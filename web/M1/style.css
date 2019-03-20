@@ -8,4 +8,27 @@ and open the template in the editor.
     Author     : Gianluca
 */
 
-body{background: #eee; }
+body{background: #eee}
+
+.header{background: #333333}
+.header_logo{color:#fff; float:left;}
+.header_menu{float:right;}
+
+
+
+
+
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
