@@ -25,7 +25,7 @@ and open the template in the editor.
                 <span></span>
             </a>
             <ul class="header_menu animate">
-                <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articolo</p></a></li>
+                <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
                 <li class="header_menu_item"><a href="valutazione.html"><p style="font-family: arial">Valutazioni</p></a></li>
                 <li class="header_menu_item"><a href="profilo.html"><p style="font-family: arial">Profilo</p></a></li>
                 <li class="header_menu_item"><a href="https://www.google.com/"><p style="font-family: arial">Serve aiuto ?</p></a></li>
@@ -41,13 +41,12 @@ and open the template in the editor.
         <div class="loginbox">
                 <img src="../img/avatar.png" class="avatar">
                 <h1>Login</h1>
-                <form>
-                    <form action="index.html" method="post">
+                    <form action="articoli.html" method="post">
                 <label for="email">Email: </label>
                 <input type="text" name="" placeholder="Email">
                 </br>
                 <label for="id_password">Password: </label>
-                <input type="password" name="passwordutente" placeholder="Password">
+                <input type="password" name="" placeholder="Password">
                 </br>
                 <input type="submit" value="Accedi"/>
                 <a href="registrazione.html">Non hai un account?<br>Registrati</a>
@@ -55,17 +54,7 @@ and open the template in the editor.
             </div>
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function(){ 
-                
-                $(".header_icon").click(function(e){
-                    
-                    $(".header_menu").toggleClass('is-open');
-                    
-                    e.preventDefault();
-                });
-            });
-        </script>
+        
     </body>
 </html> 
 
