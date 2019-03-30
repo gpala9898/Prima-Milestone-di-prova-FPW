@@ -139,34 +139,32 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1;}
     color: #fff; 
 }
 
-#layout{
+.page{
     width: 100%;
-    margin: 0px;
 }
 
-
-#colonna1{
+.articolo{
     width: 88.8%;
     float: right;
-    height: 410px;
+    height: 420px;
     border: 2px solid red;
 }
 
-#colonna2{
+.val{
     width: 88.8%;
     float: right;
     height: 300px;
     border: 2px solid yellow;
 }
 
-#sidebar{
+.profilo{
     background-color: #003366;
-    height: 710px;
+    height: 720px;
     width: 11.2%;
     float: left;
 }
 
-#sidebar button[type="button"]{
+.profilo button[type="button"]{
     border-radius: 8px;
     padding: 8px;
     font-size: 12px;
