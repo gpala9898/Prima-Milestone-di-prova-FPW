@@ -148,13 +148,20 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1;}
 #colonna1{
     width: 88.8%;
     float: right;
-    min-height: 720px;
-    opacity: 0.6;
+    height: 410px;
+    border: 2px solid red;
+}
+
+#colonna2{
+    width: 88.8%;
+    float: right;
+    height: 300px;
+    border: 2px solid yellow;
 }
 
 #sidebar{
     background-color: #003366;
-    min-height: 720px;
+    height: 710px;
     width: 11.2%;
     float: left;
 }
