@@ -1,16 +1,106 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>ScriviArticolo</title>
         <meta charset="UTF-8">
+        <meta name="author" content="Gianluca Pala">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" type="text/css" media="all" href="style.css">
+        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
     <body>
-        <div>TODO write content</div>
+        <header class="header clearfix">
+            <a href="../index.html" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
+            <a href="../index.html" class="header_icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <ul class="header_menu animate">
+                
+                <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
+                <li class="header_menu_item"><a href="valutazione.html"><p style="font-family: arial">Valutazioni</p></a></li>
+                <li class="header_menu_item"><a href="profilo.html"><p style="font-family: arial">Profilo</p></a></li>
+                <li class="header_menu_item"><a href="https://www.google.com/"><p style="font-family: arial">Serve aiuto ?</p></a></li>
+            </ul>
+        </header>
+        
+            <div class="cover_filter"></div>
+            <div class="cover_caption">
+                <div class="cover_caption_copy">
+                    <article class="page">
+                        
+                  <nav class="profilo">
+                                <br>
+                                <br>
+                                Benvenuto, <em>NomeUtente</em>
+                                <br>
+                                <br>
+                                <button type="button" ><a href="../index.html">LOGOUT</a>
+                                   
+                                </button>
+                               
+                                <br>
+                                <br>
+                                <br>
+                                
+                                <em>I miei Articoli</em>
+                                <ul type="square">
+                                <li>I robot a scuola</li><br>
+                                <li>La protezione dei dati aiuta l'economia digitale</li><br>
+                                <li>ASUS ROG Zephyrus S GX531, la recensione</li>
+                                
+                            </ul>  
+                                <br>
+                                <br>
+     
+                                <em>Da Valutare</em>
+                                <ul type="square">
+                                <li>I vantaggi dell'Intelligenza Artificiale</li><br>
+                                <li>ADA, il braccio robot che aiuta a mangiare</li><br>
+                                <li>Il carburante del futuro arriva dal mare</li>
+                                
+                            </nav>
+                        <nav class="SA">
+                        <form method="post">
+                            <br>
+                            <h1>SCRIVI ARTICOLO</h1>                         
+                        Titolo
+                        <input type="text" name="titolo"><br>
+                        <br>
+                       
+                        Autore1
+                        <input type="text" name="Autore1"><br><br>
+                        
+                        Autore2&nbsp;<sub>(opzionale)</sub>
+                        <input type="text" name="Autore2"><br><br>
+                       
+                        <strong>Categorie</strong><br><br>
+                            <input type="checkbox" name="tipo" value=""> Internet&nbsp;&nbsp;
+                            <input type="checkbox" name="tipo" value=""> Programmazione<br>&nbsp;&nbsp;                                            
+                            <input type="checkbox" name="tipo" value=""> Robotica&nbsp;&nbsp;                
+                            <input type="checkbox" name="tipo" value=""> Recensione<br>&nbsp;&nbsp;
+                            <input type="checkbox" name="tipo" value=""> HTML&nbsp;&nbsp;
+                            <input type="checkbox" name="tipo" value=""> Sicurezza Informatica&nbsp;&nbsp;
+                            <br>
+                            <br>
+                            <form action="" method="post" enctype="multipart/form-data">                                
+                                Immagine <input type="file" name="file"><br><br>
+                                <button type="submit" value="Upload">Upload Immagine</button>
+                            </form> 
+                        <strong>Data</strong>&nbsp;&nbsp;  
+                        <input type="date"  name="data">
+                        <br><br>
+                        Testo<br><br>
+                            <textarea name="commento" rows="10" cols="70"></textarea>
+                            <br><br>
+                            <button type="button" name="salva" value="SALVA">SALVA</button>
+                            </nav>
+                        </article>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        
     </body>
 </html>
