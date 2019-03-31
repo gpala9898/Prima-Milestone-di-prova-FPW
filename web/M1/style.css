@@ -145,6 +145,25 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1; overf
     height: 100%;
 }
 
+.cover_caption_copy table{
+  table-layout: fixed;
+  width: 800px;
+  height: 600px;
+  border: 2px solid white;
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-left: 30%;
+  margin-top: 3%;
+  background-color: white;
+  color: #003366;
+}
+
+.cover_caption_copy td {
+    background-color: #003366;
+    border: 1px solid white;
+    color: white;
+}
+
 .articolo{
     width: 88.8%;
     float: right;
