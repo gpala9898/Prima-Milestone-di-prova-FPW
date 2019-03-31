@@ -126,11 +126,10 @@ h1{
    position: absolute; 
    z-index: 0; 
    opacity: 0.6;
-   overflow-y: hidden;
 }
 
 .cover_caption{
-display: table; height: 100%; width: 100%; position: relative; z-index: 1;}
+display: table; height: 100%; width: 100%; position: relative; z-index: 1; overflow: hidden;}
 
 
 .cover_caption_copy{
@@ -138,6 +137,7 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1;}
     vertical-align: middle;
     text-align: center;
     color: #fff; 
+    height: 100%;
 }
 
 .page{
@@ -148,19 +148,23 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1;}
 .articolo{
     width: 88.8%;
     float: right;
-    height: 65%;
-    border-color: #003366;
-    border: 2px solid;
+    height: 64%;
+    border: 2px solid #003366;
 }
 
 .val{
     width: 88.8%;
     float: right;
-    height: 35%;
-    border-color: #003366;
-    border: 2px solid;
+    height: 36%;
+    border: 2px solid #003366;
     overflow-y: scroll;
 }
+
+.val h1{
+    margin: 0px;
+}
+
+h4,h5,h6 {margin: 1em 0 2px;}
 
 .profilo{
     background-color: #003366;
@@ -177,7 +181,17 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1;}
     color: #003366;
 }
 
+.input-form button[type="button"]{
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 12px;
+    width: 100px;
+    background-color:  white;
+    color: #003366;
+}
+
 .testoArticolo{
+    background-color: #003366; 
     border: 1px solid white;
     height: 100px;
     width: 650px;
