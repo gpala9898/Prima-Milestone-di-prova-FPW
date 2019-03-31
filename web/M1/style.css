@@ -96,6 +96,24 @@ h1{
     color: darkgrey;
 }
 
+.dispari{
+    background-color: white;
+}
+
+.pari{
+    background-color: #cccccc;
+}
+
+.nuovoArticolo{
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 12px;
+    width: 400px;
+    background-color:  white;
+    color: #003366;
+    border-radius: 12px;
+}
+
 .loginbox a:hover
 {
     color: #ffc107;
@@ -153,13 +171,12 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1; overf
   border-collapse: separate;
   border-spacing: 2px;
   margin-left: 30%;
-  margin-top: 3%;
+  margin-top: 2%;
   background-color: #003366;
   color: white;
 }
 
 .cover_caption_copy td {
-    background-color: white;
     border: 1px solid #003366;
     color: #003366;
 }
@@ -175,8 +192,7 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1; overf
     width: 88.8%;
     float: right;
     height: 36%;
-    border: 2px solid #003366;
-    overflow-y: scroll;
+    border: 2px solid #003366;    
 }
 
 .val h1{
