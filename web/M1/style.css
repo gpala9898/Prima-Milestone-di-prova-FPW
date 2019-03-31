@@ -204,6 +204,25 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1; overf
     width: 150px;
 }
 
+.azione button[type="submit"]{
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 12px;
+    background-color:  white;
+    color: green;
+    width: 200px;
+}
+
+.azione button[type="button"]{
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 12px;
+    background-color:  white;
+    color: red;
+    width: 200px;
+}
+
+
 .SA button[type="submit"]{
     border-radius: 12px;
     padding: 8px;

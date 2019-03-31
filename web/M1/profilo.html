@@ -33,17 +33,90 @@ and open the template in the editor.
                 <li class="header_menu_item"><a href="https://www.google.com/"><p style="font-family: arial">Serve aiuto ?</p></a></li>
             </ul>
         </header>
-        
-        <section class="cover">
+       
             <div class="cover_filter"></div>
             <div class="cover_caption">
                 <div class="cover_caption_copy">
-
-                </div>
-                
+                    <nav class="profilo">
+                                <br>
+                                <br>
+                                Benvenuto, <em>NomeUtente</em>
+                                <br>
+                                <br>
+                                <button type="button" ><a href="../index.html">LOGOUT</a>
+                                   
+                                </button>
+                               
+                                <br>
+                                <br>
+                                <br>
+                                
+                                <em>I miei Articoli</em>
+                                <ul type="square">
+                                <li>I robot a scuola</li><br>
+                                <li>La protezione dei dati aiuta l'economia digitale</li><br>
+                                <li>ASUS ROG Zephyrus S GX531, la recensione</li>
+                                
+                            </ul>
+                                
+                                <br>
+                                <br>
+     
+                                <em>Da Valutare</em>
+                                <ul type="square">
+                                <li>I vantaggi dell'Intelligenza Artificiale</li><br>
+                                <li>ADA, il braccio robot che aiuta a mangiare</li><br>
+                                <li>Il carburante del futuro arriva dal mare</li>
+                                
+                            </nav>
+                    
+                        <form action="profilo">                           
+                            <fieldset><legend><strong>Profilo</strong></legend>
+      <img src="../img/images.png" width="70" height="70">
+      <br><br>
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="Nome" value="Gianluca"/><br><br>  
+      <label for="nome">Cognome</label>
+        <input type="text" name="cognome" id="Cognome" value="Pala"/><br><br>
+        <label for="nome">Email</label>
+        <input type="text" name="Email" id="Email" value="gianlucapalaofficial@gmail.com"/><br><br>
+        
+        <label for="nome">Ente</label>
+        <input type="text" name="Ente" id="Ente" value="Università di Cagliari"/><br><br>
+        
+        <label for="Password">Password</label>
+        <input type="password" name="password" id="Email" value="Passwordcomplicata98"/><br><br>
+        
+        <form action="" method="post" enctype="multipart/form-data">                               
+                                Immagine <input type="file" name="file"><br><br>
+                                
+                                <button type="submit" value="Upload">Upload Immagine</button></fieldset>
+                            </form> 
+        <br>
+        <fieldset>
+            <br><br>
+         <legend>Tipo</legend>
+          <p>
+        <label for="Autore">Autore</label>
+        <input type="radio" name="classe"
+         id="Autore" value="uomo">&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="Organizzatore">Organizzatore</label>
+        <input type="radio" name="classe"
+        id="Organizzatore" value="Organizzatore">
+        </p>     
+        
+        </fieldset><br>
+        
+        <fieldset>
+        <nav class="azione">
+            <button type="submit" value="SALVA">SALVA</button><br><br>
+        <button type="button" value="CANCELLATI">CANCELLATI</button>
+    </nav>
+        
+        </fieldset>
+                </div>   
             </div>
-             
-        </section>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         
     </body>
