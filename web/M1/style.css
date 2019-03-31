@@ -195,6 +195,24 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1; overf
     border: 2px solid #003366;    
 }
 
+.SA button[type="button"]{
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 12px;
+    background-color:  white;
+    color: #003366;
+    width: 150px;
+}
+
+.SA button[type="submit"]{
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 12px;
+    background-color:  white;
+    color: #003366;
+    width: 150px;
+}
+
 .val h1{
     margin: 0px;
 }
