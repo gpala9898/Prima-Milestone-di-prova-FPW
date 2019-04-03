@@ -37,7 +37,7 @@ and open the template in the editor.
             <div class="cover_filter"></div>
             <div class="cover_caption">
                 <div class="cover_caption_copy">
-                    <nav class="profilo">
+                    <aside class="profilo">
                                 <br>
                                 <br>
                                 Benvenuto, <em>NomeUtente</em>
@@ -68,52 +68,50 @@ and open the template in the editor.
                                 <li>ADA, il braccio robot che aiuta a mangiare</li><br>
                                 <li>Il carburante del futuro arriva dal mare</li>
                                 
-                            </nav>
-                    
-                        <form action="profilo">    
-                            <fieldset>
-                                <legend style="font-size: 20px">Profilo</legend><br>
-      <img src="../img/images.png" width="70" height="70">
-      <br><br>
-      <label for="nome">Nome</label>
-      <input type="text" name="nome" id="Nome" value="Gianluca"/><br><br>  
-      <label for="nome">Cognome</label>
-        <input type="text" name="cognome" id="Cognome" value="Pala"/><br><br>
-        <label for="nome">Email</label>
-        <input type="text" name="Email" id="Email" value="gianlucapalaofficial@gmail.com"/><br><br>
-        
-        <label for="nome">Ente</label>
-        <input type="text" name="Ente" id="Ente" value="Università di Cagliari"/><br><br>
-        
-        <label for="Password">Password</label>
-        <input type="password" name="password" id="Email" value="Passwordcomplicata98"/><br><br>
-        
-        <form action="" method="post" enctype="multipart/form-data">                               
-                                Immagine <input type="file" name="file"><br><br>
-                                
-                                <button type="submit" value="Upload">Upload Immagine</button></fieldset>
-                            </form> 
-        <br>
-        <fieldset>   
-         <legend style="font-size: 20px">Tipo</legend>
-          <p>
-        <label for="Autore">Autore</label>
-        <input type="radio" name="classe"
-         id="Autore" value="uomo">&nbsp;&nbsp;&nbsp;&nbsp;
-        <label for="Organizzatore">Organizzatore</label>
-        <input type="radio" name="classe"
-        id="Organizzatore" value="Organizzatore">
-        </p>     
-        
-        </fieldset><br>
-        
-        <fieldset>
-        <nav class="azione">
-            <button type="submit" value="SALVA">SALVA</button><br><br>
-        <button type="button" value="CANCELLATI">CANCELLATI</button>
-    </nav>
-        
-        </fieldset>
+                            </aside>
+
+                        <table class="tabellaprofilo">
+                        <tr>
+                            <th><b>PROFILO</b></th>                           
+                        </tr>
+                        <tr class="rigadispari">
+                            <td><label for="nome">Nome</label>
+                        <input type="text" name="nome" id="Nome" value="Gianluca"/></td>
+                                                    
+                        </tr>
+                        <tr class="rigapari">
+                            <td><label for="nome">Cognome</label>
+                        <input type="text" name="cognome" id="Cognome" value="Pala"/></td>
+                                                  
+                        </tr>
+                        <tr class="rigadispari">
+                            <td><label for="nome">Email</label>
+                        <input type="text" name="Email" id="Email" value="gianlucapalaofficial@gmail.com"/></td>
+                                                     
+                        </tr>
+                        
+                        <tr class="rigapari">
+                            <td><label for="Password">Password</label>
+                        <input type="password" name="password" id="Password" value="Passwordcomplicata98"/></td>
+                                                     
+                        </tr>
+                        
+                        <tr class="rigadispari">
+                            <td><label for="nome">Ente</label>
+                        <input type="text" name="Ente" id="Ente" value="Università di Cagliari"/></td>                        
+                        </tr>
+                        
+                        <tr class="rigapari">
+                            <td> <form action="immagine" method="post" enctype="multipart/form-data">                              
+                                Immagine <input type="file" name="file"></td>                        
+                        </tr>  
+                        
+                    </table>
+                    <br>                   
+                    <nav class="azione">
+                        <button type="button" value="SALVA">SALVA</button>&nbsp;&nbsp;&nbsp;
+                <input type="button" value="CANCELLATI"></input>
+        </nav>
                 </div>   
             </div>
 
