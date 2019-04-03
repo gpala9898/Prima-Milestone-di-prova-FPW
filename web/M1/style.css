@@ -33,6 +33,8 @@ body{
     box-sizing: border-box;
     padding: 70px 30px;
     font-family: sans-serif;
+    border: 2px outset whitesmoke;
+    border-radius: 20px;
 }
 
 
@@ -101,6 +103,8 @@ h1{
     box-sizing: border-box;
     padding: 70px 30px;
     font-family: sans-serif;
+    border: 2px outset whitesmoke;
+    border-radius: 20px;
  
 }
 
@@ -257,10 +261,14 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1; overf
   margin-top: 2%;
   color: white; 
   background-color: #003366;
+  border-radius: 12px;
+  border: 2px outset whitesmoke;
 }
 
 .tabella td{
-color: #003366;    
+color: #003366; 
+border-radius: 12px;
+
 }
 
 .cover_caption_copy td {
@@ -382,11 +390,13 @@ h4,h5,h6 {margin: 1em 0 2px;}
   margin-top: 2%;
   color: white; 
   background-color: #003366;
+  border-radius: 12px;
+  border: 2px outset whitesmoke;
 }
 
 .tabellaprofilo td{
 color: #003366; 
-
+border-radius: 12px;
 }
 
 .rigadispari td{
