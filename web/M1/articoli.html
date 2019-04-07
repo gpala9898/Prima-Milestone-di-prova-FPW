@@ -11,7 +11,6 @@ and open the template in the editor.
         <meta name="author" content="Gianluca Pala">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" type="text/css" media="all" href="style.css">
-        <meta http-equiv="X-UA-Compatible" content="chrome=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,7 @@ and open the template in the editor.
                 <span></span>
                 <span></span>
             </a>
-            <ul class="header_menu animate">
+            <ul class="header_menu">
                 
                 <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
                 <li class="header_menu_item"><a href="valutazione.html"><p style="font-family: arial">Valutazioni</p></a></li>
@@ -38,19 +37,17 @@ and open the template in the editor.
             <div class="cover_caption">
                 <div class="cover_caption_copy">                   
                         
-                  <aside class="profilo">
-                                <br>
-                                <br>
-                                Benvenuto, <em>NomeUtente</em>
-                                <br>
-                                <br>
+                    
+                  <aside class="profilo">                      
+                                
+                                <p>Benvenuto, <em>NomeUtente</em></p>                                                                                          
                                 <nav class="tasto">
-                                <input type="submit" value="LOGOUT"/>             
-                                </nav>
+                                    <a href="../index.html" type="button" >LOGOUT</a>            
+                                </nav> 
                                 <br>
                                 <br>
                                 <br> 
-                                <em>I miei Articoli</em>
+                                <em><strong>I miei Articoli</strong></em>
                                 <ul type="square">
                                 <li>I robot a scuola</li><br>
                                 <li>La protezione dei dati aiuta l'economia digitale</li><br>
@@ -61,13 +58,14 @@ and open the template in the editor.
                                 <br>
                                 <br>
      
-                                <em>Da Valutare</em>
+                                <em><strong>Da Valutare</strong></em>
                                 <ul type="square">
                                 <li>I vantaggi dell'Intelligenza Artificiale</li><br>
                                 <li>ADA, il braccio robot che aiuta a mangiare</li><br>
                                 <li>Il carburante del futuro arriva dal mare</li>
                                 
-                            </aside>                      
+                            </aside>  
+                        
                     
                     <table class="tabella">
                         <tr>
@@ -102,10 +100,11 @@ and open the template in the editor.
                             <td><img src="../img/remove.png" width="25" height="25"></td>
                         </tr>                                            
                     </table>
-                    <br>                   
+                    <br>
+                    <form action="scriviArticolo.html" method="post">
                     <nav class="tasto">
                     <input type="submit" value="NUOVO ARTICOLO "/>             
-                    </nav>
+                    </nav></form>
                 </div>
             </div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

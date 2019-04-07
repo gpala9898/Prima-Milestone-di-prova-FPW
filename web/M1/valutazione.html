@@ -10,8 +10,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="author" content="Gianluca Pala">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" type="text/css" media="all" href="style.css">
-        <meta http-equiv="X-UA-Compatible" content="chrome=1">
+        <link rel="stylesheet" type="text/css" media="all" href="style.css">     
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +24,7 @@ and open the template in the editor.
                 <span></span>
                 <span></span>
             </a>
-            <ul class="header_menu animate">
+            <ul class="header_menu">
                 
                 <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
                 <li class="header_menu_item"><a href="valutazione.html"><p style="font-family: arial">Valutazioni</p></a></li>
@@ -38,20 +37,15 @@ and open the template in the editor.
             <div class="cover_caption">
                 <div class="cover_caption_copy">
                     <aside class="profilo">
-                                <br>
-                                <br>
-                                Benvenuto, <em>NomeUtente</em>
-                                <br>
-                                <br>
+                                <p>Benvenuto, <em>NomeUtente</em></p>
                                 <nav class="tasto">
-                                <input type="submit" value="LOGOUT"/>             
+                                    <a href="../index.html" type="button" >LOGOUT</a>            
                                 </nav>
-                               
                                 <br>
                                 <br>
                                 <br>
                                 
-                                <em>I miei Articoli</em>
+                                <em><strong>I miei Articoli</strong></em>
                                 <ul type="square">
                                 <li>I robot a scuola</li><br>
                                 <li>La protezione dei dati aiuta l'economia digitale</li><br>
@@ -62,24 +56,27 @@ and open the template in the editor.
                                 <br>
                                 <br>
      
-                                <em>Da Valutare</em>
+                                <em><strong>Da Valutare</strong></em>
                                 <ul type="square">
                                 <li>I vantaggi dell'Intelligenza Artificiale</li><br>
                                 <li>ADA, il braccio robot che aiuta a mangiare</li><br>
                                 <li>Il carburante del futuro arriva dal mare</li>
                                 
                             </aside>
-                    <!--
-                        <section class="articolo">   
-                            <br>
-                            <h1><strong>I vantaggi dell'Intelligenza Artificiale</strong></h1>
-                            <h4>Autore: NomeAutore Cognome Autore</h4>
-                            <br>
-                            <img src="../img/AI.jpg" width="250" height="150">  
-                            <br>
-                            <br>
-                            <section class="testoArticolo" >
-                                     Quando si parla di macchine pensanti 
+                    
+                    <table class="tabellaart">
+                        <tr>
+                            <th><h1><strong>I vantaggi dell'Intelligenza Artificiale</strong></h1>
+                                <h4><em>Autore: Vincenzo Paduano</em></h4>
+                            <h6><em>Categorie: Programmazione, Robotica</em></h6>
+                            <h6><em>Data: 31/03/2019</em></h6>
+                            </th>
+                            <th><img src="../img/AI.jpg" width="275" height="150"></th>
+                            
+                        </tr>                        
+                       
+                        <tr class="dispari">
+                            <td colspan="2"><p align="justify">Quando si parla di macchine pensanti 
                                      e futuro, non c'è dubbio che la
                                      letteratura di genere abbia una predilezione 
                                      per i soggetti distopici (lo stesso Asimov nei suoi 
@@ -89,17 +86,17 @@ and open the template in the editor.
                                      Reazioni di questo tipo sono comprensibili: la paura dell'ignoto è parte della 
                                      nostra natura, ma è il caso di soffermarsi in eguale misura sui numerosi e notevoli
                                      vantaggi portati dalle AI nelle nostre vite e nell'evoluzione della società, 
-                                     molti dei quali sono evidenti già nel presente.
-                            </section>
-                            <h5><em>Categorie: Programmazione, Robotica</em></h5>
-                            <h5><em>Data: 31/03/2019</em></h5>
-                        </section>
-                        
-                        
-                            
-                        <section class="val"><br>
-                            <h1>Valutazione</h1>
-                            <p>
+                                     molti dei quali sono evidenti già nel presente.</p></td>
+                                                                    
+                    </table>
+                    
+                    <table class="tabellaval">
+                        <tr>
+                            <th colspan="2"><h1>VALUTAZIONE</h1></th>                                                       
+                        </tr>                        
+                       
+                        <tr class="dispari">
+                            <td colspan="2"><p>
                             Voto:
                             <label for="1">1</label>
                                 <input type="radio" name="voto" id="1">
@@ -111,25 +108,24 @@ and open the template in the editor.
                                 <input type="radio" name="voto" id="4">
                             <label for="5">5</label>
                                 <input type="radio" name="voto" id="5">
-                                </p>
-                                
-                            <div class="input-form">
-                            
-                                 <form method="post" action="">
+                                </p></td>
+                        </tr>
+                        
+                        <tr class="pari">
+                            <td><form method="post" action="">
                                      <h5>Commenti per gli autori</h5>
-                                    <textarea rows="1" cols="30" name="lungo" id="lungo"></textarea>                                    
-                                    <h5>Commenti per gli organizzatori</h5>
-                                <textarea rows="1" cols="30" name="lungo" id="lungo"></textarea>                                  
-                                </form>                               
-                                <nav class="tasto">
-                                <input type="submit" value="INVIA"/>             
-                                </nav>
-                            </div>
-                                
-                            </section>
-
-                    -->
-                    
+                                    <textarea rows="8" cols="45" name="lungo" id="lungo"></textarea>                                                                                                          
+                                </form></td>
+                            <td><form method="post" action="">
+                                     <h5>Commenti per gli organizzatori</h5>
+                                    <textarea rows="8" cols="45" name="lungo" id="lungo"></textarea>                                                                                                          
+                                </form></td>
+                        </tr>    
+                    </table>
+                    <br>
+                    <nav class="tasto">
+                        <input type="submit" value="INVIA"/>             
+                    </nav>
                     
                         </div>
                 </div>
