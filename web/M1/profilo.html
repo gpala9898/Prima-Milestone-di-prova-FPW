@@ -10,13 +10,17 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="author" content="Gianluca Pala">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" type="text/css" media="all" href="style.css">       
+        <link rel="stylesheet" type="text/css" media="all" href="style.css"> 
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
     </head>
     <body>
+        
+        <!--Creazione tasto 'homepage' con collegamento a index-->
+        
         <header class="header clearfix">
             <a href="../index.html" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
             <a href="../index.html" class="header_icon">
@@ -24,6 +28,9 @@ and open the template in the editor.
                 <span></span>
                 <span></span>
             </a>
+            
+            <!--Creazione barra degli elementi principali (Articoli, Valutazioni,Profilo,Serve Aiuto)-->
+            
             <ul class="header_menu">
                 
                 <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
@@ -33,9 +40,16 @@ and open the template in the editor.
             </ul>
         </header>
        
+        <!--Creazione cover della pagina di sfondo per l'inserimento degli 
+            elementi della pagina-->
+        
             <div class="cover_filter"></div>
             <div class="cover_caption">
                 <div class="cover_caption_copy">
+                    
+                    <!--Creazione barra verticale di profilo con i vari elementi 
+                (Frase di Benvenuto,Articoli e Articoli da valutare)-->
+                    
                     <aside class="profilo">
                                 <p>Benvenuto, <em>NomeUtente</em></p>
                                 <nav class="tasto">
@@ -64,7 +78,10 @@ and open the template in the editor.
                                 <li>Il carburante del futuro arriva dal mare</li>
                                 
                             </aside>
-
+                    
+                    <!--Creazione tabella con i dati del profilo utente con
+                    i campi che ritrovo in fase di registrazione-->
+                    
                         <table class="tabellaprofilo">
                         <tr>
                             <th><b>PROFILO</b></th>                           
@@ -97,15 +114,24 @@ and open the template in the editor.
                         </tr>
                         
                         <tr class="rigapari">
+                            
+                            <!--Form per l'inserimento dell'immagine-->
                             <td> <form action="immagine" method="post" enctype="multipart/form-data">                              
                                 Immagine <input type="file" name="file"></td>                        
                         </tr>  
                         
                     </table>
-                    <br>                   
+                    <br>  
+                    
+                    <!--Pulsante per il salvataggio dei dati del profilo in caso
+                    di eventuale modifica-->
+                    
                     <nav class="azione">
                         <button type="button" value="SALVA">SALVA</button>&nbsp;&nbsp;&nbsp;
-                <input type="button" value="CANCELLATI"></input>
+                        
+                    <!--Pulsante per l'eventuale eliminazione del profilo utente-->
+                    
+                <input type="button" value="CANCELLATI"/>
         </nav>
                 </div>   
             </div>

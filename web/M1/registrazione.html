@@ -17,6 +17,9 @@ and open the template in the editor.
         
     </head>
     <body>
+        
+        <!--Creazione tasto 'homepage' con collegamento a index-->
+        
         <header class="header clearfix">
             <a href="../index.html" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
             <a href="../index.html" class="header_icon">
@@ -24,6 +27,9 @@ and open the template in the editor.
                 <span></span>
                 <span></span>
             </a>
+            
+            <!--Creazione barra degli elementi principali (Articoli, Valutazioni,Profilo,Serve Aiuto)-->
+            
             <ul class="header_menu">
                 
                 <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
@@ -33,16 +39,24 @@ and open the template in the editor.
             </ul>
         </header>
         
+         <!--Creazione cover della pagina di sfondo per l'inserimento degli 
+            elementi della pagina-->
+        
             <div class="cover_filter"></div>
             <div class="cover_caption">
                 <div class="cover_caption_copy">
                     
                 <aside></aside>
                 
+                <!--Creazione del box per la registrazione con gli stessi elementi
+                che ci sono nella pagina di riepilogo del profilo-->
+                
                    <div class="registrati">
-                <img src="../img/avatar.png" class="avatar">
+                       
+                      
+                       
+                <img src="../img/avatar.png" class="avatar"><!--Immagine per migliorare aspetto del box--> 
                 <h1>REGISTRATI</h1>
-                    <form action="articoli.html" method="post">
                         <p align=center>
                 <label for="Nome">Nome: </label><br>
                 <input type="text" name="" placeholder="Nome Utente">
@@ -52,9 +66,10 @@ and open the template in the editor.
                 <br><br>
                 <label for="Ente">Ente: </label><br>
                 <input type="text" name="" placeholder="Ente">
-                <br><br>
+                <br><br>                
+                <!--Pulsante per l'inserimento di un'immagine-->               
                 <form action="immagine" method="post" enctype="multipart/form-data">                            
-                    Immagine:<br><br> <input type="file" name="file">
+                    Immagine:<br><br> <input type="file" name="file"></form>
                 <br><br>
                 <label for="email">Email: </label><br>
                 <input type="text" name="" placeholder="Email">
@@ -62,16 +77,15 @@ and open the template in the editor.
                 <label for="id_password">Password: </label><br>
                 <input type="password" name="" placeholder="Password">
                 <br><br>
+                 <form action="articoli.html" method="post">
                 <input type="submit" value="Registrati"/></p>           
             </form>
             </div>
                     
                     </div>
             </div>
-                
-                    
-               
-             
+
+            <!--Libreria-->
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </body>

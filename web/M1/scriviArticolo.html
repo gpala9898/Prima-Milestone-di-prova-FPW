@@ -5,12 +5,15 @@
         <meta name="author" content="Gianluca Pala">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" type="text/css" media="all" href="style.css">
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">     
     </head>
     <body>
+        
+        <!--Creazione tasto 'homepage' con collegamento a index-->
+        
         <header class="header clearfix">
             <a href="../index.html" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
             <a href="../index.html" class="header_icon">
@@ -18,6 +21,9 @@
                 <span></span>
                 <span></span>
             </a>
+            
+            <!--Creazione barra degli elementi principali (Articoli, Valutazioni,Profilo,Serve Aiuto)-->
+            
             <ul class="header_menu">
                 
                 <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
@@ -27,9 +33,16 @@
             </ul>
         </header>
         
+            <!--Creazione cover della pagina di sfondo per l'inserimento degli 
+            elementi della pagina-->
+            
             <div class="cover_filter"></div>
             <div class="cover_caption">
-                <div class="cover_caption_copy">                                         
+                <div class="cover_caption_copy"> 
+                    
+                <!--Creazione barra verticale di profilo con i vari elementi 
+                (Frase di Benvenuto,Articoli e Articoli da valutare)-->
+                
                   <aside class="profilo">
                                 <p>Benvenuto, <em>NomeUtente</em></p>
                                 <nav class="tasto">
@@ -59,7 +72,11 @@
                                 <li>Il carburante del futuro arriva dal mare</li>
                                 
                             </aside>
-                                                
+                        
+                <!--Tabella per la creazione dell'articolo con i vari elementi
+                suddivisi in righe pari e dispari per poter cambiare i colori con css
+                per una miglior visualizzazione-->
+                
                         <table class="tabella">
                         <tr>
                             <th><b>SCRIVI ARTICOLO</b></th>                           
@@ -75,6 +92,10 @@
                                                   
                         </tr>
                         <tr class="rigadispari">
+                            
+                            <!--Checkbox per la scelta multipla della categoria 
+                            di articolo-->
+                            
                             <td><center><label for="nome"><em>Categorie</em></label><br>
                             <input type="checkbox" name="tipo" value=""> Internet
                             <input type="checkbox" name="tipo" value=""> Programmazione                                            
@@ -85,6 +106,8 @@
                         </tr>
                         
                         <tr class="rigapari">
+                            
+                            <!--Riga per l'inserimento dell'immagine-->
                             <td><center><form action="immagine" method="post" enctype="multipart/form-data">                                
                                 Immagine <input type="file" name="file">                               
                             </form></center> </td>                                                    
@@ -96,18 +119,25 @@
                         </tr>
                         
                         <tr class="rigapari">
-                            <td><center><label for="nome"><em>Testo</em></label><br>
-                            <textarea name="commento" rows="14" cols="95"></textarea></center><br></td>
+                            <td><center><label for="nome"><em>Testo Articolo</em></label><br>
+                            <textarea name="testo" rows="14" cols="95"></textarea></center><br></td>
                                 </tr>
                     </table>
-                        
+                        <!--_____________________________________________-->
                     <br> 
+                    
+                    <!--Pulsante per il salvataggio dell'articolo-->
+                    
                     <nav class="tasto">
                         <input type="submit" value="SALVA ARTICOLO "/>             
                 </nav>
                     
+                    <!--________________________________-->
+                    
                         </div>
             </div>
+            
+                    <!--Libreria-->
                     
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         

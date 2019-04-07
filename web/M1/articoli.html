@@ -11,12 +11,16 @@ and open the template in the editor.
         <meta name="author" content="Gianluca Pala">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" type="text/css" media="all" href="style.css">
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
     </head>
     <body>
+        
+        <!--Creazione tasto 'homepage' con collegamento a index-->
+        
         <header class="header clearfix">
             <a href="../index.html" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
             <a href="../index.html" class="header_icon">
@@ -24,6 +28,9 @@ and open the template in the editor.
                 <span></span>
                 <span></span>
             </a>
+            
+            <!--Creazione barra degli elementi principali (Articoli, Valutazioni,Profilo,Serve Aiuto)-->
+            
             <ul class="header_menu">
                 
                 <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
@@ -33,10 +40,15 @@ and open the template in the editor.
             </ul>
         </header>
           
+        <!--Creazione cover della pagina di sfondo per l'inserimento degli 
+            elementi della pagina-->
+        
             <div class="cover_filter"></div>
             <div class="cover_caption">
                 <div class="cover_caption_copy">                   
                         
+                <!--Creazione barra verticale di profilo con i vari elementi 
+                (Frase di Benvenuto,Articoli e Articoli da valutare)-->
                     
                   <aside class="profilo">                      
                                 
@@ -66,7 +78,11 @@ and open the template in the editor.
                                 
                             </aside>  
                         
-                    
+                <!--Tabella per la visualizzazione degli articoli con i vari elementi
+                suddivisi in righe pari e dispari per poter cambiare i colori con css
+                per una miglior visualizzazione. Create diverse colonne per
+                suddividere gli articoli per caratteristiche-->    
+                
                     <table class="tabella">
                         <tr>
                             <th>Data</th>
@@ -101,12 +117,19 @@ and open the template in the editor.
                         </tr>                                            
                     </table>
                     <br>
+                    
+                    <!--Pulsante di collegamento alla pagina di creazione di un 
+                    nuovo articolo-->
+                    
                     <form action="scriviArticolo.html" method="post">
                     <nav class="tasto">
                     <input type="submit" value="NUOVO ARTICOLO "/>             
                     </nav></form>
                 </div>
             </div>
+            
+            <!--Libreria-->
+            
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         
     </body>

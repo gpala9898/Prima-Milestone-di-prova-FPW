@@ -10,13 +10,17 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="author" content="Gianluca Pala">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-        <link rel="stylesheet" type="text/css" media="all" href="style.css">     
+        <link rel="stylesheet" type="text/css" media="all" href="style.css">  
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
     </head>
     <body>
+        
+        <!--Creazione tasto 'homepage' con collegamento a index-->
+        
         <header class="header clearfix">
             <a href="../index.html" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
             <a href="../index.html" class="header_icon">
@@ -24,6 +28,9 @@ and open the template in the editor.
                 <span></span>
                 <span></span>
             </a>
+            
+            <!--Creazione barra degli elementi principali (Articoli, Valutazioni,Profilo,Serve Aiuto)-->
+            
             <ul class="header_menu">
                 
                 <li class="header_menu_item"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
@@ -33,9 +40,16 @@ and open the template in the editor.
             </ul>
         </header>
         
+        <!--Creazione cover della pagina di sfondo per l'inserimento degli 
+            elementi della pagina-->
+        
             <div class="cover_filter"></div>
             <div class="cover_caption">
                 <div class="cover_caption_copy">
+                    
+                     <!--Creazione barra verticale di profilo con i vari elementi 
+                (Frase di Benvenuto,Articoli e Articoli da valutare)-->
+                    
                     <aside class="profilo">
                                 <p>Benvenuto, <em>NomeUtente</em></p>
                                 <nav class="tasto">
@@ -63,6 +77,9 @@ and open the template in the editor.
                                 <li>Il carburante del futuro arriva dal mare</li>
                                 
                             </aside>
+                     
+                    <!--Creazione tabella con un articolo di esempio con relativi
+                   elementi di interesse (Titolo,Autore, Categoria/e e Data)-->
                     
                     <table class="tabellaart">
                         <tr>
@@ -71,10 +88,13 @@ and open the template in the editor.
                             <h6><em>Categorie: Programmazione, Robotica</em></h6>
                             <h6><em>Data: 31/03/2019</em></h6>
                             </th>
+                            
+                            <!--Immagine di copertina dell'articolo-->
                             <th><img src="../img/AI.jpg" width="275" height="150"></th>
                             
                         </tr>                        
                        
+                        <!--Corpo dell'articolo con stile giustificato-->
                         <tr class="dispari">
                             <td colspan="2"><p align="justify">Quando si parla di macchine pensanti 
                                      e futuro, non c'è dubbio che la
@@ -89,6 +109,10 @@ and open the template in the editor.
                                      molti dei quali sono evidenti già nel presente.</p></td>
                                                                     
                     </table>
+                    
+                    <!--Creazione tabella con gli elementi per la valutazione 
+                    dell'articolo e gli eventuali commenti per l'Autore e/o per
+                    l'organizzatore (divisione per righe pari e dispari)-->
                     
                     <table class="tabellaval">
                         <tr>
@@ -123,12 +147,18 @@ and open the template in the editor.
                         </tr>    
                     </table>
                     <br>
+                    
+                    <!--Pulsante per l'invio della valutazione e degli eventuali
+                    commenti relativi all'articolo selezionato-->
+                    
                     <nav class="tasto">
                         <input type="submit" value="INVIA"/>             
                     </nav>
                     
                         </div>
                 </div>
+            
+            <!--LIbreria-->
             
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
        
