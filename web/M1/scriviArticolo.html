@@ -36,9 +36,8 @@
             <!--Creazione cover della pagina di sfondo per l'inserimento degli 
             elementi della pagina-->
             
-            <div class="cover_filter"></div>
-            <div class="cover_caption">
-                <div class="cover_caption_copy"> 
+            <div id="Sfondo_nero"></div>            
+                <div class="main_content">
                     
                 <!--Creazione barra verticale di profilo con i vari elementi 
                 (Frase di Benvenuto,Articoli e Articoli da valutare)-->
@@ -77,7 +76,8 @@
                 suddivisi in righe pari e dispari per poter cambiare i colori con css
                 per una miglior visualizzazione-->
                 
-                        <table class="tabella">
+                <form action="articoli.html" method="post">
+                        <table class="tabellaSA">
                         <tr>
                             <th><b>SCRIVI ARTICOLO</b></th>                           
                         </tr>
@@ -87,8 +87,13 @@
                                                     
                         </tr>
                         <tr class="rigapari">
-                            <td><center><label for="autori"><em>Autori</em></label><br>
-                        <input type="text" name="Autori" id="Autori" value=""/></center></td>
+                            <td><center><label for="autori"><em>Autore</em></label><br>
+                            <select name="autori">
+                                <option value="">Seleziona Autore</option>
+                                <option value="a1">Bartolomeo Buscema</option>
+                                <option value="a2">Gabriella Bernardi</option>
+                                <option value="a3">Ugo Apollonio</option>
+                            </select></center></td>
                                                   
                         </tr>
                         <tr class="rigadispari">
@@ -96,13 +101,7 @@
                             <!--Checkbox per la scelta multipla della categoria 
                             di articolo-->
                             
-                            <td><center><label for="nome"><em>Categorie</em></label><br>
-                            <input type="checkbox" name="tipo" value=""> Internet
-                            <input type="checkbox" name="tipo" value=""> Programmazione                                            
-                            <input type="checkbox" name="tipo" value=""> Robotica <br>               
-                            <input type="checkbox" name="tipo" value=""> Recensione
-                            <input type="checkbox" name="tipo" value=""> HTML
-                            <input type="checkbox" name="tipo" value=""> Sicurezza Informatica</td></center>                           
+                            <td></td>                           
                         </tr>
                         
                         <tr class="rigapari">
@@ -131,15 +130,11 @@
                     <nav class="tasto">
                         <input type="submit" value="SALVA ARTICOLO "/>             
                 </nav>
+                    </form>
                     
                     <!--________________________________-->
                     
-                        </div>
-            </div>
-            
-                    <!--Libreria-->
-                    
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        
+                        </div>           
+                 
     </body>
 </html>

@@ -43,9 +43,8 @@ and open the template in the editor.
         <!--Creazione cover della pagina di sfondo per l'inserimento degli 
             elementi della pagina-->
         
-            <div class="cover_filter"></div>
-            <div class="cover_caption">
-                <div class="cover_caption_copy">
+            <div id="Sfondo_nero"></div>            
+                <div class="main_content">
                     
                      <!--Creazione barra verticale di profilo con i vari elementi 
                 (Frase di Benvenuto,Articoli e Articoli da valutare)-->
@@ -54,7 +53,8 @@ and open the template in the editor.
                                 <p>Benvenuto, <em>NomeUtente</em></p>
                                 <nav class="tasto">
                                     <a href="../index.html" type="button" >LOGOUT</a>            
-                                </nav>
+                                </nav> 
+                               
                                 <br>
                                 <br>
                                 <br>
@@ -81,6 +81,7 @@ and open the template in the editor.
                     <!--Creazione tabella con un articolo di esempio con relativi
                    elementi di interesse (Titolo,Autore, Categoria/e e Data)-->
                     
+                    
                     <table class="tabellaart">
                         <tr>
                             <th><h1><strong>I vantaggi dell'Intelligenza Artificiale</strong></h1>
@@ -90,7 +91,7 @@ and open the template in the editor.
                             </th>
                             
                             <!--Immagine di copertina dell'articolo-->
-                            <th><img src="../img/AI.jpg" width="275" height="150"></th>
+                            <th><img src="../img/AI.jpg"></th>
                             
                         </tr>                        
                        
@@ -114,8 +115,9 @@ and open the template in the editor.
                     dell'articolo e gli eventuali commenti per l'Autore e/o per
                     l'organizzatore (divisione per righe pari e dispari)-->
                     
+                    <form action="articoli.html" method="post">
                     <table class="tabellaval">
-                        <tr>
+                            <tr>
                             <th colspan="2"><h1>VALUTAZIONE</h1></th>                                                       
                         </tr>                        
                        
@@ -136,16 +138,17 @@ and open the template in the editor.
                         </tr>
                         
                         <tr class="pari">
-                            <td><form method="post" action="">
-                                     <h5>Commenti per gli autori</h5>
-                                    <textarea rows="8" cols="45" name="lungo" id="lungo"></textarea>                                                                                                          
-                                </form></td>
-                            <td><form method="post" action="">
-                                     <h5>Commenti per gli organizzatori</h5>
-                                    <textarea rows="8" cols="45" name="lungo" id="lungo"></textarea>                                                                                                          
-                                </form></td>
+                            <td>
+                                <h5>Commenti per gli autori</h5>
+                                <textarea rows="8" cols="45" name="lungo" id="lungo"></textarea>                                                                                                          
+                                </td>
+                            <td>
+                                <h5>Commenti per gli organizzatori</h5>
+                                <textarea rows="8" cols="45" name="lungo" id="lungo"></textarea>                                                                                                          
+                            </td>
                         </tr>    
                     </table>
+                        
                     <br>
                     
                     <!--Pulsante per l'invio della valutazione e degli eventuali
@@ -154,13 +157,9 @@ and open the template in the editor.
                     <nav class="tasto">
                         <input type="submit" value="INVIA"/>             
                     </nav>
-                    
+     </form>
                         </div>
-                </div>
             
-            <!--LIbreria-->
-            
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
        
     </body>
 </html>

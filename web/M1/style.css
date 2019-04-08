@@ -26,6 +26,11 @@ body{
     background-position: center;
 }
 
+.presentazione{
+    margin-top: 15%;
+    margin-left: 10%;
+}
+
 /*Modifica visualizzazione degli elementi delle liste ordinate presenti nella
 barra verticale di profilo*/
 li{
@@ -53,8 +58,8 @@ di un bordo per migliorarne l'aspetto rispetto allo sfondo della pagina*/
     height: 620px;
     background: #000;
     color: #fff;
-    top: 15%;
-    left: 40%;
+    top: 10%;
+    left: 45%;
     position: absolute;
     transform: translate(-10%,-10%);
     box-sizing: border-box;
@@ -123,42 +128,40 @@ h1{
 /*-------------------------LOGIN----------------------------------------------*/
 /*CSS del box di login (praticamente uguale al box per la registrazione ma con
 grandezza diversa)*/
-.loginbox{
+.login{
     width: 320px;
     height: 420px;
     background: #000;
     color: #fff;
-    top: 50%;
+    top: 20%;
     left: 50%;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-10%,-10%);
     box-sizing: border-box;
     padding: 70px 30px;
     border: 2px outset whitesmoke;
     border-radius: 20px;
- 
 }
 
 /*CSS per la modifica della larghezza delle righe del box di login*/
-.loginbox input{
+.login input{
     width: 100%;
     margin-bottom: 20px;    
 }
 
 /*CSS per migliorare l'aspetto della riga password in relazione all'aspetto del box*/
-.loginbox input[type="text"], input[type="password"]
+.login input[type="text"], input[type="password"]
 {
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
     outline: none;
-    height: 40px;
     color: #fff;
     font-size: 18px;
 }
 
 /*CSS per la modifica dell'aspetto del pulsante di login*/
-.loginbox input[type="submit"]
+.login input[type="submit"]
 {
     border: none;
     outline: none;
@@ -171,7 +174,7 @@ grandezza diversa)*/
 
 /*CSS per la modifica del colore del pulsante di login quando ci si passa sopra
 con il puntatore*/
-.loginbox input[type="submit"]:hover
+.login input[type="submit"]:hover
 {
     cursor: pointer;
     background: #66ccff;
@@ -180,18 +183,34 @@ con il puntatore*/
 
 /*CSS per l'aspetto delle righe collegate alla pagina di registrazione se la 
 pagina è visitata da un nuovo utente*/
-.loginbox a{
+.login a{
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
     color: darkgrey;
+    float: left;
 }
 
 /*CSS per modificare il colore delle righe quando ci si passa sopra con il puntatore*/
-.loginbox a:hover
+.login a:hover
 {
     color: #ffc107;
 }
+
+/*CSS per l'aspetto della riga collegata alla pagina di valutazione*/
+#valuta{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+    float: right;
+}
+
+/*CSS per modificare il colore delle righe quando ci si passa sopra con il puntatore*/
+#valuta:hover{
+    color: #00ffff;
+}
+
 /*----------------------------------------------------------------------------*/
 
 /*CSS per cambiare il colore dello sfondo della classe dispari delle tabelle*/
@@ -204,6 +223,17 @@ pagina è visitata da un nuovo utente*/
     background-color: #cccccc;
 }
 
+.pari button{
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 2px 5px;
+}
+
+.dispari button{
+    background: transparent;
+    padding: 2px 5px;
+    border: 1px solid transparent;
+}
 
 /*----------------------------------------------------------------------------*/
 /*CSS dei pulsanti di login e di registrazione della pagina principale del progetto*/
@@ -226,31 +256,36 @@ alla homepage della pagina (Free Peer Review)*/
 .header_icon{display:block; float: right; padding: 20px; display:none;}
 .header_icon span{display: block; height: 3px; width: 30px; background: #fff; margin-bottom: 5px;}
 
-/*CSS che modifica l'aspetto della cover inserita sopra l'immagine di sfondo 
+/*CSS che modifica l'aspetto dello sfondo inserito sopra l'immagine principale 
 di tutte pagine con regolazione dell'opacità per permettere proprio la visualizzazione
 di quell'immagine*/
-.cover_filter{
+
+#Sfondo_nero{
    background: #000;
    width: 100%; 
    height: 100%; 
    position: absolute; 
    z-index: 0; 
    opacity: 0.6;
+   margin: 0;
 }
 
 /*----------------------------------------------------------------------------*/
-/*CSS per l'inserimento di elementi al di sopra della cover nera presente in tutte
+
+/*CSS per l'inserimento di elementi al di sopra dello sfondo nero presente in tutte
 le pagine*/
-.cover_caption{
-display: table; height: 100%; width: 100%; position: relative; z-index: 1; overflow: hidden;}
 
-
-.cover_caption_copy{
-    display: table-cell;
+.main_content{
+    display: table;
     vertical-align: middle;
     text-align: center;
     color: #fff; 
     height: 100%;
+    width: 88%;
+    position: relative;
+    z-index: 1; 
+    overflow: hidden;
+    margin: 0;
 }
 /*----------------------------------------------------------------------------*/
 
@@ -260,13 +295,13 @@ display: table; height: 100%; width: 100%; position: relative; z-index: 1; overf
 articoli.html e scriviArticolo.html------------------------------------------*/
 .tabella{
   table-layout: fixed;
-  width: 800px;
+  width: 75%;
   height: 600px;
   border: 2px solid #003366;
   border-collapse: separate;
   border-spacing: 2px;
-  margin-left: 30%;
-  margin-top: 4%;
+  margin-left: 25%;
+  margin-top:2%;
   color: white; 
   background-color: #003366;
   border-radius: 5px;
@@ -281,17 +316,38 @@ border-radius: 3px;
 }
 /*----------------------------------------------------------------------------*/
 
-
-/*--------------CSS per regolare l'aspetto della tabella articolo presente nella pagina
-valutazione.html------------------------------------------*/
-.tabellaart{
+/*-------------CSS della tabella scrivi articolo------------------------------*/
+.tabellaSA{
   table-layout: fixed;
-  width: 800px;
-  height: 150px;
+  width: 45%;
+  height: 650px;
   border: 2px solid #003366;
   border-collapse: separate;
   border-spacing: 2px;
-  margin-left: 30%;
+  margin-left: 40%;
+  margin-top:2%;
+  color: white; 
+  background-color: #003366;
+  border-radius: 5px;
+  border: 2px outset whitesmoke;
+}
+
+.tabellaSA td{
+color: #003366; 
+border-radius: 3px;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*-------CSS per regolare l'aspetto della tabella articolo presente nella pagina
+valutazione.html------------------------------------------*/
+.tabellaart{
+  table-layout: fixed;
+  width: 60%;
+  border: 2px solid #003366;
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-left: 33%;
   margin-top: 1%;
   color: white; 
   background-color: #003366;
@@ -309,9 +365,10 @@ border-radius: 3px;
 /*CSS per regolare i margini dell'immagine usata nella pagina valutazione.html
 con aggiunta di un bordo per migliorarne l'aspetto finale*/
 .tabellaart img{
-    margin-top: 4px;
-    margin-left: 105px;
+    margin: 1%;
     border: 2px solid whitesmoke;
+    width: 50%;
+    float: right;
 }
 
 /*CSS che modifica la visualizzazione del testo dell'articolo regolando i bordi
@@ -325,13 +382,13 @@ margin-right: 15px;
 /*--------------CSS per regolare l'aspetto della tabella valutazione presente nella pagina
 valutazione.html--------------------------------------------------------------*/
 .tabellaval{
+  
   table-layout: fixed;
-  width: 800px;
-  height: 90px;
+  width: 60%;
   border: 2px solid #003366;
   border-collapse: separate;
   border-spacing: 2px;
-  margin-left: 30%;
+  margin-left: 33%;
   margin-top: 1%;
   color: white; 
   background-color: #003366;
@@ -356,23 +413,25 @@ border-radius: 3px;
 siano attaccati alla base della tabella*/
 .pari textarea{
     margin-bottom: 10px;
+    width:90%;
 }
 /*----------------------------------------------------------------------------*/
 
 /*-------------------------PULSANTE PROFILO-----------------------------------*/
 /*CSS per modificare l'aspetto del pulsante di salvataggio presente nella pagina
 profilo*/
-.azione button[type="button"]{
+.azione button[type="submit"]{
     border-radius: 12px;
     padding: 8px;
     font-size: 12px;
     background-color:  white;
     color: #003366;
-    width: 200px;
+    width: 30%;
+    margin-left: 8%;
 }
 /*CSS per modificare il colore del pulsante quando ci si passa sopra (colore verde
 per il salvataggio)*/
-.azione button[type="button"]:hover{
+.azione button[type="submit"]:hover{
     cursor: pointer;
     background: green;
     color: white;
@@ -380,21 +439,20 @@ per il salvataggio)*/
 
 /*CSS per modificare l'aspetto del pulsante di eliminazione presente nella pagina
 profilo*/
-.azione input[type="button"]{
-    border-radius: 12px;
-    padding: 8px;
-    font-size: 12px;
-    background-color:  white;
-    color: #003366;
-    width: 200px;
+.azione a{
+    font-weight: bold;
+    font-size: 18px;
+    color: whitesmoke;
+    margin-left: 30%;
+    padding: 4px 8px;
+    border-radius: 20px;
 }
 
 /*CSS per modificare il colore del pulsante quando ci si passa sopra (colore rosso
 per l'eliminazione)*/
-.azione input[type="button"]:hover{
+.azione a:hover{
     cursor: pointer;
-    background: red;
-    color: white;
+    color: red;
 }
 /*----------------------------------------------------------------------------*/
 
@@ -422,14 +480,14 @@ verticale*/
 /*CSS per la modifica della tabella presente nella pagina profilo con cambiamenti
 rispetto a quella utilizzata per la tabella contenente tutti gli articoli*/
 .tabellaprofilo{
-  table-layout: fixed;
-  width: 680px;                              
+  table-layout: fixed;                             
   height: 600px;
+  width: 30%;
   border: 2px solid #003366;
   border-collapse: separate;
   border-spacing: 2px;
-  margin-left: 33%;
-  margin-top: 2%;
+  margin-left: 45%;
+  margin-top:2%;
   color: white; 
   background-color: #003366;
   border-radius: 8px;
@@ -440,6 +498,20 @@ rispetto a quella utilizzata per la tabella contenente tutti gli articoli*/
 .tabellaprofilo td{
 color: #003366; 
 border-radius: 4px;
+margin: 0;
+}
+
+.tabellaprofilo th{
+    height: 80px;
+}
+
+img[type="utente"]{
+    margin-left: 3%;
+    border-radius: 8px;
+    float: left;
+    width: 35%;
+    height: 80%;
+    border: 2px inset whitesmoke;
 }
 
 /*----CSS per la modifica del colore delle righe e dello stile delle parole---*/
@@ -451,6 +523,14 @@ border-radius: 4px;
 .rigapari td{
     background-color: #cccccc;
     font-weight: bold;    
+}
+
+.rigapari form{
+    width: 100%;
+}
+
+.rigapari textarea{
+    width: 90%;
 }
 /*----------------------------------------------------------------------------*/
 
@@ -480,8 +560,9 @@ border-radius: 4px;
     background: white;
     color: #003366;
     font-size: 12px;
+    width: 30%;
+    margin-left: 12%;
     border-radius: 15px;  
-    width: 20%;
 }
 
 /*CSS che modifica il colore del pulsante quando ci si passa sopra con il puntatore*/
@@ -528,5 +609,3 @@ border-radius: 4px;
 .clearfix { display: inline-block; }
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
-
-

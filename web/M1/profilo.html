@@ -43,9 +43,8 @@ and open the template in the editor.
         <!--Creazione cover della pagina di sfondo per l'inserimento degli 
             elementi della pagina-->
         
-            <div class="cover_filter"></div>
-            <div class="cover_caption">
-                <div class="cover_caption_copy">
+            <div id="Sfondo_nero"></div>            
+                <div class="main_content">
                     
                     <!--Creazione barra verticale di profilo con i vari elementi 
                 (Frase di Benvenuto,Articoli e Articoli da valutare)-->
@@ -82,42 +81,45 @@ and open the template in the editor.
                     <!--Creazione tabella con i dati del profilo utente con
                     i campi che ritrovo in fase di registrazione-->
                     
+                    <form action="" method="post">
                         <table class="tabellaprofilo">
                         <tr>
-                            <th><b>PROFILO</b></th>                           
+                            <th><img type="utente" src="../img/images.png"</th>
+                            <th><b>PROFILO</b></th>                             
                         </tr>
                         <tr class="rigadispari">
-                            <td><label for="nome">Nome</label>
+                            <td colspan="2"><label for="nome">Nome</label>
                         <input type="text" name="nome" id="Nome" value="Gianluca"/></td>
-                                                    
+                           
                         </tr>
                         <tr class="rigapari">
-                            <td><label for="nome">Cognome</label>
+                            <td colspan="2"><label for="nome">Cognome</label>
                         <input type="text" name="cognome" id="Cognome" value="Pala"/></td>
                                                   
                         </tr>
                         <tr class="rigadispari">
-                            <td><label for="nome">Email</label>
+                            <td colspan="2"><label for="nome">Email</label>
                         <input type="text" name="Email" id="Email" value="gianlucapalaofficial@gmail.com"/></td>
                                                      
                         </tr>
                         
                         <tr class="rigapari">
-                            <td><label for="Password">Password</label>
+                            <td colspan="2"><label for="Password">Password</label>
                         <input type="password" name="password" id="Password" value="Passwordcomplicata98"/></td>
                                                      
                         </tr>
                         
                         <tr class="rigadispari">
-                            <td><label for="nome">Ente</label>
+                            <td colspan="2"><label for="nome">Ente</label>
                         <input type="text" name="Ente" id="Ente" value="Università di Cagliari"/></td>                        
                         </tr>
                         
                         <tr class="rigapari">
                             
                             <!--Form per l'inserimento dell'immagine-->
-                            <td> <form action="immagine" method="post" enctype="multipart/form-data">                              
-                                Immagine <input type="file" name="file"></td>                        
+                            <td colspan="2">                               
+                                Immagine <input type="file" name="file">
+                                <form action="immagine" method="post" enctype="multipart/form-data"></td>                        
                         </tr>  
                         
                     </table>
@@ -127,16 +129,13 @@ and open the template in the editor.
                     di eventuale modifica-->
                     
                     <nav class="azione">
-                        <button type="button" value="SALVA">SALVA</button>&nbsp;&nbsp;&nbsp;
+                        <button type="submit" value="">SALVA</button><br><br>
                         
                     <!--Pulsante per l'eventuale eliminazione del profilo utente-->
                     
-                <input type="button" value="CANCELLATI"/>
+                <a href="profilo.html">Cancellati</a>
         </nav>
-                </div>   
-            </div>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        
+                    </form>
+                </div>               
     </body>
 </html>
