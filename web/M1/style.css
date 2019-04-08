@@ -124,6 +124,12 @@ e modifica dell'aspetto del testo*/
     padding: 0;
     font-weight: bold;
 }
+
+.registrati input[type="url"]{
+    background: transparent;
+    border: 1px inset whitesmoke;
+    color: whitesmoke;
+}
 /*----------------------------------------------------------------------------*/
 
 /*CSS per la modifica dei titoli principali delle pagine dove sono presenti*/
@@ -576,7 +582,13 @@ img[type="utente"]{
 }
 
 .rigadispari input[type="url"]{
-    background: transparent;  
+    background: #cccccc;  
+    width: 80%;
+    text-align: center;
+}
+
+.rigapari input[type="url"]{
+    background: white;  
     width: 80%;
     text-align: center;
 }
