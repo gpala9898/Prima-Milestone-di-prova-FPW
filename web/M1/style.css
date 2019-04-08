@@ -254,11 +254,11 @@ pagina è visitata da un nuovo utente*/
 .header{background: #003366;}
 .header_logo{color:#fff; float:left;display: block;padding: 20px;text-decoration: none;}
 .header_menu{float:right;margin: 0;padding: 0;}
-.header_menu_item{display:inline-block;}
-.header_menu_item a{color:#fff;display: block;padding: 20px;text-decoration: none}
+.header_menu_el{display:inline-block;}
+.header_menu_el a{color:#fff;display: block;padding: 20px;text-decoration: none}
 /*CSS per modificare il colore degli elementi della barra principale al passaggio 
 del puntatore*/
-.header_menu_item a:hover{background: #000;}
+.header_menu_el a:hover{background: #000;}
 
 /*CSS che modifica l'aspetto dell'elemento principale che contiene il collegamento
 alla homepage della pagina (Free Peer Review)*/
