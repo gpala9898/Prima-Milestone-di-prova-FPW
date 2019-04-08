@@ -574,6 +574,13 @@ img[type="utente"]{
     width: 90%;
     text-align: center;
 }
+
+.rigadispari input[type="url"]{
+    background: transparent;  
+    width: 80%;
+    text-align: center;
+}
+
 /*----------------------------------------------------------------------------*/
 
 /*---------------------PULSANTE INVIA E NUOVO ARTICOLO------------------------*/
