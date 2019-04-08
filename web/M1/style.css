@@ -486,7 +486,8 @@ verticale*/
 }
 
 .profilo li a{
-    color: white;
+    opacity: 0.9;
+    color: whitesmoke;
     text-decoration: none;
 }
 /*----------------------------------------------------------------------------*/
