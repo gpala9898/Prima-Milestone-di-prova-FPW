@@ -31,6 +31,15 @@ body{
     margin-left: 10%;
 }
 
+footer{
+    background: #003366;
+    float:left;
+    clear:both;
+    width:100%;
+    text-align:center;
+    color: whitesmoke;
+}
+
 /*Modifica visualizzazione degli elementi delle liste ordinate presenti nella
 barra verticale di profilo*/
 li{
@@ -129,8 +138,8 @@ h1{
 /*CSS del box di login (praticamente uguale al box per la registrazione ma con
 grandezza diversa)*/
 .login{
-    width: 320px;
-    height: 420px;
+    width: 300px;
+    height: 400px;
     background: #000;
     color: #fff;
     top: 20%;
@@ -475,6 +484,11 @@ verticale*/
     margin-left: 8px;
     margin-right: 8px;
 }
+
+.profilo li a{
+    color: white;
+    text-decoration: none;
+}
 /*----------------------------------------------------------------------------*/
 
 /*CSS per la modifica della tabella presente nella pagina profilo con cambiamenti
@@ -529,9 +543,11 @@ img[type="utente"]{
     width: 100%;
 }
 
-.rigapari textarea{
+.rigadispari textarea{
     width: 90%;
+    background: #eee
 }
+
 /*----------------------------------------------------------------------------*/
 
 /*--CSS per cambiare l'aspetto delle righe contenenti i dati (pari e dispari)-*/
@@ -540,6 +556,17 @@ img[type="utente"]{
     border: none;
     outline: none;
     border-bottom: 1px solid white;
+    width: 90%;
+    text-align: center;
+}
+
+.rigapari input[type="password"]{
+    background: transparent;  
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    width: 90%;
+    text-align: center;
 }
 
 .rigadispari input[type="text"]{
@@ -547,6 +574,8 @@ img[type="utente"]{
     border: none;
     outline: none;
     border-bottom: 1px solid #cccccc;
+    width: 90%;
+    text-align: center;
 }
 /*----------------------------------------------------------------------------*/
 

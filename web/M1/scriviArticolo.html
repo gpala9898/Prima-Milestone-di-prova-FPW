@@ -43,12 +43,10 @@
                 (Frase di Benvenuto,Articoli e Articoli da valutare)-->
                 
                   <aside class="profilo">
-                                <p>Benvenuto, <em>NomeUtente</em></p>
+                                <p>Benvenuto, <em><strong>Gianluca</strong></em></p>
                                 <nav class="tasto">
                                     <a href="../index.html" type="button" >LOGOUT</a>            
-                                </nav>  
-                                   
-                                </button>
+                                </nav> 
                                
                                 <br>
                                 <br>
@@ -56,19 +54,20 @@
                                 
                                 <em><strong>I miei Articoli</strong></em>
                                 <ul type="square">
-                                <li>I robot a scuola</li><br>
-                                <li>La protezione dei dati aiuta l'economia digitale</li><br>
-                                <li>ASUS ROG Zephyrus S GX531, la recensione</li>
+                                    <li><a href="articoli.html" type="text">I robot a scuola</a></li><br>
+                                <li><a href="articoli.html" type="text">La protezione dei dati aiuta l'economia digitale</a></li><br>
+                                <li><a href="articoli.html" type="text">ASUS ROG Zephyrus S GX531, la recensione</a></li>
                                 
-                            </ul>  
+                            </ul>
+                                
                                 <br>
                                 <br>
      
                                 <em><strong>Da Valutare</strong></em>
                                 <ul type="square">
-                                <li>I vantaggi dell'Intelligenza Artificiale</li><br>
-                                <li>ADA, il braccio robot che aiuta a mangiare</li><br>
-                                <li>Il carburante del futuro arriva dal mare</li>
+                                <li><a href="articoli.html" type="text">I vantaggi dell'Intelligenza Artificiale</a></li><br>
+                                <li><a href="articoli.html" type="text">ADA, il braccio robot che aiuta a mangiare</a></li><br>
+                                <li><a href="articoli.html" type="text">Il carburante del futuro arriva dal mare</a></li>
                                 
                             </aside>
                         
@@ -87,37 +86,60 @@
                                                     
                         </tr>
                         <tr class="rigapari">
-                            <td><center><label for="autori"><em>Autore</em></label><br>
+                            <td><center><label for="autore"><em>Aggiungi Autore</em></label><br>
+                        <input type="text" name="AA" id="titolo" value=""/></center></td>                                                    
+                        </tr>
+                        
+                        <tr class="rigadispari">
+                            <td><center><label for="autori"><em>Scegli Autore</em></label><br>
                             <select name="autori">
                                 <option value="">Seleziona Autore</option>
                                 <option value="a1">Bartolomeo Buscema</option>
                                 <option value="a2">Gabriella Bernardi</option>
                                 <option value="a3">Ugo Apollonio</option>
-                            </select></center></td>
-                                                  
+                            </select></center></td>                                                  
                         </tr>
-                        <tr class="rigadispari">
+                        
+                        <tr class="rigapari">
                             
                             <!--Checkbox per la scelta multipla della categoria 
                             di articolo-->
                             
-                            <td></td>                           
-                        </tr>
-                        
-                        <tr class="rigapari">
-                            
-                            <!--Riga per l'inserimento dell'immagine-->
-                            <td><center><form action="immagine" method="post" enctype="multipart/form-data">                                
-                                Immagine <input type="file" name="file">                               
-                            </form></center> </td>                                                    
+                            <td><label for="nome"><center><em>Categorie</em></center></label><br>
+                                <center><table>
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="tipo"> Internet<br>                                                                                      
+                                            <input type="checkbox" name="tipo"> Robotica  <br>
+                             </td> 
+                             
+                             <td>
+                                 <input type="checkbox" name="tipo"> Recensione <br>
+                                 <input type="checkbox" name="tipo"> HTML <br>                              
+                                        </td>
+                                        
+                                        <td>
+                                 <input type="checkbox" name="tipo"> Programmazione <br> 
+                                 <input type="checkbox" name="tipo"> Sicurezza Informatica <br>
+                                        </td>
+                                    </tr>
+                                </table></center></td>                           
                         </tr>
                         
                         <tr class="rigadispari">
+                            
+                            <!--Riga per l'inserimento dell'immagine-->
+                            <td><center><label for="immagine"><em>Immagine</em></label><br>
+                        <input type="text" name="img" id="immagine" value=""/></center>                               
+                            </td>                                                    
+                        </tr>
+                        
+                        <tr class="rigapari">
                             <td><center><label for="nome"><em>Data</em></label><br>
                         <input type="date"  name="data"/></center></td>                        
                         </tr>
                         
-                        <tr class="rigapari">
+                        <tr class="rigadispari">
                             <td><center><label for="nome"><em>Testo Articolo</em></label><br>
                             <textarea name="testo" rows="14" cols="95"></textarea></center><br></td>
                                 </tr>
@@ -131,10 +153,9 @@
                         <input type="submit" value="SALVA ARTICOLO "/>             
                 </nav>
                     </form>
-                    
-                    <!--________________________________-->
-                    
                         </div>           
-                 
+                 <footer>
+            <p>Developed by <em>Gianluca Pala</em></p>
+        </footer>
     </body>
 </html>
