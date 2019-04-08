@@ -260,10 +260,6 @@ pagina è visitata da un nuovo utente*/
 del puntatore*/
 .header_menu_el a:hover{background: #000;}
 
-/*CSS che modifica l'aspetto dell'elemento principale che contiene il collegamento
-alla homepage della pagina (Free Peer Review)*/
-.header_icon{display:block; float: right; padding: 20px; display:none;}
-.header_icon span{display: block; height: 3px; width: 30px; background: #fff; margin-bottom: 5px;}
 
 /*CSS che modifica l'aspetto dello sfondo inserito sopra l'immagine principale 
 di tutte pagine con regolazione dell'opacità per permettere proprio la visualizzazione
