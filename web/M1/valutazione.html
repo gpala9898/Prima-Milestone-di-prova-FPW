@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="it">
     <head>
         <title>Valutazione</title>
         <meta charset="UTF-8">
@@ -46,19 +46,18 @@ and open the template in the editor.
                     
                     <aside class="profilo">
                         <p>Benvenuto, <em><strong>Gianluca</strong></em></p>
-                                <nav class="tasto">
-                                    <a href="../index.html" type="button" >LOGOUT</a>            
-                                </nav> 
+                                
+                                    <a id="button" href="../index.html">LOGOUT</a>                                            
                                
                                 <br>
                                 <br>
                                 <br>
                                 
                                 <em><strong>I miei Articoli</strong></em>
-                                <ul type="square">
-                                    <li><a href="articoli.html" type="text">I robot a scuola</a></li><br>
-                                <li><a href="articoli.html" type="text">La protezione dei dati aiuta l'economia digitale</a></li><br>
-                                <li><a href="articoli.html" type="text">ASUS ROG Zephyrus S GX531, la recensione</a></li>
+                                <ul>
+                                    <li><a href="articoli.html">I robot a scuola</a></li>
+                                <li><a href="articoli.html">La protezione dei dati aiuta l'economia digitale</a></li>
+                                <li><a href="articoli.html">ASUS ROG Zephyrus S GX531, la recensione</a></li>
                                 
                             </ul>
                                 
@@ -66,11 +65,11 @@ and open the template in the editor.
                                 <br>
      
                                 <em><strong>Da Valutare</strong></em>
-                                <ul type="square">
-                                <li><a href="articoli.html" type="text">I vantaggi dell'Intelligenza Artificiale</a></li><br>
-                                <li><a href="articoli.html" type="text">ADA, il braccio robot che aiuta a mangiare</a></li><br>
-                                <li><a href="articoli.html" type="text">Il carburante del futuro arriva dal mare</a></li>
-                                
+                                <ul>
+                                <li><a href="articoli.html">I vantaggi dell'Intelligenza Artificiale</a></li>
+                                <li><a href="articoli.html">ADA, il braccio robot che aiuta a mangiare</a></li>
+                                <li><a href="articoli.html">Il carburante del futuro arriva dal mare</a></li>
+                                </ul>
                             </aside>
                      
                     <!--Creazione tabella con un articolo di esempio con relativi
@@ -79,20 +78,20 @@ and open the template in the editor.
                     
                     <table class="tabellaart">
                         <tr>
-                            <th><h1><strong>I vantaggi dell'Intelligenza Artificiale</strong></h1>
-                                <h4><em>Autore: Vincenzo Paduano</em></h4>
-                            <h6><em>Categorie: Programmazione, Robotica</em></h6>
-                            <h6><em>Data: 31/03/2019</em></h6>
+                            <th><strong>I vantaggi dell'Intelligenza Artificiale</strong><br><br>
+                                <em>Autore: Vincenzo Paduano</em><br><br>
+                            <em>Categorie: Programmazione, Robotica</em><br><br>
+                            <em>Data: 31/03/2019</em>
                             </th>
                             
                             <!--Immagine di copertina dell'articolo-->
-                            <th><img src="../img/AI.jpg"></th>
+                            <th><img src="../img/AI.jpg" alt="AI"></th>
                             
                         </tr>                        
                        
                         <!--Corpo dell'articolo con stile giustificato-->
                         <tr class="dispari">
-                            <td colspan="2"><p align="justify">Quando si parla di macchine pensanti 
+                            <td colspan="2"><p>Quando si parla di macchine pensanti 
                                      e futuro, non c'è dubbio che la
                                      letteratura di genere abbia una predilezione 
                                      per i soggetti distopici (lo stesso Asimov nei suoi 
@@ -113,33 +112,33 @@ and open the template in the editor.
                     <form action="articoli.html" method="post">
                     <table class="tabellaval">
                             <tr>
-                            <th colspan="2"><h1>VALUTAZIONE</h1></th>                                                       
+                            <th colspan="2">VALUTAZIONE</th>                                                       
                         </tr>                        
                        
                         <tr class="dispari">
-                            <td colspan="2"><p>
+                            <td colspan="2" ><p id="voto">
                             Voto:
-                            <label for="1">1</label>
-                                <input type="radio" name="voto" id="1">
-                            <label for="2">2</label>
-                                <input type="radio" name="voto" id="2">
-                            <label for="3">3</label>
-                                <input type="radio" name="voto" id="3">
-                            <label for="4">4</label>
-                                <input type="radio" name="voto" id="4">
-                            <label for="5">5</label>
-                                <input type="radio" name="voto" id="5">
+                            <label>1</label>
+                                <input type="radio" name="voto">
+                            <label>2</label>
+                                <input type="radio" name="voto">
+                            <label>3</label>
+                                <input type="radio" name="voto">
+                            <label>4</label>
+                                <input type="radio" name="voto">
+                            <label>5</label>
+                                <input type="radio" name="voto">
                                 </p></td>
                         </tr>
                         
                         <tr class="pari">
                             <td>
-                                <h5>Commenti per gli autori</h5>
-                                <textarea rows="8" cols="45" name="lungo" id="lungo"></textarea>                                                                                                          
+                                Commenti per gli autori
+                                <textarea rows="8" cols="45"></textarea>                                                                                                          
                                 </td>
                             <td>
-                                <h5>Commenti per gli organizzatori</h5>
-                                <textarea rows="8" cols="45" name="lungo" id="lungo"></textarea>                                                                                                          
+                                Commenti per gli organizzatori
+                                <textarea rows="8" cols="45"></textarea>                                                                                                          
                             </td>
                         </tr>    
                     </table>

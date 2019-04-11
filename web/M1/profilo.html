@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="it">
     <head>
         <title>Profilo</title>
         <meta charset="UTF-8">
@@ -46,19 +46,18 @@ and open the template in the editor.
                     
                     <aside class="profilo">
                                 <p>Benvenuto, <em><strong>Gianluca</strong></em></p>
-                                <nav class="tasto">
-                                    <a href="../index.html" type="button" >LOGOUT</a>            
-                                </nav> 
+                                
+                                    <a id="button" href="../index.html">LOGOUT</a>                                            
                                
                                 <br>
                                 <br>
                                 <br>
                                 
                                 <em><strong>I miei Articoli</strong></em>
-                                <ul type="square">
-                                    <li><a href="articoli.html" type="text">I robot a scuola</a></li><br>
-                                <li><a href="articoli.html" type="text">La protezione dei dati aiuta l'economia digitale</a></li><br>
-                                <li><a href="articoli.html" type="text">ASUS ROG Zephyrus S GX531, la recensione</a></li>
+                                <ul>
+                                    <li><a href="articoli.html">I robot a scuola</a></li>
+                                <li><a href="articoli.html">La protezione dei dati aiuta l'economia digitale</a></li>
+                                <li><a href="articoli.html">ASUS ROG Zephyrus S GX531, la recensione</a></li>
                                 
                             </ul>
                                 
@@ -66,46 +65,46 @@ and open the template in the editor.
                                 <br>
      
                                 <em><strong>Da Valutare</strong></em>
-                                <ul type="square">
-                                <li><a href="articoli.html" type="text">I vantaggi dell'Intelligenza Artificiale</a></li><br>
-                                <li><a href="articoli.html" type="text">ADA, il braccio robot che aiuta a mangiare</a></li><br>
-                                <li><a href="articoli.html" type="text">Il carburante del futuro arriva dal mare</a></li>
-                                
+                                <ul>
+                                <li><a href="articoli.html">I vantaggi dell'Intelligenza Artificiale</a></li>
+                                <li><a href="articoli.html">ADA, il braccio robot che aiuta a mangiare</a></li>
+                                <li><a href="articoli.html">Il carburante del futuro arriva dal mare</a></li>
+                                </ul>
                             </aside>
                     
                     <!--Creazione tabella con i dati del profilo utente con
                     i campi che ritrovo in fase di registrazione-->
                     
-                    <form action="" method="post">
+                    <form action="profilo.html" method="post">
                         <table class="tabellaprofilo">
                         <tr>
-                            <th><img type="utente" src="../img/images.png"</th>
+                            <th><img id="image" src="../img/images.png" alt="utente"></th>
                             <th><b>PROFILO</b></th>                             
                         </tr>
                         <tr class="rigadispari">
-                            <td colspan="2"><label for="nome">Nome<br></label>
+                            <td colspan="2"><label>Nome<br></label>
                         <input type="text" name="nome" id="Nome" value="Gianluca"/></td>
                            
                         </tr>
                         <tr class="rigapari">
-                            <td colspan="2"><label for="nome">Cognome<br></label>
+                            <td colspan="2"><label>Cognome<br></label>
                         <input type="text" name="cognome" id="Cognome" value="Pala"/></td>
                                                   
                         </tr>
                         <tr class="rigadispari">
-                            <td colspan="2"><label for="nome">Email<br></label>
+                            <td colspan="2"><label>Email<br></label>
                         <input type="text" name="Email" id="Email" value="gianlucapala98@gmail.com"/></td>
                                                      
                         </tr>
                         
                         <tr class="rigapari">
-                            <td colspan="2"><label for="Password">Password<br></label>
+                            <td colspan="2"><label>Password<br></label>
                         <input type="password" name="password" id="Password" value="Passwordcomplicata98"/></td>
                                                      
                         </tr>
                         
                         <tr class="rigadispari">
-                            <td colspan="2"><label for="nome">Ente<br></label>
+                            <td colspan="2"><label>Ente<br></label>
                         <input type="url" name="Ente" id="Ente" value="http://facolta.unica.it/ingegneriarchitettura/"/></td>                        
                         </tr>
                         
@@ -127,8 +126,7 @@ and open the template in the editor.
                         <button type="submit" value="">SALVA</button><br><br>
                         
                     <!--Pulsante per l'eventuale eliminazione del profilo utente-->
-                    
-                <a href="profilo.html">Cancellati</a>
+    
         </nav>
                     </form>
                 </div> 

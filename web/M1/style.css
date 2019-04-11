@@ -325,6 +325,23 @@ di un bordo per migliorare l'aspetto finale della tabella*/
 color: #003366; 
 border-radius: 3px;
 }
+
+#rosso{
+    color: red;
+}
+
+#verde{
+    color: green;
+}
+
+#azzurro1{
+    color: #66ccff;
+}
+
+#azzurro2{
+    color: #66ccff;
+}
+
 /*----------------------------------------------------------------------------*/
 
 /*-------------CSS della tabella scrivi articolo------------------------------*/
@@ -347,7 +364,6 @@ border-radius: 3px;
 color: #003366; 
 border-radius: 3px;
 }
-
 /*----------------------------------------------------------------------------*/
 
 /*-------CSS per regolare l'aspetto della tabella articolo presente nella pagina
@@ -364,6 +380,16 @@ valutazione.html------------------------------------------*/
   background-color: #003366;
   border-radius: 5px;
   border: 2px outset whitesmoke;
+}
+
+.tabellaart strong{
+    font-size: larger;
+    text-align: center;
+}
+
+.tabellaart em{
+    font-size: x-small;
+    text-align: justify;
 }
 
 /*CSS che modifica il colore delle parole interne alla classe e aggiunta
@@ -387,7 +413,10 @@ rispetto alla tabella di riferimento*/
 .dispari p{
 margin-left: 15px;
 margin-right: 15px;
+text-align: justify;
 }
+
+
 /*----------------------------------------------------------------------------*/
 
 /*--------------CSS per regolare l'aspetto della tabella valutazione presente nella pagina
@@ -405,6 +434,11 @@ valutazione.html--------------------------------------------------------------*/
   background-color: #003366;
   border-radius: 5px;
   border: 2px outset whitesmoke;
+}
+
+/*Allinea riga di valutazione rispetto alla tabella*/
+#voto{
+    text-align: center;
 }
 
 /*CSS che modifica il colore delle parole interne alla classe e aggiunta
@@ -522,7 +556,7 @@ margin: 0;
     height: 80px;
 }
 
-img[type="utente"]{
+#image{
     margin-left: 3%;
     border-radius: 8px;
     float: left;
@@ -620,22 +654,19 @@ img[type="utente"]{
 /*----------------------------------------------------------------------------*/
 
 /*---------------------------PULSANTE LOGOUT----------------------------------*/
-/*CSS del pulsante usato per LOGOUT*/
-.tasto a[type="button"]
-{
-    text-decoration: none;
+#button{
     border: 2px outset whitesmoke;
     outline: none;
     padding: 8px;
     background: white;
     color: #003366;
     font-size: 12px;
-    border-radius: 15px;  
+    width: 30%;
+    border-radius: 15px; 
+    text-decoration: none;
 }
 
-/*CSS che modifica il colore del pulsante quando ci si passa sopra con il puntatore*/
-.tasto a[type="button"]:hover
-{
+#button:hover{
     cursor: pointer;
     background: #66ccff;
     color: #000;
