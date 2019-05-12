@@ -1,11 +1,13 @@
+<%-- 
+    Document   : profilo
+    Created on : 30-apr-2019, 13.27.31
+    Author     : Gianluca
+--%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html lang="it">
-    <head>
+<head>
         <title>Profilo</title>
         <meta charset="UTF-8">
         <meta name="author" content="Gianluca Pala">
@@ -18,64 +20,47 @@ and open the template in the editor.
         
     </head>
     <body>
-        
-        <!--Creazione tasto 'homepage' con collegamento a index-->
-        
-        <header class="header clearfix">
-            <a href="../index.html" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
-   
-            <!--Creazione barra degli elementi principali (Articoli, Valutazioni,Profilo,Serve Aiuto)-->
-            
-            <ul class="header_menu">
-                
-                <li class="header_menu_el"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
-                <li class="header_menu_el"><a href="valutazione.html"><p style="font-family: arial">Valutazioni</p></a></li>
-                <li class="header_menu_el"><a href="profilo.html"><p style="font-family: arial">Profilo</p></a></li>
-                <li class="header_menu_el"><a href="https://www.google.com/"><p style="font-family: arial">Serve aiuto ?</p></a></li>
-            </ul>
-        </header>
-       
+        <!--Qui includo il mio header-->
+        <jsp:include page="header.jsp"/>
         <!--Creazione cover della pagina di sfondo per l'inserimento degli 
             elementi della pagina-->
         
             <div id="Sfondo_nero"></div>            
                 <div class="main_content">
                     
-                    <!--Creazione barra verticale di profilo con i vari elementi 
-                (Frase di Benvenuto,Articoli e Articoli da valutare)-->
-                    
                     <aside class="profilo">
-                                <p>Benvenuto, <em><strong>Gianluca</strong></em></p>
-                                
-                                    <a id="button" href="../index.html">LOGOUT</a>                                            
-                               
-                                <br>
-                                <br>
-                                <br>
-                                
-                                <em><strong>I miei Articoli</strong></em>
-                                <ul>
-                                    <li><a href="articoli.html">I robot a scuola</a></li>
-                                <li><a href="articoli.html">La protezione dei dati aiuta l'economia digitale</a></li>
-                                <li><a href="articoli.html">ASUS ROG Zephyrus S GX531, la recensione</a></li>
-                                
-                            </ul>
-                                
-                                <br>
-                                <br>
-     
-                                <em><strong>Da Valutare</strong></em>
-                                <ul>
-                                <li><a href="articoli.html">I vantaggi dell'Intelligenza Artificiale</a></li>
-                                <li><a href="articoli.html">ADA, il braccio robot che aiuta a mangiare</a></li>
-                                <li><a href="articoli.html">Il carburante del futuro arriva dal mare</a></li>
-                                </ul>
-                            </aside>
+                        
+    <p>Benvenuto, <em><strong>Gianluca</strong></em></p>
+
+    <a id="button" href="../index.html">LOGOUT</a>                                            
+
+    <br>
+    <br>
+    <br>
+
+    <em><strong>I miei Articoli</strong></em>
+    <ul>
+        <li><a href="articoli.jsp">I robot a scuola</a></li>
+        <li><a href="articoli.jsp">La protezione dei dati aiuta l'economia digitale</a></li>
+        <li><a href="articoli.jsp">ASUS ROG Zephyrus S GX531, la recensione</a></li>
+
+    </ul>
+
+    <br>
+    <br>
+
+    <em><strong>Da Valutare</strong></em>
+    <ul>
+        <li><a href="articoli.jsp">I vantaggi dell'Intelligenza Artificiale</a></li>
+        <li><a href="articoli.jsp">ADA, il braccio robot che aiuta a mangiare</a></li>
+        <li><a href="articoli.jsp">Il carburante del futuro arriva dal mare</a></li>
+    </ul>
+</aside>
                     
                     <!--Creazione tabella con i dati del profilo utente con
                     i campi che ritrovo in fase di registrazione-->
                     
-                    <form action="profilo.html" method="post">
+                    <form action="profilo.jsp" method="post">
                         <table class="tabellaprofilo">
                         <tr>
                             <th><img id="image" src="../img/images.png" alt="utente"></th>
@@ -124,14 +109,13 @@ and open the template in the editor.
                     
                     <nav class="azione">
                         <button type="submit" value="">SALVA</button><br><br>
-                        <a href="profilo.html">Cancellati</a>
+                        <a href="profilo.jsp">Cancellati</a>
                     <!--Pulsante per l'eventuale eliminazione del profilo utente-->
     
         </nav>
                     </form>
                 </div> 
-            <footer>
-            <p>Developed by <em>Gianluca Pala</em></p>
-        </footer>
+            <!--Qui includo il mio footer-->
+        <jsp:include page="footer.jsp"/>
     </body>
 </html>

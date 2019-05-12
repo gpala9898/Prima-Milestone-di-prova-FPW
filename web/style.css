@@ -1,0 +1,755 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 20-mar-2019, 9.44.10
+    Author     : Gianluca
+*/
+
+html,body{height: 100%;}/*Regolazione altezza del body*/
+
+/*Assegnazione del font di utilizzo a tutte le pagine del progetto*/
+*{
+    font-family: "Arial", Helvetica, sans-serif;
+}
+
+/*Inserimento dell'immagine che sarà condivisa da tutte le altre pagine del progetto
+(collegamento tramite URL)*/
+body{
+    background: #eee;
+    margin: 0;
+    padding: 0;
+    background: url("https://www.startmag.it/wp-content/uploads/information.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.presentazione{
+    margin-top: 15%;
+    margin-left: 10%;
+}
+
+footer{
+    background: #003366;
+    float:left;
+    clear:both;
+    width:100%;
+    text-align:center;
+    color: whitesmoke;
+}
+
+/*Modifica visualizzazione degli elementi delle liste ordinate presenti nella
+barra verticale di profilo*/
+li{
+    text-align: left;
+    margin-right: 10px;
+}
+
+/*CSS per la modifica dell'aspetto dell'immagine caricata nel box con modifica
+di grandezza e posizione (stessa classe condivisa sia dalla pagina di login che
+da quella di registrazione)*/
+.avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: calc(50% - 25px);
+}
+
+/*-------------------------REGISTRAZIONE--------------------------------------*/
+/*Classe per la registrazione con modfica dell'aspetto del box e con inserimento
+di un bordo per migliorarne l'aspetto rispetto allo sfondo della pagina*/
+.registrati{
+    width: 420px;
+    height: 620px;
+    background: #000;
+    color: #fff;
+    top: 10%;
+    left: 45%;
+    position: absolute;
+    transform: translate(-10%,-10%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border: 2px outset whitesmoke;
+    border-radius: 20px;
+}
+
+/*Modifica lunghezza delle righe degli elementi del box di registrazione con 
+aumento del margine inferiore per migliorarne l'aspetto*/
+.registrati input{
+    width: 100%;
+    margin-bottom: 5px;    
+}
+
+/*CSS della riga per la password che migliora l'aspetto all'interno del box*/
+.registrati input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 20px;
+    color: #fff;
+    font-size: 16px;
+}
+
+/*CSS del pulsante del box di registrazione*/
+.registrati input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0099ff;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+/*CSS per cambiare il colore del pulsante per la registrazione quando ci si passa
+sopra con il puntatore*/
+.registrati input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #66ccff;
+    color: #000;
+}
+
+/*CSS per sistemare la visualizzazione delle righe del box di registrazione
+e modifica dell'aspetto del testo*/
+.registrati p{
+    margin: 2px;
+    padding: 0;
+    font-weight: bold;
+}
+
+.registrati input[type="url"]{
+    background: transparent;
+    border: 1px inset whitesmoke;
+    color: whitesmoke;
+}
+/*----------------------------------------------------------------------------*/
+
+/*CSS per la modifica dei titoli principali delle pagine dove sono presenti*/
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+/*-------------------------LOGIN----------------------------------------------*/
+/*CSS del box di login (praticamente uguale al box per la registrazione ma con
+grandezza diversa)*/
+.login{
+    width: 300px;
+    height: 400px;
+    background: #000;
+    color: #fff;
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-10%,-10%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border: 2px outset whitesmoke;
+    border-radius: 20px;
+}
+
+/*CSS per la modifica della larghezza delle righe del box di login*/
+.login input{
+    width: 100%;
+    margin-bottom: 20px;    
+}
+
+/*CSS per migliorare l'aspetto della riga password in relazione all'aspetto del box*/
+.login input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+/*CSS per la modifica dell'aspetto del pulsante di login*/
+#entra[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0099ff;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+/*CSS per la modifica del colore del pulsante di login quando ci si passa sopra
+con il puntatore*/
+#entra:hover
+{
+    cursor: pointer;
+    background: #66ccff;
+    color: #000;
+}
+
+/*CSS per l'aspetto delle righe collegate alla pagina di registrazione se la 
+pagina è visitata da un nuovo utente*/
+#reg{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: whitesmoke;
+    float: left;
+    background-color: transparent;
+    border: none;
+}
+
+/*CSS per modificare il colore delle righe quando ci si passa sopra con il puntatore*/
+#reg:hover{
+    color: #ffc107;
+}
+
+/*CSS per l'aspetto della riga collegata alla pagina di valutazione*/
+#val{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: whitesmoke;
+    background-color: transparent;
+    border: none;
+}
+
+/*CSS per modificare il colore delle righe quando ci si passa sopra con il puntatore*/
+#val:hover{
+    color: #00ffff;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*CSS per cambiare il colore dello sfondo della classe dispari delle tabelle*/
+.dispari{
+    background-color: white;
+}
+
+/*CSS per cambiare il colore dello sfondo della classe pari delle tabelle*/
+.pari{
+    background-color: #cccccc;
+}
+
+.pari button{
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 2px 5px;
+}
+
+.dispari button{
+    background: transparent;
+    padding: 2px 5px;
+    border: 1px solid transparent;
+}
+
+/*----------------------------------------------------------------------------*/
+/*CSS dei pulsanti di login e di registrazione della pagina principale del progetto*/
+.button{display: inline-block; background: #fff; color: #000; padding: 10px 20px; border-radius: 3px; text-decoration: none;}
+.button_sec{display: inline-block; background: #fff; color: #000; padding: 10px 20px; border-radius: 3px; text-decoration: none;}
+/*----------------------------------------------------------------------------*/
+
+/*-----CSS del menù principale condiviso da tutte le pagine del progetto------*/
+.header{background: #003366;}
+.header_logo{color:#fff; float:left;display: block;padding: 20px;text-decoration: none;}
+.header_menu{float:right;margin: 0;padding: 0;}
+.header_menu_el{display:inline-block;}
+.header_menu_el a{color:#fff;display: block;padding: 20px;text-decoration: none}
+/*CSS per modificare il colore degli elementi della barra principale al passaggio 
+del puntatore*/
+.header_menu_el a:hover{background: #000;}
+
+
+/*CSS che modifica l'aspetto dello sfondo inserito sopra l'immagine principale 
+di tutte pagine con regolazione dell'opacità per permettere proprio la visualizzazione
+di quell'immagine*/
+
+#Sfondo_nero{
+   background: #000;
+   width: 100%; 
+   height: 100%; 
+   position: absolute; 
+   z-index: 0; 
+   opacity: 0.6;
+   margin: 0;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*CSS per l'inserimento di elementi al di sopra dello sfondo nero presente in tutte
+le pagine*/
+
+.main_content{
+    display: table;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff; 
+    height: 100%;
+    width: 88%;
+    position: relative;
+    z-index: 1; 
+    overflow: hidden;
+    margin: 0;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*--------------CSS per regolare l'aspetto della tabella presente nella pagina
+articoli.html e scriviArticolo.html------------------------------------------*/
+.tabella{
+  table-layout: fixed;
+  width: 75%;
+  height: 600px;
+  border: 2px solid #003366;
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-left: 25%;
+  margin-top:2%;
+  color: white; 
+  background-color: #003366;
+  border-radius: 5px;
+  border: 2px outset whitesmoke;
+}
+
+/*CSS che modifica il colore delle parole interne alla classe e aggiunta
+di un bordo per migliorare l'aspetto finale della tabella*/
+.tabella td{
+color: #003366; 
+border-radius: 3px;
+}
+
+#rosso{
+    color: red;
+}
+
+#verde{
+    color: green;
+}
+
+#azzurro1{
+    color: #66ccff;
+}
+
+#azzurro2{
+    color: #66ccff;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*-------CSS per regolare l'aspetto della tabella articolo presente nella pagina
+valutazione.html------------------------------------------*/
+.tabellaart{
+  table-layout: fixed;
+  width: 60%;
+  border: 2px solid #003366;
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-left: 33%;
+  margin-top: 1%;
+  color: white; 
+  background-color: #003366;
+  border-radius: 5px;
+  border: 2px outset whitesmoke;
+}
+
+.tabellaart strong{
+    font-size: larger;
+    text-align: center;
+}
+
+.tabellaart em{
+    font-size: x-small;
+    text-align: justify;
+}
+
+/*CSS che modifica il colore delle parole interne alla classe e aggiunta
+di un bordo per migliorare l'aspetto finale della tabella*/
+.tabellaart td{
+color: #003366; 
+border-radius: 3px;
+}
+
+/*CSS per regolare i margini dell'immagine usata nella pagina valutazione.html
+con aggiunta di un bordo per migliorarne l'aspetto finale*/
+.tabellaart img{
+    margin: 1%;
+    border: 2px solid whitesmoke;
+    width: 50%;
+    float: right;
+}
+
+.edit{
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+.edit:hover{
+    background-color: #cccccc;
+    border-radius: 8px;
+}
+
+.remove{
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+
+.remove:hover{
+    background-color: #cccccc;
+    border-radius: 8px;
+}
+
+/*CSS che modifica la visualizzazione del testo dell'articolo regolando i bordi
+rispetto alla tabella di riferimento*/
+.dispari p{
+margin-left: 15px;
+margin-right: 15px;
+text-align: justify;
+}
+
+
+/*----------------------------------------------------------------------------*/
+
+/*--------------CSS per regolare l'aspetto della tabella valutazione presente nella pagina
+valutazione.html--------------------------------------------------------------*/
+.tabellaval{
+  
+  table-layout: fixed;
+  width: 60%;
+  border: 2px solid #003366;
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-left: 33%;
+  margin-top: 1%;
+  color: white; 
+  background-color: #003366;
+  border-radius: 5px;
+  border: 2px outset whitesmoke;
+}
+
+/*Allinea riga di valutazione rispetto alla tabella*/
+#voto{
+    text-align: center;
+}
+
+/*CSS che modifica il colore delle parole interne alla classe e aggiunta
+di un bordo per migliorare l'aspetto finale della tabella*/
+.tabellaval td{
+color: #003366; 
+border-radius: 3px;
+}
+
+/*CSS per sistemare il margine superiore del header principale della tabella
+(VALUTAZIONE)*/
+.tabellaval h1{
+    margin-top: 8px;  
+}
+
+/*CSS per regolare il margine inferiore dei commenti all'articolo ed evitare che
+siano attaccati alla base della tabella*/
+.pari textarea{
+    margin-bottom: 10px;
+    width:90%;
+}
+/*----------------------------------------------------------------------------*/
+
+/*-------------------------PULSANTE PROFILO-----------------------------------*/
+/*CSS per modificare l'aspetto del pulsante di salvataggio presente nella pagina
+profilo*/
+.azione button[type="submit"]{
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 12px;
+    background-color:  white;
+    color: #003366;
+    width: 30%;
+    margin-left: 8%;
+}
+/*CSS per modificare il colore del pulsante quando ci si passa sopra (colore verde
+per il salvataggio)*/
+.azione button[type="submit"]:hover{
+    cursor: pointer;
+    background: green;
+    color: white;
+}
+
+/*CSS per modificare l'aspetto del pulsante di eliminazione presente nella pagina
+profilo*/
+.azione a{
+    font-weight: bold;
+    font-size: 18px;
+    color: whitesmoke;
+    margin-left: 30%;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+/*CSS per modificare il colore del pulsante quando ci si passa sopra (colore rosso
+per l'eliminazione)*/
+.azione a:hover{
+    cursor: pointer;
+    color: red;
+}
+/*----------------------------------------------------------------------------*/
+
+/*CSS per regolare i margini delle intestazioni di minore importanza*/
+h4,h5,h6 {margin: 1em 0 2px;}
+
+/*-------------------------BARRA PROFILO--------------------------------------*/
+/*CSS per la modifica dell'aspetto della barra verticale contenente articoli e
+pulsante di logout per l'utente*/
+.profilo{
+    background-color: #003366;
+    height: 100%;
+    width: 12%;
+    float: left;
+}
+
+/*CSS che regola i margini della riga di benvenuto all'utente rispetto alla barra
+verticale*/
+.profilo p{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.profilo li a{
+    opacity: 0.9;
+    color: whitesmoke;
+    text-decoration: none;
+}
+/*----------------------------------------------------------------------------*/
+
+/*CSS per la modifica della tabella presente nella pagina profilo con cambiamenti
+rispetto a quella utilizzata per la tabella contenente tutti gli articoli*/
+.tabellaprofilo{
+  table-layout: fixed;                             
+  height: 600px;
+  width: 30%;
+  border: 2px solid #003366;
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-left: 45%;
+  margin-top:2%;
+  color: white; 
+  background-color: #003366;
+  border-radius: 8px;
+  border: 2px outset whitesmoke;
+}
+
+/*CSS per l'inserimento di un bordo per migliorare l'aspetto finale della tabella*/
+.tabellaprofilo td{
+color: #003366; 
+border-radius: 4px;
+margin: 0;
+}
+
+.tabellaprofilo th{
+    height: 80px;
+}
+
+#image{
+    margin-left: 3%;
+    border-radius: 8px;
+    float: left;
+    width: 35%;
+    height: 80%;
+    border: 2px inset whitesmoke;
+}
+
+/*----CSS per la modifica del colore delle righe e dello stile delle parole---*/
+.rigadispari td{
+    background-color: white;
+    font-weight: bold;
+}
+
+.rigapari td{
+    background-color: #cccccc;
+    font-weight: bold;    
+}
+
+.rigapari form{
+    width: 100%;
+}
+
+.rigadispari textarea{
+    width: 90%;
+    background: #eee
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*--CSS per cambiare l'aspetto delle righe contenenti i dati (pari e dispari)-*/
+.rigapari input[type="text"]{
+    background: transparent;  
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    width: 90%;
+    text-align: center;
+}
+
+.rigapari input[type="password"]{
+    background: transparent;  
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    width: 90%;
+    text-align: center;
+}
+
+.rigadispari input[type="text"]{
+    background: transparent;  
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #cccccc;
+    width: 90%;
+    text-align: center;
+}
+
+.rigadispari input[type="url"]{
+    background: #cccccc;  
+    width: 80%;
+    text-align: center;
+}
+
+.rigapari input[type="url"]{
+    background: white;  
+    width: 80%;
+    text-align: center;
+}
+
+/*----------------------------------------------------------------------------*/
+
+/*---------------------PULSANTE INVIA E NUOVO ARTICOLO------------------------*/
+/*CSS del pulsante usato per INVIA e NUOVO ARTICOLO*/
+.tasto input[type="submit"]
+{
+    border: 2px outset whitesmoke;
+    outline: none;
+    padding: 8px;
+    background: white;
+    color: #003366;
+    font-size: 12px;
+    width: 30%;
+    margin-left: 12%;
+    border-radius: 15px;  
+}
+
+/*CSS che modifica il colore del pulsante quando ci si passa sopra con il puntatore*/
+.tasto input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #66ccff;
+    color: #000;
+}
+
+/*----------------------------------------------------------------------------*/
+.tabellamodart{
+  table-layout: fixed;
+  width: 60%;
+  height: 550px;
+  border: 2px solid #003366;
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-left: 30%;
+  margin-top:3%;
+  color: white; 
+  background-color: #003366;
+  border-radius: 5px;
+  border: 2px outset whitesmoke;
+}
+/*----------------------------------------------------------------------------*/
+
+.tabellamodart input[type="text"]{
+width: 90%;
+color: #003366; 
+border-radius: 3px;
+padding: 2px;
+margin-bottom: 10px;
+}
+
+.tabellamodart th{
+height: 10px;
+color: whitesmoke; 
+border-radius: 3px;
+margin-top: 15px;
+}
+
+/*CSS che modifica il colore delle parole interne alla classe e aggiunta
+di un bordo per migliorare l'aspetto finale della tabella*/
+.tabellamodart td{
+color: #003366; 
+border-radius: 3px;
+font-weight: bold;
+}
+
+#testo{
+color: #003366; 
+border-radius: 3px;
+width: 90%;
+justify-content: center;
+font-size: large;
+}
+
+/*----------------------------------------------------------------------------*/
+
+#salvaarticolo{
+    border: 2px outset whitesmoke;
+    outline: none;
+    padding: 8px;
+    background: white;
+    color: #003366;
+    font-size: 12px;
+    width: 20%;
+    border-radius: 15px; 
+    text-decoration: none;
+    margin-left: 10%;
+}
+
+#salvaarticolo:hover{
+    cursor: pointer;
+    background: #66ccff;
+    color: #000;
+}
+
+/*---------------------------PULSANTE LOGOUT----------------------------------*/
+#button{
+    border: 2px outset whitesmoke;
+    outline: none;
+    padding: 8px;
+    background: white;
+    color: #003366;
+    font-size: 12px;
+    width: 30%;
+    border-radius: 15px; 
+    text-decoration: none;
+}
+
+#button:hover{
+    cursor: pointer;
+    background: #66ccff;
+    color: #000;
+}
+/*----------------------------------------------------------------------------*/
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }

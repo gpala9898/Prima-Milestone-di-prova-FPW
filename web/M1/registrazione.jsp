@@ -1,9 +1,12 @@
+<%-- 
+    Document   : registrazione
+    Created on : 30-apr-2019, 13.13.57
+    Author     : Gianluca
+--%>
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html lang="it">
     <head>
         <title>Registrazione</title>
@@ -18,27 +21,11 @@ and open the template in the editor.
     </head>
     <body>
         
-        <!--Creazione tasto 'homepage' con collegamento a index-->
+         <!--Qui includo il mio header-->
+        <jsp:include page="header.jsp"/>
         
-        <header class="header clearfix">
-            <a href="../index.html" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
-   
-            <!--Creazione barra degli elementi principali (Articoli, Valutazioni,Profilo,Serve Aiuto)-->
-            
-            <ul class="header_menu">
-                
-                <li class="header_menu_el"><a href="articoli.html"><p style="font-family: arial">Articoli</p></a></li>
-                <li class="header_menu_el"><a href="valutazione.html"><p style="font-family: arial">Valutazioni</p></a></li>
-                <li class="header_menu_el"><a href="profilo.html"><p style="font-family: arial">Profilo</p></a></li>
-                <li class="header_menu_el"><a href="https://www.google.com/"><p style="font-family: arial">Serve aiuto ?</p></a></li>
-            </ul>
-        </header>
-        
-         <!--Creazione cover della pagina di sfondo per l'inserimento degli 
-            elementi della pagina-->
-        
-            <div id="Sfondo_nero"></div>            
-                <div class="main_content">
+        <div id="Sfondo_nero"></div>
+        <div class="main_content">
                     
                 <aside></aside>
                 
@@ -49,7 +36,14 @@ and open the template in the editor.
         
                        <img src="../img/avatar.png" class="avatar" alt="avatar"><!--Immagine per migliorare aspetto del box--> 
                 <h1>REGISTRATI</h1>
-                 
+                
+                 <form action="registrazione" method="post">
+                     <c:if test="${param[\"userName\"] != null}">
+
+                        <p>Benvenuto, ${param["userName"]}</p>
+
+                    </c:if>
+                        
                 <label>Nome: </label><br>
                 <input type="text" placeholder="Nome Utente">
                 <br><br>
@@ -68,14 +62,13 @@ and open the template in the editor.
                 <label>Password: </label><br>
                 <input type="password" placeholder="Password">
                 <br><br>
-                 <form action="articoli.html" method="post">
+                 
                 <input type="submit" value="Registrati"/>          
             </form>
             </div>
                     
                     </div>
-<footer>
-            <p>Developed by <em>Gianluca Pala</em></p>
-        </footer>
+<!--Qui includo il mio footer-->
+        <jsp:include page="footer.jsp"/>
     </body>
 </html>
