@@ -7,7 +7,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <header class="header clearfix">
-            <a href="" class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
+            <a class="header_logo"><p style="font-family: arial">Free Peer Review</p></a>
    
             <!--Barra di navigazione dinamica in base al tipo di utente che
             decide di loggarsi-->
