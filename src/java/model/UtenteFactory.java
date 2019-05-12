@@ -36,7 +36,7 @@ public class UtenteFactory {
         gianluca.setNome("Gianluca");
         gianluca.setCognome("Pala");
         gianluca.setEmail("gianlucapala98@gmail.com");
-        gianluca.setPassword("ProgettoMilestone19");
+        gianluca.setPassword("Milestone19");
         gianluca.setEnte("http://facolta.unica.it/ingegneriainformatica/");
         gianluca.setImmagine("http://www.balooa.com/img/icon-registra-utente.jpg?m=1398631416");
         gianluca.setTipo("autore");
