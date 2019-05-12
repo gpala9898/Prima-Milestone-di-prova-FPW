@@ -29,11 +29,8 @@
                     <h1>ERRORE</h1>
                     <a type="submit" id="button" href="logout.html?logout=true">LOGOUT</a>
                 </div>
-        <footer>
-            
-            <p>Developed by <em>Gianluca Pala</em></p>
-            
-        </footer>
+        <!--Qui includo il mio footer-->
+        <jsp:include page="footer.jsp"/>
     </body>
 </html>
 

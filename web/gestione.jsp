@@ -72,6 +72,8 @@
                         </c:forEach>                                         
                     </table>
                     </div>
+                                <!--Qui includo il mio footer-->
+                                <jsp:include page="footer.jsp"/>
                     
     </body>
 </html>
