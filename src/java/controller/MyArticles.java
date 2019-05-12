@@ -22,7 +22,6 @@ import model.ArticleFactory;
  * @author Gianluca
  */
 
-
 @WebServlet(name = "MyArticles", urlPatterns = {"/articoli.html"})
 public class MyArticles extends HttpServlet {
 

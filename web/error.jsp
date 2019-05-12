@@ -3,7 +3,6 @@
     Created on : 6-mag-2019, 10.04.05
     Author     : Gianluca
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="it">
