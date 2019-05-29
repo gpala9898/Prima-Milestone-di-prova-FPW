@@ -54,7 +54,7 @@
                                               <a href="gestione.html">Scegli Valutatori</a>
                                           </c:when>
                                           <c:otherwise>
-                                              ${articoli.getnValutatori()}/3
+                                              <!--</${articoli.getnValutatori()}/3-->
                                           </c:otherwise>
                                       </c:choose>
                                   </td>

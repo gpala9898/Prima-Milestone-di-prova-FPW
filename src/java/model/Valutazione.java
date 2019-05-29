@@ -14,39 +14,53 @@ package model;
 e per ognuno avrò dei valori fittizi nella factory*/
 public class Valutazione {
     
-    private int id;
-    private int idcomment;
+    private int id_valutazione;
+    private int id_articolo;
+    private int id_utente;
     private int voto;
     private String commaut;
     private String commorg;
-    private int idarticolo;
 
     /**
-     * @return the id
+     * @return the id_valutazione
      */
-    public int getId() {
-        return id;
+    public int getId_valutazione() {
+        return id_valutazione;
     }
 
     /**
-     * @param id the id to set
+     * @param id the id_valutazione to set
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setId_valutazione(int id) {
+        this.id_valutazione = id;
     }
 
     /**
-     * @return the idcomment
+     * @return the id_articolo
      */
-    public int getIdcomment() {
-        return idcomment;
+    public int getId_articolo() {
+        return id_articolo;
     }
 
     /**
-     * @param idcomment the idcomment to set
+     * @param id_articolo the id_articolo to set
      */
-    public void setIdcomment(int idcomment) {
-        this.idcomment = idcomment;
+    public void setId_articolo(int id_articolo) {
+        this.id_articolo = id_articolo;
+    }
+
+    /**
+     * @return the id_utente
+     */
+    public int getId_utente() {
+        return id_utente;
+    }
+
+    /**
+     * @param id_utente the id_utente to set
+     */
+    public void setId_utente(int id_utente) {
+        this.id_utente = id_utente;
     }
 
     /**
@@ -89,19 +103,5 @@ public class Valutazione {
      */
     public void setCommorg(String commorg) {
         this.commorg = commorg;
-    }
-
-    /**
-     * @return the idarticolo
-     */
-    public int getIdarticolo() {
-        return idarticolo;
-    }
-
-    /**
-     * @param idarticolo the idarticolo to set
-     */
-    public void setIdarticolo(int idarticolo) {
-        this.idarticolo = idarticolo;
     }
 }

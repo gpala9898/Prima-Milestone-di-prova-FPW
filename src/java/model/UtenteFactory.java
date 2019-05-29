@@ -5,8 +5,17 @@
  */
 package model;
 
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -28,53 +37,155 @@ public class UtenteFactory {
             return singleton;
         }
     
-        public List<Utente> getUtenti(){
+        public List<Utente> getUtenti()throws SQLException {
         List<Utente> utenti = new ArrayList<>();
         
-        Utente gianluca = new Utente();
-        gianluca.setId(1);
-        gianluca.setNome("Gianluca");
-        gianluca.setCognome("Pala");
-        gianluca.setEmail("gianlucapala98@gmail.com");
-        gianluca.setPassword("Milestone19");
-        gianluca.setEnte("http://facolta.unica.it/ingegneriainformatica/");
-        gianluca.setImmagine("http://www.balooa.com/img/icon-registra-utente.jpg?m=1398631416");
-        gianluca.setTipo("autore");
-        utenti.add(gianluca);
-        
-        Utente bill = new Utente();
-        bill.setId(2);
-        bill.setNome("Bill");
-        bill.setCognome("Gates");
-        bill.setEmail("billgates55@outlook.com");
-        bill.setPassword("SonoRicco");
-        bill.setEnte("https://support.microsoft.com/it-it");
-        bill.setImmagine("https://static.milanofinanza.it/content_upload/img/2018/02/201802190833455455/Gates-Bill-326203.jpg");
-        bill.setTipo("organizzatore");
-        utenti.add(bill);
-        
+        try {
+            Connection conn = DbManager.getInstance().getDbConnection();
+            Statement stmt = conn.createStatement();
+            String sql = "select * from utente";
+            ResultSet set = stmt.executeQuery(sql);
+            while (set.next()) {
+                Utente utente = new Utente();
+                utente.setId(set.getInt("id_utente"));
+                utente.setNome(set.getString("nome"));
+                utente.setCognome(set.getString("cognome"));
+                utente.setEmail(set.getString("email"));
+                utente.setPassword(set.getString("password"));
+                utente.setEnte(set.getString("ente"));
+                utente.setImmagine(set.getString("immagine"));
+                utente.setTipo(set.getString("tipo"));
+                utenti.add(utente);
+            }
+
+            stmt.close();
+            conn.close();
         return utenti;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DbManager.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } return null;
+
     }
+
     
     /*Ordina l'utente in base al proprio ID*/
-    public Utente getUtenteById(int id){
-        List<Utente> utente = this.getUtenti();
-        for(Utente u : utente){
-            if(u.getId() == id){
-                return u;
+    public Utente getUtenteById(int id) throws SQLException {
+       try {
+            Boolean loggedIn;
+
+            Connection conn = DbManager.getInstance().getDbConnection();
+            String sql = "select * from utente where id_utente="+id;
+
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            ResultSet set = stmt.executeQuery();
+
+            loggedIn = set.next(); 
+            if (loggedIn) {
+                Utente utente = new Utente();
+                utente.setId(set.getInt("id_utente"));
+                utente.setNome(set.getString("nome"));
+                utente.setCognome(set.getString("cognome"));
+                utente.setEmail(set.getString("email"));
+                utente.setPassword(set.getString("password"));
+                utente.setEnte(set.getString("ente"));
+                utente.setImmagine(set.getString("immagine"));
+                utente.setTipo(set.getString("tipo"));
+                stmt.close();
+                conn.close();
+                return utente;
+            } else {
+                return null;
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(UtenteFactory.class.getName()).
+                    log(Level.SEVERE, null, ex);
         }
+
         return null;
     }
     
     /*Ordina l'utente in base alla propri Mail e Password*/
-    public Utente getUtenteByEmailPassword(String email, String password){
-        List<Utente> utente = this.getUtenti();
-        for(Utente u : utente){
-            if(u.getEmail().equals(email) && u.getPassword().equals(password)){
-                return u;
+    public Utente getUtenteByEmailPassword(String email, String password)
+    throws SQLException{
+        try {
+            Boolean loggedIn;
+
+            Connection conn = DbManager.getInstance().getDbConnection();
+            String sql = "select * from utente where email = ? and password = ?";
+
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            stmt.setString(1, email);
+            stmt.setString(2, password);
+
+            ResultSet set = stmt.executeQuery();
+
+            loggedIn = set.next(); 
+            if (loggedIn) {
+                Utente utente = new Utente();
+                utente.setId(set.getInt("id_utente"));
+                utente.setNome(set.getString("nome"));
+                utente.setCognome(set.getString("cognome"));
+                utente.setEmail(set.getString("email"));
+                utente.setPassword(set.getString("password"));
+                utente.setEnte(set.getString("ente"));
+                utente.setImmagine(set.getString("immagine"));
+                utente.setTipo(set.getString("tipo"));
+                stmt.close();
+                conn.close();
+                return utente;
+            } else {
+                return null;
             }
+        } catch (SQLException ex) {
+            Logger.getLogger(UtenteFactory.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+    
+    
+     public Boolean deleteAutore(int idaut,int id) {
+
+        Connection conn = null;
+        try {
+            conn = DbManager.getInstance().getDbConnection();
+
+            conn.setAutoCommit(false);
+
+            String articolo = "DELETE FROM modart WHERE id_autore = ?";
+            PreparedStatement stmt = conn.prepareStatement(articolo);
+            stmt.setInt(1,idaut);
+
+            stmt.executeUpdate();
+
+            String utente = "DELETE FROM utente WHERE id_utente = ?";
+
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+
+            conn.commit();
+            conn.setAutoCommit(true); //Per completezza
+            stmt.close();
+            conn.close();
+            
+        } catch (SQLException e) {
+            Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, e);
+            if (conn != null) {
+                try {
+                    conn.rollback();
+                } catch (SQLException ex) {
+                    Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            return false;
+
         }
         return null;
+
     }
 }

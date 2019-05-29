@@ -6,8 +6,8 @@
 package controller;
 
 import java.io.IOException;
-
-import java.util.List;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +18,11 @@ import model.Utente;
 import model.UtenteFactory;
 import model.Article;
 import model.ArticleFactory;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 /**
  *
@@ -36,7 +41,7 @@ public class Login extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
         
@@ -66,7 +71,7 @@ public class Login extends HttpServlet {
             Utente utente = UtenteFactory.getInstance().getUtenteById(utenteId);
         /*Qui verifico che l'utente che si è loggato sia un organizzatore, se lo è
             il login rimanderà alla pagina di gestione*/
-        if(utente.getTipo() == "organizzatore"){
+        if( "Organizzatore".equals(utente.getTipo())){
             List<Article> articoli = ArticleFactory.getInstance().getArticle();
            request.setAttribute("utente", utente);
            request.setAttribute("articoli", articoli);
@@ -86,6 +91,7 @@ public class Login extends HttpServlet {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -98,7 +104,12 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
     }
 
     /**
@@ -112,7 +123,14 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
     }
 
     /**
@@ -124,4 +142,5 @@ public class Login extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }

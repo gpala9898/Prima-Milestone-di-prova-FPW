@@ -1,0 +1,63 @@
+table utente(
+id_utente serial,
+nome varchar,
+cognome varchar,
+email varchar,
+password varchar,
+ente varchar,
+immagine varchar,
+tipo varchar
+)
+/*La tabella utente ha al suo interno un attributo tipo che definisce la tipologia
+di utente connesso perchè in base al tipo avrà una determinata funzione
+collegata. La chiave primaria è l'id utente.*/
+
+
+table articolo(
+id_articolo serial,
+id_utente unsigned int,
+titolo varchar,
+testo varchar,
+creatore varchar,
+data varchar,
+situazione varchar,
+valutatori int,
+immagine varchar
+)
+
+/*La tabella articolo presenta una relazione esterna con l'id_utente in quanto 
+per ogni articolo avremo necessariamente almeno un autore (che è una delle tipologie
+di utente). La chiave primaria è id_articolo e presenta una relazione tra articolo e
+utente di cardinalità N a N in quanto un utente(autore) può scrivere più articoli
+e ogni articolo può avere più autori, inoltre ha una relazione 1 a N con la tabella valutazione
+in quanto ogni articolo può avere più valutazioni ma ogni valutazione è valida per il singolo
+articolo. Con entrambe le tipologie di utente ha una relazione 1 a N. In quanto 
+un autore può valutare N articoli ma ogni articolo ha una sola valutazione per autore.
+La seconda tipologia di utente (organizzatore) ha anch'essa una relazione 1 a N in 
+quanto un organizzatore può accettare o rifiutare N articolo ma ogni articolo presenta
+una sola situazione a seconda di quella scelta(Se un articolo è stato rifiutato, non può 
+presentare una condizione diversa da quella)*/
+
+
+table valutazione(
+id_valutazione serial,
+id_utente unsigned int,
+id_articolo unsigned int,
+voto int,
+commento_aut varchar,
+commento_org varchar,
+)
+/*La tabella valutazione è ha una relazione 1 a N con articolo e utente, con quest'ultimo
+poichè un utente(organizzatore) può inviare N valutazioni ma ogni valutazione è
+inviata da un singolo organizzatore. Inoltre un utente(autore) può fare N valutazioni
+ma ogni valutazione è fatta dal singolo autore*/
+
+
+
+table modart(
+id_utente unsigned int,
+id_articolo unsigned int
+)
+/*Questa è la tabella che si genera in seguito alla relazione di cardinalità N a N 
+tra articolo e utente(autore) che presenta i due id interessati che referenziano
+alle rispettive tabelle di interesse*/

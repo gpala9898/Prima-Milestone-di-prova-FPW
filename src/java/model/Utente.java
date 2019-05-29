@@ -32,7 +32,7 @@ public class Utente {
     }
 
     /**
-     * @param id the id to set
+     * @param id the id_utente to set
      */
     public void setId(int id) {
         this.id = id;

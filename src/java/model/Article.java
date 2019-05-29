@@ -17,8 +17,10 @@ import java.util.List;
 visualizzazione che saranno collegati all'utente che verrà mostrato dopo il login*/
 
 public class Article {
+
     
-   private int id;
+    private int id_articolo;
+    private int id_organizzatore;
     private List<Utente> utente;
     private String titolo;
     private String data;
@@ -26,7 +28,6 @@ public class Article {
     private String testo;
     private String creatore;
     private String immagine;
-    private int nValutatori;
     
     
     public Article(){
@@ -34,17 +35,31 @@ public class Article {
     }
 
     /**
-     * @return the id
+     * @return the id_articolo
      */
-    public int getId() {
-        return id;
+    public int getId_articolo() {
+        return id_articolo;
     }
 
     /**
-     * @param id the id to set
+     * @param id the id_articolo to set
      */
-    public void setId(int id) {
-        this.id = id;
+    public void setId_articolo(int id_articolo) {
+        this.id_articolo = id_articolo;
+    }
+    
+    /**
+     * @return the id_organizzatore
+     */
+    public int getId_organizzatore() {
+        return id_organizzatore;
+    }
+
+    /**
+     * @param id_organizzatore the id_organizzatore to set
+     */
+    public void setId_organizzatore(int id_organizzatore) {
+        this.id_organizzatore = id_organizzatore;
     }
 
     /**
@@ -143,20 +158,6 @@ public class Article {
      */
     public void setImmagine(String immagine) {
         this.immagine = immagine;
-    }
-    
-    /**
-     * @return the nValutatori
-     */
-    public int getnValutatori() {
-        return nValutatori;
-    }
-
-    /**
-     * @param nValutatori the nValutatori to set
-     */
-    public void setnValutatori(int nValutatori) {
-        this.nValutatori = nValutatori;
     }
     
 }

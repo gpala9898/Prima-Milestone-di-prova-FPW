@@ -39,7 +39,7 @@
     <br>
     <!--Visualizza gli articoli che non sono da valutare di quel determinato autore-->
         <c:choose>
-            <c:when test="${utente.getTipo()=='autore'}">
+            <c:when test="${utente.getTipo()=='Autore'}">
                 <strong><h4>I miei Articoli</h4></strong>
                         <ul><c:forEach items="${articoli}" var="articoli">                               
                                 <c:choose>

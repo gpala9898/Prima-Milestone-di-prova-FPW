@@ -6,16 +6,22 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Article;
 import model.ArticleFactory;
 import model.Utente;
 import model.UtenteFactory;
+
 
 /**
  *
@@ -34,7 +40,7 @@ public class Manage extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException,SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
         /*Se l'ID dell'utente è nullo torno al form di login (alla Servlet che lo 
@@ -50,7 +56,7 @@ public class Manage extends HttpServlet {
 
             /*Se l'utente che vuole accedere alla pagina di gestione è un autore
             visualizza la pagina di errore*/
-            if (utente.getTipo().equals("autore"))
+            if (utente.getTipo().equals("Autore"))
                 request.getRequestDispatcher("error.jsp").forward(request, response);
             else{
                 /*Altrimenti mostra la pagina di gestione*/
@@ -61,6 +67,7 @@ public class Manage extends HttpServlet {
         }
     }
         
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -73,7 +80,11 @@ public class Manage extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Manage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -87,7 +98,11 @@ public class Manage extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Manage.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

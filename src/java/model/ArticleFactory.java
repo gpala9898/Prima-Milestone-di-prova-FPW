@@ -5,8 +5,15 @@
  */
 package model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -31,11 +38,39 @@ public class ArticleFactory {
         return singleton;
     }
     
-    public List<Article> getArticle(){
+    public List<Article> getArticle() throws SQLException{
         List<Article> articoli = new ArrayList<>();
         
-        Article dc = new Article();
-        dc.setId(1);
+        try {
+            Connection conn = DbManager.getInstance().getDbConnection();
+            Statement stmt = conn.createStatement();
+            String sql = "select * from articolo";
+            ResultSet set = stmt.executeQuery(sql);
+            while (set.next()) {
+                Article articolo = new Article();
+                articolo.setId_articolo(set.getInt("id_articolo"));
+                articolo.setId_organizzatore(set.getInt("id_organizzatore"));
+                articolo.setTitolo(set.getString("titolo"));
+                articolo.setTesto(set.getString("testo"));
+                articolo.setData(set.getString("data"));
+                articolo.setCreatore(set.getString("creatore"));
+                articolo.setSituazione(set.getString("situazione"));
+                articolo.setImmagine(set.getString("immagine"));
+                articoli.add(articolo);
+            }
+
+            stmt.close();
+            conn.close();
+        return articoli;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DbManager.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } return null;
+
+    }
+        /*Article dc = new Article();
+        dc.setId_articolo(1);
         dc.setTitolo("I robot a scuola");
         dc.setTesto("La robotica a scuola, insieme al coding, sta rivoluzionando"
                 + " i metodi d’insegnamento e d’apprendimento, rendendo entrambi"
@@ -47,14 +82,13 @@ public class ArticleFactory {
         dc.setData("06/04/2019");
         dc.setCreatore("Gianluca Pala");
         dc.setSituazione("Aperto");
-        dc.setnValutatori(3);
         dc.setImmagine("https://myfacemood.com/wp-content/uploads/2017/01/Myfacemood-Google-manda-i-robot-a-scuola.png");
         Utente gianluca = UtenteFactory.getInstance().getUtenteById(1);
         dc.getUtente().add(gianluca);
         articoli.add(dc);
         
         Article vn = new Article();
-        vn.setId(2);
+        vn.setId_articolo(2);
         vn.setTitolo("La protezione dei dati aiuta l'economia digitale");
         vn.setTesto("Oggi abbiamo processori in grado di raccogliere, archiviare e processare enormi quantità\n"
                 + "di dati, che hanno consentito lo svilupparsi delle tecnologie big data e reti che permettono\n" 
@@ -72,7 +106,7 @@ public class ArticleFactory {
         articoli.add(vn);
         
         Article ps = new Article();
-        ps.setId(3);
+        ps.setId_articolo(3);
         ps.setTitolo("ASUS ROG Zephyrus S GX531, la recensione");
         ps.setTesto("ASUS ROG Zephyrus S GX531 è uno dei portatili più potenti del mercato."
                 + " Ed è anche il più sottile – circa 16mm al più – con questo hardware. "
@@ -88,7 +122,7 @@ public class ArticleFactory {
         articoli.add(ps);
         
         Article rs = new Article();
-        rs.setId(4);
+        rs.setId_articolo(4);
         rs.setTitolo("I vantaggi dell'Intelligenza Artificiale");
         rs.setTesto("Quando si parla di macchine pensanti,"
                 + " non c'è dubbio che la"
@@ -110,13 +144,12 @@ public class ArticleFactory {
         rs.setData("27/12/2018");
         rs.setCreatore("Gianluca Pala");
         rs.setSituazione("Accettato");
-        rs.setnValutatori(3);
         rs.setImmagine("https://www.galileonet.it/wp-content/uploads/2018/10/artificial-intelligence-3382507_1280.jpg");
         rs.getUtente().add(gianluca);
         articoli.add(rs);
         
         Article ms = new Article();
-        ms.setId(5);
+        ms.setId_articolo(5);
         ms.setTitolo("ADA, il braccio robot che aiuta a mangiare");
         ms.setTesto("Un team di ricercatori della Washington University ha messo" 
                 + "a punto un braccio robot per aiutare disabili e invalidi a "
@@ -133,18 +166,54 @@ public class ArticleFactory {
         ms.setData("14/03/2017");
         ms.setCreatore("Gianluca Pala");
         ms.setSituazione("Rifiutato");
-        ms.setnValutatori(3);
         ms.setImmagine("https://www.hurolife.it/wp-content/uploads/2019/03/braccio-robotico-autonomo.jpg");
         ms.getUtente().add(gianluca);
         articoli.add(ms);
         
         return articoli;
-    }
+    }*/
     
     /*prende gli articoli in base al loro autore a partire da tutti gli articoli
     presenti*/
-    public List<Article> getArticleAutore(Utente u){
+    public List<Article> getArticleAutore(Utente u) throws SQLException{
         List<Article> articleAuthor = new ArrayList<>();
+        try {
+            Boolean loggedIn;
+
+            Connection conn = DbManager.getInstance().getDbConnection();
+            String sql = "select * from articolo where utente=?";
+
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            stmt.setObject(1,u);
+
+            ResultSet set = stmt.executeQuery();
+
+            loggedIn = set.next(); 
+            if (loggedIn) {
+                Article articolo = new Article();
+                articolo.setId_articolo(set.getInt("id_articolo"));
+                articolo.setId_organizzatore(set.getInt("id_organizzatore"));
+                articolo.setTitolo(set.getString("titolo"));
+                articolo.setTesto(set.getString("testo"));
+                articolo.setData(set.getString("data"));
+                articolo.setCreatore(set.getString("creatore"));
+                articolo.setSituazione(set.getString("situazione"));
+                articolo.setImmagine(set.getString("immagine"));
+                stmt.close();
+                conn.close();
+                return articleAuthor;
+            } else {
+                return null;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UtenteFactory.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+        /*List<Article> articleAuthor = new ArrayList<>();
         List<Article> allArticles = this.getArticle();
         
         for(Article a : allArticles){
@@ -156,17 +225,86 @@ public class ArticleFactory {
         }
         
         return articleAuthor;
-    }
+    }*/
     
     /*Mostra gli articoli in base al loro ID*/
-    public Article getArticleId(int artid){
-        List<Article> allArticles = this.getArticle();
+    public Article getArticleId(int artid) throws SQLException{
+        try {
+            Boolean loggedIn;
+
+            Connection conn = DbManager.getInstance().getDbConnection();
+            String sql = "select * from articolo where id_articolo="+artid;
+
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            ResultSet set = stmt.executeQuery();
+
+            loggedIn = set.next(); 
+            if (loggedIn) {
+                Article articolo = new Article();
+                articolo.setId_articolo(set.getInt("id_articolo"));
+                articolo.setId_organizzatore(set.getInt("id_organizzatore"));
+                articolo.setTitolo(set.getString("titolo"));
+                articolo.setTesto(set.getString("testo"));
+                articolo.setData(set.getString("data"));
+                articolo.setCreatore(set.getString("creatore"));
+                articolo.setSituazione(set.getString("situazione"));
+                articolo.setImmagine(set.getString("immagine"));
+                stmt.close();
+                conn.close();
+                return articolo;
+            } else {
+                return null;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UtenteFactory.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+
+        return null;
+    }
+    public Boolean deleteArticle(int idart) {
+
+        Connection conn = null;
+        try {
+            conn = DbManager.getInstance().getDbConnection();
+
+            conn.setAutoCommit(false);
+
+            String articolo = "DELETE FROM articolo WHERE id_articolo = ?";
+            PreparedStatement stmt = conn.prepareStatement(articolo);
+            stmt.setInt(1, idart);
+
+            stmt.executeUpdate();
+
+            conn.commit();
+            conn.setAutoCommit(true); //Per completezza
+            stmt.close();
+            conn.close();
+
+        } catch (SQLException e) {
+            Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, e);
+            if (conn != null) {
+                try {
+                    conn.rollback();
+                } catch (SQLException ex) {
+                    Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            return false;
+
+        }
+        return null;
+
+    }
+}
+        /*List<Article> allArticles = this.getArticle();
         for(Article a : allArticles){
-            if(a.getId() == artid){
+            if(a.getId_articolo() == artid){
                 return a;
             }
         }
         return null;
     }
     
-}
+}*/
