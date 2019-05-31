@@ -20,13 +20,11 @@ public class Article {
 
     
     private int id_articolo;
-    private int id_organizzatore;
     private List<Utente> utente;
     private String titolo;
     private String data;
     private String situazione;
     private String testo;
-    private String creatore;
     private String immagine;
     
     
@@ -42,24 +40,10 @@ public class Article {
     }
 
     /**
-     * @param id the id_articolo to set
+     * @param id_articolo the id_articolo to set
      */
     public void setId_articolo(int id_articolo) {
         this.id_articolo = id_articolo;
-    }
-    
-    /**
-     * @return the id_organizzatore
-     */
-    public int getId_organizzatore() {
-        return id_organizzatore;
-    }
-
-    /**
-     * @param id_organizzatore the id_organizzatore to set
-     */
-    public void setId_organizzatore(int id_organizzatore) {
-        this.id_organizzatore = id_organizzatore;
     }
 
     /**
@@ -130,20 +114,6 @@ public class Article {
      */
     public void setTesto(String testo) {
         this.testo = testo;
-    }
-
-    /**
-     * @return the creatore
-     */
-    public String getCreatore() {
-        return creatore;
-    }
-
-    /**
-     * @param creatore the creatore to set
-     */
-    public void setCreatore(String creatore) {
-        this.creatore = creatore;
     }
 
     /**

@@ -46,8 +46,8 @@
             <table class="tabellamodart">               
                         <tr>
                             <th><c:choose>
-                                    <c:when test="${articoli.getId() != null}">
-                                        <b>MODIFICA ARTICOLO (ID:${articoli.getId()})</b>   
+                                    <c:when test="${articoli.getId_articolo() != null}">
+                                        <b>MODIFICA ARTICOLO (ID:${articoli.getId_articolo()})</b>   
                                     </c:when>  
                                     <c:otherwise>
                                         <b>SCRIVI ARTICOLO</b>  
@@ -58,23 +58,13 @@
                             <td><label><em>Titolo Articolo</em></label>
                             <input type="text" name="titolo" id="titolo" value="${articoli.getTitolo()}"/></td>
                                                     
-                        </tr>
+                        </tr>                      
                         <tr class="rigapari">
-                            <td><label><em>Aggiungi Autore</em></label><br>
-                        <input type="text" name="AA" value="${articoli.getCreatore()}"/></td>                                                    
+                            <td><label><em>Scegli Autore</em></label><br>
+                        <input type="text" name="autori" id="autore" value="${utente.getCognome()} ${utente.getNome()}"/></td>                                              
                         </tr>
                         
                         <tr class="rigadispari">
-                            <td><label><em>Scegli Autore</em></label><br>
-                            <select>
-                                <option value="">Seleziona Autore</option>
-                                <option value="a1">Bartolomeo Buscema</option>
-                                <option value="a2">Gabriella Bernardi</option>
-                                <option value="a3">Ugo Apollonio</option>
-                            </select></td>                                                  
-                        </tr>
-                        
-                        <tr class="rigapari">
                             
                             <!--Checkbox per la scelta multipla della categoria 
                             di articolo-->
@@ -100,7 +90,7 @@
                                 </table></center></td>                           
                         </tr>
                         
-                        <tr class="rigadispari">
+                        <tr class="rigapari">
                             
                             <!--Riga per l'inserimento dell'immagine-->
                             <td><label><em>Url Immagine</em></label><br>
@@ -108,15 +98,15 @@
                             </td>                                                    
                         </tr>
                         
-                        <tr class="rigapari">
+                        <tr class="rigadispari">
                             <td><label><em>Data</em></label><br>
                                 <input type="text" value="${articoli.getData()}"/></td>                        
                         </tr>
                         
-                        <tr class="rigadispari">
+                        <tr class="rigapari">
                             <td><label><em>Testo</em></label><br/>
             <textarea id="testo" name="testo" rows="5" cols="60">${articoli.getTesto()}</textarea>
-            <input type="hidden" name="lid" value="${articoli.getId()}"><br/></td>                                  
+            <input type="hidden" name="lid" value="${articoli.getId_articolo()}"><br/></td>                                  
                         </tr>                                                           
                     </table>
                         <br/>

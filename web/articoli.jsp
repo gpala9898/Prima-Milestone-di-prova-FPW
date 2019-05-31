@@ -39,14 +39,14 @@
     <br>
     <!--Visualizza gli articoli che non sono da valutare di quel determinato autore-->
         <c:choose>
-            <c:when test="${utente.getTipo()=='Autore'}">
+            <c:when test="${utente.getTipo()=='autore'}">
                 <strong><h4>I miei Articoli</h4></strong>
-                        <ul><c:forEach items="${articoli}" var="articoli">                               
+                        <ul><c:forEach items="${articoli}" var="articolo">                               
                                 <c:choose>
-                                    <c:when test="${articoli.getSituazione()!='Da valutare'}">
+                                    <c:when test="${articolo.getSituazione()!='Da valutare'}">
                             <li>
-                                <a href="scriviArticolo.html?pid=${articoli.getId()}&mid=${utente.getId()}">
-                                    ${articoli.getTitolo()}
+                                <a href="scriviArticolo.html?pid=${articolo.getId_articolo()}&mid=${utente.getId()}">  
+                                    ${articolo.getTitolo()}
                                 </a>
                             </li></c:when>
                                 </c:choose>
@@ -67,6 +67,7 @@
         </c:choose>
     
 </aside>
+
                     
     <!--Tabella per la visualizzazione degli articoli con i vari elementi.
     Articoli ordinati dal più recente al più vecchio.Create diverse colonne per
@@ -94,7 +95,7 @@
                             <td>
                                     <c:choose>
                                         <c:when test="${articoli.getSituazione()=='Aperto'}"> 
-                                        <a href="scriviArticolo.html?pid=${articoli.getId()}&mid=${utente.getId()}">
+                                        <a href="scriviArticolo.html?pid=${articoli.getId_articolo()}&mid=${utente.getId()}">
                                             <button class="edit" type="submit"><img src="img/edit.png" width="25" height="25" alt="edit"></button>
                                         </a>
                                         </c:when>

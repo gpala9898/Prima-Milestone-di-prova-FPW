@@ -48,7 +48,7 @@ public class ValutazioneFactory {
                 Valutazione valutazione = new Valutazione();
                 valutazione.setId_valutazione(set.getInt("id_valutazione"));
                 valutazione.setId_articolo(set.getInt("id_articolo"));
-                valutazione.setId_utente(set.getInt("id_utente"));
+                valutazione.setId_autore(set.getInt("id_autore"));
                 valutazione.setVoto(set.getInt("voto"));
                 valutazione.setCommaut(set.getString("commaut"));
                 valutazione.setCommorg(set.getString("commorg"));
@@ -64,41 +64,6 @@ public class ValutazioneFactory {
                     log(Level.SEVERE, null, ex);
         } return null;
 
-    }
-    
-    public Valutazione getValutazioneByArticolo(int id) throws SQLException{
-
-        try {
-            Boolean loggedIn;
-
-            Connection conn = DbManager.getInstance().getDbConnection();
-            String sql = "select * from valutazione where id_articolo = ?";
-
-            PreparedStatement stmt = conn.prepareStatement(sql);
-
-            stmt.setInt(1, id);
-
-            ResultSet set = stmt.executeQuery();
-
-            loggedIn = set.next(); 
-            if (loggedIn) {
-                Valutazione valutazione = new Valutazione();
-                valutazione.setId_valutazione(set.getInt("id_valutazione"));
-                valutazione.setId_articolo(set.getInt("id_articolo"));
-                valutazione.setId_utente(set.getInt("id_utente"));
-                valutazione.setVoto(set.getInt("voto"));
-                valutazione.setCommaut(set.getString("commaut"));
-                valutazione.setCommorg(set.getString("commorg"));
-            return valutazione;
-            } else {
-                return null;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(UtenteFactory.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        }
-
-        return null;
     }
     
     public Valutazione getValutazioneByUtente(int id) throws SQLException{
@@ -120,7 +85,7 @@ public class ValutazioneFactory {
                 Valutazione valutazione = new Valutazione();
                 valutazione.setId_valutazione(set.getInt("id_valutazione"));
                 valutazione.setId_articolo(set.getInt("id_articolo"));
-                valutazione.setId_utente(set.getInt("id_utente"));
+                valutazione.setId_autore(set.getInt("id_autore"));
                 valutazione.setVoto(set.getInt("voto"));
                 valutazione.setCommaut(set.getString("commaut"));
                 valutazione.setCommorg(set.getString("commorg"));
@@ -135,47 +100,6 @@ public class ValutazioneFactory {
 
         return null;
     }
-    
-    public Boolean deleteValutazione(int idval,int id) {
-
-        Connection conn = null;
-        try {
-            conn = DbManager.getInstance().getDbConnection();
-
-            conn.setAutoCommit(false);
-
-            String articolo = "DELETE FROM valutazione WHERE id_valutazione = ?";
-            PreparedStatement stmt = conn.prepareStatement(articolo);
-            stmt.setInt(1,idval);
-
-            stmt.executeUpdate();
-
-            String utente = "DELETE FROM valutazione WHERE id_utente = ?";
-
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
-
-            conn.commit();
-            conn.setAutoCommit(true); //Per completezza
-            stmt.close();
-            conn.close();
-            
-        } catch (SQLException e) {
-            Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, e);
-            if (conn != null) {
-                try {
-                    conn.rollback();
-                } catch (SQLException ex) {
-                    Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            return false;
-
-        }
-        return null;
-
-    }
-    
 }
         
         /*Valutazione val1 = new Valutazione();

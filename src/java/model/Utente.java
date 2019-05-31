@@ -32,7 +32,7 @@ public class Utente {
     }
 
     /**
-     * @param id the id_utente to set
+     * @param id the id to set
      */
     public void setId(int id) {
         this.id = id;
@@ -136,7 +136,4 @@ public class Utente {
         this.tipo = tipo;
     }
     
-    public boolean equals(Utente u){
-        return this.getId() == u.getId();
-    }
 }

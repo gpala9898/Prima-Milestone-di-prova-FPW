@@ -76,9 +76,11 @@ public class UtenteFactory {
             Boolean loggedIn;
 
             Connection conn = DbManager.getInstance().getDbConnection();
-            String sql = "select * from utente where id_utente="+id;
+            String sql = "select * from utente where id_utente=?";
 
             PreparedStatement stmt = conn.prepareStatement(sql);
+
+            stmt.setInt(1,id);
 
             ResultSet set = stmt.executeQuery();
 

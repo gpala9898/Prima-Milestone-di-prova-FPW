@@ -16,7 +16,7 @@ public class Valutazione {
     
     private int id_valutazione;
     private int id_articolo;
-    private int id_utente;
+    private int id_autore;
     private int voto;
     private String commaut;
     private String commorg;
@@ -50,17 +50,17 @@ public class Valutazione {
     }
 
     /**
-     * @return the id_utente
+     * @return the id_autore
      */
-    public int getId_utente() {
-        return id_utente;
+    public int getId_autore() {
+        return id_autore;
     }
 
     /**
-     * @param id_utente the id_utente to set
+     * @param id_autore the id_autore to set
      */
-    public void setId_utente(int id_utente) {
-        this.id_utente = id_utente;
+    public void setId_autore(int id_autore) {
+        this.id_autore = id_autore;
     }
 
     /**

@@ -52,9 +52,9 @@
                                   <td>
                                       <c:choose><c:when test="${articoli.getSituazione()=='Da valutare'}">
                                               <a href="gestione.html">Scegli Valutatori</a>
-                                          </c:when>
+                                          </c:when>   
                                           <c:otherwise>
-                                              <!--</${articoli.getnValutatori()}/3-->
+                                              1/3
                                           </c:otherwise>
                                       </c:choose>
                                   </td>

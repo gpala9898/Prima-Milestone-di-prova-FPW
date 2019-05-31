@@ -6,8 +6,10 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,11 +20,6 @@ import model.Utente;
 import model.UtenteFactory;
 import model.Article;
 import model.ArticleFactory;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 
 /**
  *
@@ -53,10 +50,10 @@ public class Login extends HttpServlet {
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             
-            Utente utente = UtenteFactory.getInstance().getUtenteByEmailPassword(email, password);
+            Utente u = UtenteFactory.getInstance().getUtenteByEmailPassword(email, password);
             
-            if(utente != null){
-                session.setAttribute("utenteId", utente.getId());
+            if(u != null){
+                session.setAttribute("utenteId", u.getId());
             }
             /*Se l'utente è non è presente verrà indirizzato all pagina di registrazione*/
             else{
@@ -71,7 +68,7 @@ public class Login extends HttpServlet {
             Utente utente = UtenteFactory.getInstance().getUtenteById(utenteId);
         /*Qui verifico che l'utente che si è loggato sia un organizzatore, se lo è
             il login rimanderà alla pagina di gestione*/
-        if( "Organizzatore".equals(utente.getTipo())){
+        if( "organizzatore".equals(utente.getTipo())){
             List<Article> articoli = ArticleFactory.getInstance().getArticle();
            request.setAttribute("utente", utente);
            request.setAttribute("articoli", articoli);
@@ -91,7 +88,6 @@ public class Login extends HttpServlet {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
-    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -109,7 +105,6 @@ public class Login extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-      
     }
 
     /**
@@ -128,9 +123,6 @@ public class Login extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
     }
 
     /**
@@ -142,5 +134,4 @@ public class Login extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

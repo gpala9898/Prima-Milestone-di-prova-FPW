@@ -49,11 +49,9 @@ public class ArticleFactory {
             while (set.next()) {
                 Article articolo = new Article();
                 articolo.setId_articolo(set.getInt("id_articolo"));
-                articolo.setId_organizzatore(set.getInt("id_organizzatore"));
                 articolo.setTitolo(set.getString("titolo"));
                 articolo.setTesto(set.getString("testo"));
                 articolo.setData(set.getString("data"));
-                articolo.setCreatore(set.getString("creatore"));
                 articolo.setSituazione(set.getString("situazione"));
                 articolo.setImmagine(set.getString("immagine"));
                 articoli.add(articolo);
@@ -175,48 +173,38 @@ public class ArticleFactory {
     
     /*prende gli articoli in base al loro autore a partire da tutti gli articoli
     presenti*/
-    public List<Article> getArticleAutore(Utente u) throws SQLException{
+    public List<Article> getArticleAutore(Utente utente) throws SQLException{
         List<Article> articleAuthor = new ArrayList<>();
         try {
-            Boolean loggedIn;
-
             Connection conn = DbManager.getInstance().getDbConnection();
-            String sql = "select * from articolo where utente=?";
+            String sql = "select * from articolo join modart on articolo.id_articolo=modart.id_art where modart.id_aut=?";
 
             PreparedStatement stmt = conn.prepareStatement(sql);
 
-            stmt.setObject(1,u);
-
+            stmt.setInt(1,utente.getId());
+            
             ResultSet set = stmt.executeQuery();
-
-            loggedIn = set.next(); 
-            if (loggedIn) {
+            
+            while (set.next()) {
                 Article articolo = new Article();
                 articolo.setId_articolo(set.getInt("id_articolo"));
-                articolo.setId_organizzatore(set.getInt("id_organizzatore"));
                 articolo.setTitolo(set.getString("titolo"));
                 articolo.setTesto(set.getString("testo"));
                 articolo.setData(set.getString("data"));
-                articolo.setCreatore(set.getString("creatore"));
                 articolo.setSituazione(set.getString("situazione"));
                 articolo.setImmagine(set.getString("immagine"));
-                stmt.close();
-                conn.close();
-                return articleAuthor;
-            } else {
-                return null;
+                articleAuthor.add(articolo);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(UtenteFactory.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        }
+            stmt.close();
+            conn.close();
 
-        return null;
+        } catch (SQLException ex) {
+            Logger.getLogger(DbManager.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        } return articleAuthor;
+
     }
-        /*List<Article> articleAuthor = new ArrayList<>();
-        List<Article> allArticles = this.getArticle();
-        
-        for(Article a : allArticles){
+        /*for(Article a : allArticles){
             for(Utente u1 : a.getUtente()){
                 if(u1.equals(u)){
                     articleAuthor.add(a);
@@ -225,86 +213,18 @@ public class ArticleFactory {
         }
         
         return articleAuthor;
-    }*/
+    }
+        */
     
     /*Mostra gli articoli in base al loro ID*/
-    public Article getArticleId(int artid) throws SQLException{
-        try {
-            Boolean loggedIn;
-
-            Connection conn = DbManager.getInstance().getDbConnection();
-            String sql = "select * from articolo where id_articolo="+artid;
-
-            PreparedStatement stmt = conn.prepareStatement(sql);
-
-            ResultSet set = stmt.executeQuery();
-
-            loggedIn = set.next(); 
-            if (loggedIn) {
-                Article articolo = new Article();
-                articolo.setId_articolo(set.getInt("id_articolo"));
-                articolo.setId_organizzatore(set.getInt("id_organizzatore"));
-                articolo.setTitolo(set.getString("titolo"));
-                articolo.setTesto(set.getString("testo"));
-                articolo.setData(set.getString("data"));
-                articolo.setCreatore(set.getString("creatore"));
-                articolo.setSituazione(set.getString("situazione"));
-                articolo.setImmagine(set.getString("immagine"));
-                stmt.close();
-                conn.close();
-                return articolo;
-            } else {
-                return null;
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(UtenteFactory.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        }
-
-        return null;
-    }
-    public Boolean deleteArticle(int idart) {
-
-        Connection conn = null;
-        try {
-            conn = DbManager.getInstance().getDbConnection();
-
-            conn.setAutoCommit(false);
-
-            String articolo = "DELETE FROM articolo WHERE id_articolo = ?";
-            PreparedStatement stmt = conn.prepareStatement(articolo);
-            stmt.setInt(1, idart);
-
-            stmt.executeUpdate();
-
-            conn.commit();
-            conn.setAutoCommit(true); //Per completezza
-            stmt.close();
-            conn.close();
-
-        } catch (SQLException e) {
-            Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, e);
-            if (conn != null) {
-                try {
-                    conn.rollback();
-                } catch (SQLException ex) {
-                    Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            return false;
-
-        }
-        return null;
-
-    }
-}
-        /*List<Article> allArticles = this.getArticle();
+    public Article getArticleId(int autid) throws SQLException{
+    
+        List<Article> allArticles = this.getArticle();
         for(Article a : allArticles){
-            if(a.getId_articolo() == artid){
+            if(a.getId_articolo() == autid){
                 return a;
             }
         }
         return null;
-    }
-    
-}*/
+}
+}

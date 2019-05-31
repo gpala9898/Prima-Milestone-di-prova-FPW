@@ -51,7 +51,7 @@ public class MyArticles extends HttpServlet {
 
             /*e verifica che si tratti di un autore, in quel caso mostrerà tutti 
             gli articoli di quell'autore nella jsp caricata*/
-            if (utente.getTipo().equals("Autore")) {
+            if (utente.getTipo().equals("autore")) {
             List<Article> articoli = ArticleFactory.getInstance().getArticleAutore(utente);
             request.setAttribute("articoli", articoli);
             request.getRequestDispatcher("articoli.jsp").forward(request, response);

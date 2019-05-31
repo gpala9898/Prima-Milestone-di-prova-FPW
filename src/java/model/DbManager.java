@@ -40,7 +40,7 @@ public class DbManager {
         String db = "jdbc:mysql://localhost:3306/fpw19_dbpalagianluca?zeroDateTimeBehavior=convertToNull";
         
         try {
-           Connection conn = DriverManager.getConnection(db,"fpw19_palagianluca","FreePeerReview");
+           Connection conn = DriverManager.getConnection(db,"fpw19_PalaGianluca","FreePeerReview");
            return conn;
         }catch (SQLException ex){
             Logger.getLogger(DbManager.class.getName()).
