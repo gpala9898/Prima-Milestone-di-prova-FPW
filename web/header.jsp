@@ -28,7 +28,7 @@
                                    <c:when test="${utente.getTipo()=='autore'}"> 
                 <li class="header_menu_el"><a href="articoli.html?pid="><p style="font-family: arial">Articoli</p></a></li>
                 <li class="header_menu_el"><a href=""><p style="font-family: arial">Valutazioni</p></a></li>
-                <li class="header_menu_el"><a href="registrazione.html?uid=${utente.getId()}"><p style="font-family: arial">Profilo</p></a></li>
+                <li class="header_menu_el"><a href="registrazione.html"><p style="font-family: arial">Profilo</p></a></li>
                                    </c:when>
                                </c:choose>
                 <!--Se l'utente non è loggato mostra solo il collegamento alla pagina

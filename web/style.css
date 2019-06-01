@@ -484,20 +484,22 @@ per il salvataggio)*/
 
 /*CSS per modificare l'aspetto del pulsante di eliminazione presente nella pagina
 profilo*/
-.azione a{
-    font-weight: bold;
-    font-size: 18px;
-    color: whitesmoke;
-    margin-left: 30%;
-    padding: 4px 8px;
-    border-radius: 20px;
+.azione input{
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 12px;
+    background-color:  white;
+    color: #003366;
+    width: 30%;
+    margin-left: 8%;
 }
 
 /*CSS per modificare il colore del pulsante quando ci si passa sopra (colore rosso
 per l'eliminazione)*/
-.azione a:hover{
+.azione input:hover{
     cursor: pointer;
-    color: red;
+    background: red;
+    color: white;
 }
 /*----------------------------------------------------------------------------*/
 

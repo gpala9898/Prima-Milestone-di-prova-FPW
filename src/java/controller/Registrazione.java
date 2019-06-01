@@ -42,7 +42,7 @@ public class Registrazione extends HttpServlet {
         HttpSession session = request.getSession();
         if(session.getAttribute("utenteId") != null){
         //Altrimenti verifica l'ID dell'utente
-            int uid = (int) session.getAttribute("utenteId");
+             int uid = (int) session.getAttribute("utenteId");
             Utente utente = UtenteFactory.getInstance().getUtenteById(uid);
             request.setAttribute("utente", utente);
             request.getRequestDispatcher("profilo.jsp").forward(request, response);

@@ -119,7 +119,7 @@
                         </c:choose>
                                 <c:choose>
                                     <c:when test="${articoli.getSituazione()== 'Aperto'}">                          
-                                        <input type="submit" id="salvaarticolo" name="salvaart" value="Salva"/> 
+                                        <input type="submit" id="salvaarticolo" name="salvaart" value="Modifica"/> 
                                     </c:when>
                                 </c:choose>
         </form>

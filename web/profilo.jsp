@@ -38,7 +38,7 @@
                     <aside class="profilo">
                         
                         <!--Messaggio di benvenuto-->
-                        <c:choose><c:when test="${utente.getNome()}!=null"><p>Benvenuto, ${utente.getNome()} ${utente.getCognome()}!</p>
+                        <c:choose><c:when test="${utente!=null}"><p>Benvenuto, ${utente.getNome()} ${utente.getCognome()}!</p>
 
                                 <a type="submit" id="button" href="logout.html?logout=true">LOGOUT</a></c:when></c:choose>            
                         <br>
@@ -52,7 +52,7 @@
                         <tr>
                             <th><img id="image" src="img/images.png" alt="utente"></th>
                             <th><c:choose>
-                                    <c:when test="${utente.getId()}!=null">
+                                    <c:when test="${utente!=null}">
                                         <h1>Profilo</h1>
                                     </c:when>
                                     <c:otherwise>
@@ -106,13 +106,13 @@
                     <!--Pulsante per il salvataggio dei dati del profilo in caso
                     di eventuale modifica (NON FUNZIONANTE)-->
                     <c:choose>
-                        <c:when test="${utente.getId()}!=null">
+                        <c:when test="${utente!=null}">
                             <nav class="azione">
                                 <button type="submit">SALVA</button><br><br>
-                            </nav> 
+                             
                             <form action="registrazione.html" method="post">
-                                <input name="cancella" type="submit" value="Cancellati"/>
-                            </form>
+                                <input id="cancellati" name="cancella" type="submit" value="CANCELLATI"/>
+                            </form></nav>
                         </c:when>
                         <c:otherwise>
                             <nav class="azione">
