@@ -156,9 +156,9 @@ public Boolean deleteAutore(int id){
 
             conn.setAutoCommit(false);
 
-            String sql = "DELETE * FROM valutazione WHERE id_autore = ?";
-            String sql2 = "DELETE * from articolo join modart on articolo.id_articolo=modart.id_art where modart.id_aut=?";  //"DELETE * FROM articolo INNER JOIN modart ON id_art = id_articolo WHERE  id_aut= ?"
-            String sql3 = "DELETE * FROM utente WHERE id_utente = ?";
+            String sql = "DELETE FROM valutazione WHERE id_autore = ?";
+            String sql2 = "DELETE a.* FROM articolo a INNER JOIN modart m ON m.id_art = a.id_articolo WHERE  m.id_aut= ?";  //"DELETE * FROM articolo INNER JOIN modart ON id_art = id_articolo WHERE  id_aut= ?"
+            String sql3 = "DELETE FROM utente WHERE id_utente = ?";
             
             PreparedStatement stmt1 = conn.prepareStatement(sql);
             stmt1.setInt(1, id);
