@@ -38,7 +38,7 @@
     <br/>
     
 </aside>
-    <form action="scriviArticolo.html?pid=true" method="post">
+    <form action="scriviArticolo.html?pid=${articoli.getId_articolo()}" method="post">
             
         <!--Se l'ID dell'articolo è diverso da null la pagina si chiamerà modifica
         articolo, altrimenti la pagina si chiamerà SCRIVI ARTICOLO e mostrerà tutti
@@ -100,7 +100,7 @@
                         
                         <tr class="rigadispari">
                             <td><label><em>Data</em></label><br>
-                                <input type="text" value="${articoli.getData()}"/></td>                        
+                                <input type="text" name="data" value="${articoli.getData()}"/></td>                        
                         </tr>
                         
                         <tr class="rigapari">
@@ -113,11 +113,15 @@
                 <!--Il bottone comparirà solo nel caso in cui l'articolo si trovi
                 in uno stato aperto-->
                         <c:choose>
-                            <c:when test="${articoli.getSituazione()=='Aperto'}">                          
-                                <input type="submit" id="salvaarticolo" value="Salva"/> 
+                            <c:when test="${articoli.getSituazione()== null}">                          
+                                <input type="submit" id="salvaarticolo" name="salvaart" value="Salva"/> 
                             </c:when>
                         </c:choose>
-           
+                                <c:choose>
+                                    <c:when test="${articoli.getSituazione()== 'Aperto'}">                          
+                                        <input type="submit" id="salvaarticolo" name="salvaart" value="Salva"/> 
+                                    </c:when>
+                                </c:choose>
         </form>
                 </div>
                     

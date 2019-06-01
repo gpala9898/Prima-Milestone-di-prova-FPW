@@ -45,7 +45,7 @@
                                 <c:choose>
                                     <c:when test="${articolo.getSituazione()!='Da valutare'}">
                             <li>
-                                <a href="scriviArticolo.html?pid=${articolo.getId_articolo()}&mid=${utente.getId()}">  
+                                <a href="scriviArticolo.html?pid=${articolo.getId_articolo()}">  
                                     ${articolo.getTitolo()}
                                 </a>
                             </li></c:when>
@@ -95,7 +95,7 @@
                             <td>
                                     <c:choose>
                                         <c:when test="${articoli.getSituazione()=='Aperto'}"> 
-                                        <a href="scriviArticolo.html?pid=${articoli.getId_articolo()}&mid=${utente.getId()}">
+                                        <a href="scriviArticolo.html?pid=${articoli.getId_articolo()}">
                                             <button class="edit" type="submit"><img src="img/edit.png" width="25" height="25" alt="edit"></button>
                                         </a>
                                         </c:when>
@@ -112,9 +112,10 @@
                     <br>
                     <!--Pulsante di collegamento alla pagina di creazione di un 
                     nuovo articolo (NON FUNZIONANTE NON RIMANDA A NIENTE)-->  
-                    <form action="" method="post">
+                    
+                    <form action="articoli.html" method="post">
                     <nav class="tasto">
-                    <input type="submit" value="NUOVO ARTICOLO "/>             
+                    <input type="submit" name="nuovo" value="NUOVO ARTICOLO"/>            
                     </nav></form>
                 </div>
             <!--Qui includo il mio footer-->

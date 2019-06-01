@@ -216,15 +216,91 @@ public class ArticleFactory {
     }
         */
     
-    /*Mostra gli articoli in base al loro ID*/
-    public Article getArticleId(int autid) throws SQLException{
+    public int insertArticolo(Article articolo) {
+        int pid = 0;
+        
+        try {
+            Connection conn = DbManager.getInstance().getDbConnection();
+            Statement stmt = conn.createStatement();
+            String sql = "INSERT INTO articolo (id_articolo) "
+                    + "VALUES (default)"; //modificare con join per autori
+
+            stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
+            ResultSet set = stmt.getGeneratedKeys();
+            if (set.next()) {
+                pid = set.getInt(1);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return pid;
+    }
     
+    
+    public int maxIdArt() {
+        try {
+            Boolean LoggedIn;
+            int max = 0;
+            Connection conn = DbManager.getInstance().getDbConnection();
+
+            String sql = "select max(id_articolo) id_articolo from articolo";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet set = stmt.executeQuery();
+            LoggedIn = set.next();
+            if (LoggedIn) {
+                max = set.getInt(1);
+            }
+
+            stmt.close();
+            conn.close();
+            return max;
+        } catch (SQLException ex) {
+            // nel caso la query fallisca (p.e. errori di sintassi)
+            // viene sollevata una SQLException
+            Logger.getLogger(DbManager.class.getName()).
+                    log(Level.SEVERE, null, ex);
+        }
+        return 0;
+    }
+    
+    
+    public void saveArticle(Article articolo) throws SQLException {
+        try{
+        Connection conn = DbManager.getInstance().getDbConnection();
+           String sql = "update articolo set titolo=?, testo=?,data=?,immagine=? where id_articolo=?";
+            
+           PreparedStatement stmt = conn.prepareStatement(sql);
+           stmt.setString(1, articolo.getTitolo());
+           stmt.setString(2, articolo.getTesto());
+           stmt.setString(3, articolo.getData());
+           stmt.setString(4, articolo.getImmagine());
+           stmt.setInt(5, articolo.getId_articolo());
+            
+           stmt.executeUpdate();
+            
+            stmt.close();
+            conn.close();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    
+    
+    /*Mostra gli articoli in base al loro ID*/
+    public Article getArticleId(int autid) throws SQLException {
+
         List<Article> allArticles = this.getArticle();
-        for(Article a : allArticles){
-            if(a.getId_articolo() == autid){
+        for (Article a : allArticles) {
+            if (a.getId_articolo() == autid) {
                 return a;
             }
         }
         return null;
-}
+    }
 }

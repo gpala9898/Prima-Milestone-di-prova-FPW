@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Utente;
 import model.UtenteFactory;
 import model.Article;
@@ -41,11 +42,10 @@ public class MyArticles extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         //Se l'ID dell'utente è nullo andrà al form di Login
-        if(request.getParameter("uid") == null){
-            request.getRequestDispatcher("login.html").forward(request, response);
-        }else{
-            //Altrimenti verifica l'ID dell'utente
-            int uid = Integer.parseInt(request.getParameter("uid"));
+        HttpSession session = request.getSession();
+        if(session.getAttribute("utenteId") != null){
+        //Altrimenti verifica l'ID dell'utente
+            int uid = (int) session.getAttribute("utenteId");
             Utente utente = UtenteFactory.getInstance().getUtenteById(uid);
             request.setAttribute("utente", utente);
 
@@ -54,7 +54,22 @@ public class MyArticles extends HttpServlet {
             if (utente.getTipo().equals("autore")) {
             List<Article> articoli = ArticleFactory.getInstance().getArticleAutore(utente);
             request.setAttribute("articoli", articoli);
-            request.getRequestDispatcher("articoli.jsp").forward(request, response);
+            }
+            if (request.getParameter("nuovo") != null) {
+                Article articolo = new Article();
+                int pid = ArticleFactory.getInstance().insertArticolo(articolo);
+                
+                response.sendRedirect("scriviArticolo.html?pid=" + pid);
+            } else {
+                request.getRequestDispatcher("articoli.jsp").forward(request, response);
+            }
+        
+        }
+        
+    }
+                /*Article articolo=new Article();
+                ArticleFactory.getInstance().writeArticle(articolo);
+               
         }//In caso contrario darà errore
             else request.getRequestDispatcher("error.jsp").forward(request, response);           
         }

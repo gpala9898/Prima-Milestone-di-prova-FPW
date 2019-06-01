@@ -105,7 +105,6 @@ public class UtenteFactory {
             Logger.getLogger(UtenteFactory.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
-
         return null;
     }
     
@@ -151,43 +150,48 @@ public class UtenteFactory {
     }
     
     
-     public Boolean deleteAutore(int idaut,int id) {
-
+public Boolean deleteAutore(int id){
         Connection conn = null;
         try {
-            conn = DbManager.getInstance().getDbConnection();
+           conn = DbManager.getInstance().getDbConnection();
 
             conn.setAutoCommit(false);
 
-            String articolo = "DELETE FROM modart WHERE id_autore = ?";
-            PreparedStatement stmt = conn.prepareStatement(articolo);
-            stmt.setInt(1,idaut);
-
-            stmt.executeUpdate();
-
-            String utente = "DELETE FROM utente WHERE id_utente = ?";
-
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
-
+            String sql = "DELETE FROM valutazione WHERE id_autore = ?";
+            String sql2 = "DELETE * FROM articolo INNER JOIN modart ON id_art = id_articolo WHERE  id_aut= ?";
+            String sql3 = "DELETE FROM utente WHERE id_utente = ?";
+            
+            PreparedStatement stmt1 = conn.prepareStatement(sql);
+            stmt1.setInt(1, id);
+            stmt1.executeUpdate();
+            
+            PreparedStatement stmt2 = conn.prepareStatement(sql2);
+            stmt2.setInt(1, id);
+            stmt2.executeUpdate();
+            
+            PreparedStatement stmt3 = conn.prepareStatement(sql3);
+            stmt3.setInt(1, id);
+            stmt3.executeUpdate();
+            
             conn.commit();
             conn.setAutoCommit(true); //Per completezza
-            stmt.close();
+            stmt1.close();
+            stmt2.close();
+            stmt3.close();
             conn.close();
             
         } catch (SQLException e) {
-            Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, e);
             if (conn != null) {
                 try {
                     conn.rollback();
                 } catch (SQLException ex) {
-                    Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
             return false;
 
         }
-        return null;
-
+        return true;
     }
 }

@@ -8,7 +8,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
-        <title>Profilo</title>
+    <c:choose>
+        <c:when test="${utente.getId()}!=null">
+            <title>Profilo</title>
+        </c:when> 
+        <c:otherwise>
+            <title>Registrazione</title>
+        </c:otherwise>
+    </c:choose>
         <meta charset="UTF-8">
         <meta name="author" content="Gianluca Pala">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
@@ -30,22 +37,28 @@
                     
                     <aside class="profilo">
                         
-    <!--Messaggio di benvenuto-->
-    <p>Benvenuto, ${utente.getNome()} ${utente.getCognome()}!</p>
+                        <!--Messaggio di benvenuto-->
+                        <c:choose><c:when test="${utente.getNome()}!=null"><p>Benvenuto, ${utente.getNome()} ${utente.getCognome()}!</p>
 
-    <a type="submit" id="button" href="logout.html?logout=true">LOGOUT</a>              
-    <br>
-    <br>
-    
-</aside>
+                                <a type="submit" id="button" href="logout.html?logout=true">LOGOUT</a></c:when></c:choose>            
+                        <br>
+                        <br>
+
+                    </aside>
                     <!--Creazione tabella con i dati del profilo utente con
                     i campi che ritrovo in fase di registrazione-->
                     
-                    <form action="" method="post">
                         <table class="tabellaprofilo">
                         <tr>
                             <th><img id="image" src="img/images.png" alt="utente"></th>
-                            <th><b>PROFILO</b></th>                             
+                            <th><c:choose>
+                                    <c:when test="${utente.getId()}!=null">
+                                        <h1>Profilo</h1>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <h1>Registrazione</h1>
+                                    </c:otherwise>
+                                </c:choose></th>                             
                         </tr>
                         <tr class="rigadispari">
                             <td colspan="2"><label>Nome<br></label>
@@ -92,15 +105,25 @@
                     
                     <!--Pulsante per il salvataggio dei dati del profilo in caso
                     di eventuale modifica (NON FUNZIONANTE)-->
-                    
-                    <nav class="azione">
-                        <button type="submit">SALVA</button><br><br>
-                        <a>Cancellati</a>
+                    <c:choose>
+                        <c:when test="${utente.getId()}!=null">
+                            <nav class="azione">
+                                <button type="submit">SALVA</button><br><br>
+                            </nav> 
+                            <form action="registrazione.html" method="post">
+                                <input name="cancella" type="submit" value="Cancellati"/>
+                            </form>
+                        </c:when>
+                        <c:otherwise>
+                            <nav class="azione">
+                            <input type="submit" name="registrati" value="Registrati"/> 
+                            </nav>
+                        </c:otherwise>
+                    </c:choose>
                     <!--Pulsante per l'eventuale eliminazione del profilo utente
                     (NON FUNZIONANTE)-->
     
-        </nav>
-                    </form>
+                 
                 </div> 
             <!--Qui includo il mio footer-->
         <jsp:include page="footer.jsp"/>

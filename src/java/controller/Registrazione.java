@@ -39,22 +39,16 @@ public class Registrazione extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
-        /*Richiedo una sessione*/
         HttpSession session = request.getSession();
         if(session.getAttribute("utenteId") != null){
-            int utenteId = (int) session.getAttribute("utenteId");
-
-        Utente utente = UtenteFactory.getInstance().getUtenteById(utenteId);   
+        //Altrimenti verifica l'ID dell'utente
+            int uid = (int) session.getAttribute("utenteId");
+            Utente utente = UtenteFactory.getInstance().getUtenteById(uid);
             request.setAttribute("utente", utente);
-            
-    //Carico la jsp registrazione con i campi da compilare se l'utente non è autenticato
-            
-            request.getRequestDispatcher("registrazione.jsp").forward(request, response);
-        }else{
-            request.getRequestDispatcher("registrazione.jsp").forward(request, response);
-        } 
-    }
-
+            request.getRequestDispatcher("profilo.jsp").forward(request, response);
+        }else
+            request.getRequestDispatcher("profilo.jsp").forward(request, response);       
+        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
