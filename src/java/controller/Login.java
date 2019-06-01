@@ -45,8 +45,7 @@ public class Login extends HttpServlet {
         HttpSession session = request.getSession();
         
         if(request.getParameter("accedi") != null){
-            /*Quando premo il pulsante accedi richiederà email e password e andrà
-            a verificare che i dati inseriti siano presenti*/
+            
             String email = request.getParameter("email");
             String password = request.getParameter("password");
             
@@ -55,19 +54,15 @@ public class Login extends HttpServlet {
             if(u != null){
                 session.setAttribute("utenteId", u.getId());
             }
-            /*Se l'utente è non è presente verrà indirizzato all pagina di registrazione*/
+            
             else{
                 request.getRequestDispatcher("registrazione.html").forward(request, response); 
             }
         }
         
-        /*Qui ho l'utenteId che è stato inizializzato (adesso o precedentemente)*/
-        
         if(session.getAttribute("utenteId") != null){
             int utenteId = (int) session.getAttribute("utenteId");
             Utente utente = UtenteFactory.getInstance().getUtenteById(utenteId);
-        /*Qui verifico che l'utente che si è loggato sia un organizzatore, se lo è
-            il login rimanderà alla pagina di gestione*/
         if( "organizzatore".equals(utente.getTipo())){
             List<Article> articoli = ArticleFactory.getInstance().getArticle();
            request.setAttribute("utente", utente);
@@ -76,15 +71,11 @@ public class Login extends HttpServlet {
         }    
             List<Article> articoli = ArticleFactory.getInstance().getArticleAutore(utente);
             
-            /*Alla jsp verrà passata una variabile utente e articoli, con un valore 
-            riferito all'oggetto utente e articoli della Servlet*/
             
             request.setAttribute("utente", utente);
             request.setAttribute("articoli", articoli);
-            /*Carico la jsp articoli se non si tratta di un organizzatore*/
             request.getRequestDispatcher("articoli.jsp").forward(request, response);
         }else{
-            //altrimenti torno alla pagina di login
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }

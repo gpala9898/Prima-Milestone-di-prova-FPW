@@ -111,7 +111,7 @@
                     </table>
                     <br>
                     <!--Pulsante di collegamento alla pagina di creazione di un 
-                    nuovo articolo (NON FUNZIONANTE NON RIMANDA A NIENTE)-->  
+                    nuovo articolo-->  
                     
                     <form action="articoli.html" method="post">
                     <nav class="tasto">

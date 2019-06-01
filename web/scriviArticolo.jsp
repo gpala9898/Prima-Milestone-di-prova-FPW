@@ -42,7 +42,7 @@
             
         <!--Se l'ID dell'articolo è diverso da null la pagina si chiamerà modifica
         articolo, altrimenti la pagina si chiamerà SCRIVI ARTICOLO e mostrerà tutti
-        i campi compilati tramite i valori fittizi della Factory-->
+        i campi compilati-->
             <table class="tabellamodart">               
                         <tr>
                             <th><c:choose>

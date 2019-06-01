@@ -50,17 +50,12 @@ public class ModificaArticolo extends HttpServlet{
             int pid = Integer.parseInt(request.getParameter("pid"));
             Article articoli = ArticleFactory.getInstance().getArticleId(pid);
             
-            /*Alla jsp passerò una variabile utente e articoli, con un valore 
-            riferito all'oggetto utente e articoli della Servlet*/
-            
             request.setAttribute("articoli", articoli);}
            else{
                request.getRequestDispatcher("error.jsp").forward(request, response);
            }
         }
         
-        /*Se il parametro scriviarticolo non è nullo mostrerò la pagina scrivi 
-        Articolo collegata all'articolo con l'ID richiesto*/
             if(request.getParameter("salvaart") != null){
             int pid = Integer.parseInt(request.getParameter("pid"));
             Article articoli = ArticleFactory.getInstance().getArticleId(pid);
@@ -74,7 +69,6 @@ public class ModificaArticolo extends HttpServlet{
             request.setAttribute("articoli", articoli);
             request.setAttribute("pid", pid);
             }
-            //Carico la jsp scriviArticolo
             request.getRequestDispatcher("scriviArticolo.jsp")
                     .forward(request, response);            
             }

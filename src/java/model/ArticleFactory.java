@@ -25,18 +25,14 @@ fittizi di determinati articoli collegati all'utente che sta usando la pagina*/
 
 public class ArticleFactory {
     private static ArticleFactory singleton;
-    
     private ArticleFactory(){
-        
     }
-    
-    public static ArticleFactory getInstance(){
-        if(singleton == null){
-            singleton = new ArticleFactory();
+        public static ArticleFactory getInstance(){
+            if(singleton==null){
+                singleton = new ArticleFactory();
+            }
+            return singleton;
         }
-        
-        return singleton;
-    }
     
     public List<Article> getArticle() throws SQLException{
         List<Article> articoli = new ArrayList<>();

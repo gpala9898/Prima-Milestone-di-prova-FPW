@@ -22,12 +22,11 @@ import java.util.logging.Logger;
  * @author Gianluca
  */
 
-/*Creo una classe utente Factory con la funzione di contenere i metodi e i dati 
-fittizi assegnati al tipo di utente che utilizza la pagina*/
+/*Creo una classe utente Factory con la funzione di contenere i metodi e i dati
+assegnati al tipo di utente che utilizza la pagina*/
 public class UtenteFactory {
     
     private static UtenteFactory singleton;
-    
     private UtenteFactory(){
     }
         public static UtenteFactory getInstance(){

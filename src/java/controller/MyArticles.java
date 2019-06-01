@@ -41,16 +41,15 @@ public class MyArticles extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        //Se l'ID dell'utente è nullo andrà al form di Login
+        
         HttpSession session = request.getSession();
         if(session.getAttribute("utenteId") != null){
-        //Altrimenti verifica l'ID dell'utente
+        
             int uid = (int) session.getAttribute("utenteId");
             Utente utente = UtenteFactory.getInstance().getUtenteById(uid);
             request.setAttribute("utente", utente);
 
-            /*e verifica che si tratti di un autore, in quel caso mostrerà tutti 
-            gli articoli di quell'autore nella jsp caricata*/
+            
             if (utente.getTipo().equals("autore")) {
             List<Article> articoli = ArticleFactory.getInstance().getArticleAutore(utente);
             request.setAttribute("articoli", articoli);

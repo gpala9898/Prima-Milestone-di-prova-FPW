@@ -40,23 +40,21 @@ public class Manage extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
-        /*Se l'ID dell'utente è nullo torno al form di login (alla Servlet che lo 
-        gestisce)*/
+        
         if(request.getParameter("uid") == null){
             request.getRequestDispatcher("login.html").forward(request, response);
         } else {
-            //Altrimenti richiedo l'Id dell'utente e verifico di che utente si tratta
+            
             int uid = Integer.parseInt(request.getParameter("uid"));
             Utente utente = UtenteFactory.getInstance().getUtenteById(uid);
 
             request.setAttribute("utente", utente);
 
-            /*Se l'utente che vuole accedere alla pagina di gestione è un autore
-            visualizza la pagina di errore*/
+            
             if (utente.getTipo().equals("autore"))
                 request.getRequestDispatcher("error.jsp").forward(request, response);
             else{
-                /*Altrimenti mostra la pagina di gestione*/
+                
                 List<Article> articoli = ArticleFactory.getInstance().getArticle();
                 request.setAttribute("articoli", articoli);
                 request.getRequestDispatcher("gestione.jsp").forward(request, response);

@@ -11,7 +11,7 @@ package model;
  */
 
 /*Creo una classe pubblica con gli elementi che mi serve compaiano nelle pagine
-e per ognuno avrò dei valori fittizi nella factory*/
+e per ognuno avrò dei valori*/
 public class Valutazione {
     
     private int id_valutazione;
