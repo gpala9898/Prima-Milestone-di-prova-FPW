@@ -31,6 +31,7 @@ articolo. Con entrambe utente ha una relazione 1 a N perchè un autore può valu
  N articoli ma ogni articolo ha una sola valutazione per autore.*/
 
 
+
 table valutazione(
 id_valutazione serial,
 id_autore unsigned int,
