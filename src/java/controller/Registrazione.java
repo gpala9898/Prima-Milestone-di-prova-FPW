@@ -35,20 +35,34 @@ public class Registrazione extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
         HttpSession session = request.getSession();
-        if(session.getAttribute("utenteId") != null){
+        if(session.getAttribute("utenteId") == null){
         //Altrimenti verifica l'ID dell'utente
-             int uid = (int) session.getAttribute("utenteId");
+            request.getRequestDispatcher("login.html").forward(request, response);
+        }
+        else{
+            if (request.getParameter("cancella") != null) {
+            int uid = (int) session.getAttribute("utenteId");
+            Utente utente = UtenteFactory.getInstance().getUtenteById(uid);
+            request.setAttribute("utente", utente);
+            UtenteFactory.getInstance().deleteAutore(uid);
+            session.invalidate();
+            
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+            }
+            int uid = (int) session.getAttribute("utenteId");
             Utente utente = UtenteFactory.getInstance().getUtenteById(uid);
             request.setAttribute("utente", utente);
             request.getRequestDispatcher("profilo.jsp").forward(request, response);
-        }else
-            request.getRequestDispatcher("profilo.jsp").forward(request, response);       
         }
+    }
+    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

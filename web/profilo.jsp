@@ -110,7 +110,7 @@
                             <nav class="azione">
                                 <button type="submit">SALVA</button><br><br>
                              
-                            <form action="registrazione.html" method="post">
+                            <form action="registrazione.html?cancella=true" method="post">
                                 <input id="cancellati" name="cancella" type="submit" value="CANCELLATI"/>
                             </form></nav>
                         </c:when>
