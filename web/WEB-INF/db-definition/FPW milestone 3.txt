@@ -39,7 +39,8 @@ voto int,
 commento_aut varchar,
 commento_org varchar,
 )
-/*La tabella valutazione è ha una relazione 1 a N con articolo e autore
+
+/*La tabella valutazione ha una relazione 1 a N con articolo e autore
 perchè l'autore può fare N valutazioni ma ogni valutazione è fatta dal singolo autore*/
 
 table modart(
