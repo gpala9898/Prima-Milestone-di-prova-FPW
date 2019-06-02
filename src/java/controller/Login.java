@@ -56,7 +56,7 @@ public class Login extends HttpServlet {
             }
             
             else{
-                request.getRequestDispatcher("registrazione.html").forward(request, response); 
+                request.getRequestDispatcher("profilo.jsp").forward(request, response); 
             }
         }
         

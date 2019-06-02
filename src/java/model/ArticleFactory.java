@@ -219,7 +219,7 @@ public class ArticleFactory {
             Connection conn = DbManager.getInstance().getDbConnection();
             Statement stmt = conn.createStatement();
             String sql = "INSERT INTO articolo (id_articolo) "
-                    + "VALUES (default)"; //modificare con join per autori
+                    + "VALUES (default)"; //aggiungere un join per gli autori
 
             stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet set = stmt.getGeneratedKeys();

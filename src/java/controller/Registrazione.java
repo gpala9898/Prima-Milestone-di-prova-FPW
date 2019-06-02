@@ -43,7 +43,7 @@ public class Registrazione extends HttpServlet {
         HttpSession session = request.getSession();
         if(session.getAttribute("utenteId") == null){
         //Altrimenti verifica l'ID dell'utente
-            request.getRequestDispatcher("login.html").forward(request, response);
+            request.getRequestDispatcher("profilo.jsp").forward(request, response);
         }
         else{
             if (request.getParameter("cancella") != null) {
