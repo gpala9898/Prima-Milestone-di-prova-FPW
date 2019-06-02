@@ -252,11 +252,13 @@ pagina è visitata da un nuovo utente*/
     border: 1px solid transparent;
 }
 
+
 /*----------------------------------------------------------------------------*/
 /*CSS dei pulsanti di login e di registrazione della pagina principale del progetto*/
 .button{display: inline-block; background: #fff; color: #000; padding: 10px 20px; border-radius: 3px; text-decoration: none;}
 .button_sec{display: inline-block; background: #fff; color: #000; padding: 10px 20px; border-radius: 3px; text-decoration: none;}
 /*----------------------------------------------------------------------------*/
+
 
 /*-----CSS del menù principale condiviso da tutte le pagine del progetto------*/
 .header{background: #003366;}
