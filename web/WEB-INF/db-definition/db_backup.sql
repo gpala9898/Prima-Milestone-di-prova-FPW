@@ -31,7 +31,7 @@ CREATE TABLE `articolo` (
   `immagine` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id_articolo`),
   UNIQUE KEY `id_articolo` (`id_articolo`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `articolo` (
 
 LOCK TABLES `articolo` WRITE;
 /*!40000 ALTER TABLE `articolo` DISABLE KEYS */;
-INSERT INTO `articolo` VALUES (1,'La protezione dei dati aiuta l\'economia digitale','Oggi abbiamo processori in grado di raccogliere, archiviare e processare enormi quantitÃ  di dati, che hanno consentito lo svilupparsi delle tecnologie sempre migliori di quelle presenti...','31/05/2019','Aperto','https://protezionedatipersonali.it/images/gdpr.jpg'),(2,'ASUS ROG Zephyrus S GX531, la recensione','ASUS ROG Zephyrus S GX531 è uno dei portatili\n più potenti del mercato. Ed è anche il più sottile con questo hardware...','15/01/2019','Da valutare','https://d2skuhm0vrry40.cloudfront.net/2019/articles/2019-03-04-20-59/DSC02913_920x613.jpg'),(3,'I vantaggi dell\'Intelligenza Artificiale','Quando si parla di macchine pensanti, non c\'è dubbio che la letteratura di genere abbia una predilezione per i soggetti distopici (lo stesso Asimov nei suoi \nracconti metteva continuamente in evidenza le falle delle tre leggi elencate sopra)...','27/12/2018','Accettato','https://www.galileonet.it/wp-content/uploads/2018/10/artificial-intelligence-3382507_1280.jpg'),(4,'ADA,il braccio robotico che aiuta a mangiare','Un team di ricercatori della Washington University ha messo a punto un braccio \nrobot per aiutare disabili e invalidi a mangiare  in autonomia...','14/03/2017','Rifutato','https://www.hurolife.it/wp-content/uploads/2019/03/braccio-robotico-autonomo.jpg'),(5,'AMD al Computex 2019, svelati i processori Ryzen 3000','Prima conferenza della fiera, quella AMD ha ospitato anche una\n sorta di  cerimonia d\'inizio del Computex, l\'enorme fiera dedicata all\'informatica ...','27/05/2019','Aperto','https://multiplayer.net-cdn.it/thumbs/images/2019/05/27/amd-lisa-su-computex.jpg');
+INSERT INTO `articolo` VALUES (1,'La protezione dei dati aiuta l\'economia digitale','Oggi abbiamo processori in grado di raccogliere, archiviare e processare enormi quantitÃ  di dati, che hanno consentito lo svilupparsi delle tecnologie sempre migliori di quelle presenti...','31/05/2019','Aperto','https://protezionedatipersonali.it/images/gdpr.jpg'),(2,'ASUS ROG Zephyrus S GX531, la recensione','ASUS ROG Zephyrus S GX531 è uno dei portatili\n più potenti del mercato. Ed è anche il più sottile con questo hardware...','15/01/2019','Da valutare','https://d2skuhm0vrry40.cloudfront.net/2019/articles/2019-03-04-20-59/DSC02913_920x613.jpg'),(3,'I vantaggi dell\'Intelligenza Artificiale','Quando si parla di macchine pensanti, non c\'è dubbio che la letteratura di genere abbia una predilezione per i soggetti distopici (lo stesso Asimov nei suoi \nracconti metteva continuamente in evidenza le falle delle tre leggi elencate sopra)...','27/12/2018','Accettato','https://www.galileonet.it/wp-content/uploads/2018/10/artificial-intelligence-3382507_1280.jpg'),(4,'ADA,il braccio robotico che aiuta a mangiare','Un team di ricercatori della Washington University ha messo a punto un braccio \nrobot per aiutare disabili e invalidi a mangiare  in autonomia...','14/03/2017','Rifutato','https://www.hurolife.it/wp-content/uploads/2019/03/braccio-robotico-autonomo.jpg'),(5,'AMD al Computex 2019, svelati i processori Ryzen 3000','Prima conferenza della fiera, quella AMD ha ospitato anche una\n sorta di  cerimonia d\'inizio del Computex, l\'enorme fiera dedicata all\'informatica ...','27/05/2019','Aperto','https://multiplayer.net-cdn.it/thumbs/images/2019/05/27/amd-lisa-su-computex.jpg'),(6,'Tesla Model 3: prime consegne in USA della versione base','Apparentemente, Tesla ha iniziato a consegnare la versione base di Tesla Model  3\n (“Standard Range”) per 35.000 dollari in USA. Questa è ...','15/05/2019','Accettato','https://www.investireoggi.it/motori/wp-content/uploads/sites/17/2019/05/Tesla-Model-3-640x342.jpg');
 /*!40000 ALTER TABLE `articolo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +67,7 @@ CREATE TABLE `modart` (
 
 LOCK TABLES `modart` WRITE;
 /*!40000 ALTER TABLE `modart` DISABLE KEYS */;
-INSERT INTO `modart` VALUES (1,1),(1,2),(1,3),(1,4),(3,5);
+INSERT INTO `modart` VALUES (1,1),(1,2),(1,3),(1,4),(3,5),(3,6);
 /*!40000 ALTER TABLE `modart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `utente` (
   `immagine` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_utente`),
   UNIQUE KEY `id_utente` (`id_utente`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -144,4 +144,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-02  0:56:13
+-- Dump completed on 2019-06-02 10:34:30
