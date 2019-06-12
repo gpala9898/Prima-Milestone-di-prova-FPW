@@ -18,7 +18,7 @@
         
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <script src="js/jquery.js"></script> 
     </head>
     <body>
         <!--Qui includo il mio header-->

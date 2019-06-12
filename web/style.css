@@ -187,6 +187,7 @@ grandezza diversa)*/
     border-radius: 20px;
 }
 
+
 /*CSS per la modifica del colore del pulsante di login quando ci si passa sopra
 con il puntatore*/
 #entra:hover
@@ -304,8 +305,20 @@ le pagine*/
 }
 /*----------------------------------------------------------------------------*/
 
+#elaut{
+    width: 85%;
+}
 
+.addaut{
+    width: 5%;
+    background-color: whitesmoke;
+    border: 1px solid #cccccc;
+}
 
+.addaut img{
+    height: 12px;
+    width: 12px;
+}
 /*--------------CSS per regolare l'aspetto della tabella presente nella pagina
 articoli.html e scriviArticolo.html------------------------------------------*/
 .tabella{
@@ -672,6 +685,10 @@ margin: 0;
   border: 2px outset whitesmoke;
 }
 /*----------------------------------------------------------------------------*/
+
+ul#naut {
+ list-style-type: none;
+ }
 
 .tabellamodart input[type="text"]{
 width: 90%;

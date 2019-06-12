@@ -7,5 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <footer>
             <p>Developed by <em>Gianluca Pala</em></p>
+            <script src="js/jquery.js"></script> 
         </footer>
 

@@ -17,7 +17,7 @@
         
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+        <script src="js/jquery.js"></script> 
     </head>
     <body>
         <!--Qui includo il mio header-->
@@ -56,12 +56,22 @@
                         </tr>
                         <tr class="rigadispari">
                             <td><label><em>Titolo Articolo</em></label>
-                            <input type="text" name="titolo" id="titolo" value="${articoli.getTitolo()}"/></td>
-                                                    
-                        </tr>                      
+                            <input type="text" name="titolo" id="titolo" value="${articoli.getTitolo()}"/></td>                       
+                        </tr>       
+                        
                         <tr class="rigapari">
                             <td><label><em>Scegli Autore</em></label><br>
-                        <input type="text" name="autori" id="autore" value="${utente.getCognome()} ${utente.getNome()}"/></td>                                              
+                                <ul id="naut">
+                                    <c:forEach items="${articoli.getUtente()}" var="utente">
+                                        <li>${utente.getNome()}, ${utente.getCognome()} (${utente.getId()})</li>
+                                        </c:forEach>
+                                </ul>
+                                <input type="text" name="author" value="" id="elaut"/>
+                                    <button type="submit" class="addaut" name="addAuthor">
+                                        <img src="img/add.png"/>
+                                    </button>
+                            </td>                          
+                            
                         </tr>
                         
                         <tr class="rigadispari">

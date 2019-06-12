@@ -41,4 +41,5 @@
                 <li class="header_menu_el"><a href="https://www.google.com/"><p style="font-family: arial">Serve aiuto ?</p></a></li>
                 
             </ul>
+            <script src="js/jquery.js"></script> 
         </header>
