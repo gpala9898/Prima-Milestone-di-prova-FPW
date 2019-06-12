@@ -62,7 +62,8 @@
                                 </a>
                             </li></c:when>
                                 </c:choose>
-                        </c:forEach></ul>
+                        </c:forEach>           
+
             </c:when>
         </c:choose>
     

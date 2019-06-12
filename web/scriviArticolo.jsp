@@ -18,6 +18,7 @@
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="js/jquery.js"></script> 
+        <script src="js/author.js"></script>
     </head>
     <body>
         <!--Qui includo il mio header-->
@@ -66,12 +67,13 @@
                                         <li>${utente.getNome()}, ${utente.getCognome()} (${utente.getId()})</li>
                                         </c:forEach>
                                 </ul>
-                                <input type="text" name="author" value="" id="elaut"/>
+                                <input type="text" name="author" value="" placeholder="Cerca Autore" id="author"/> 
                                     <button type="submit" class="addaut" name="addAuthor">
                                         <img src="img/add.png"/>
-                                    </button>
-                            </td>                          
-                            
+                                <div id="inautori">
+                                    
+                                </div>
+                            </td>
                         </tr>
                         
                         <tr class="rigadispari">

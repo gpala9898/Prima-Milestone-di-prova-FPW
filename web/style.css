@@ -689,6 +689,10 @@ margin: 0;
 ul#naut {
  list-style-type: none;
  }
+ 
+#naut li{
+ text-align: center;
+ }
 
 .tabellamodart input[type="text"]{
 width: 90%;

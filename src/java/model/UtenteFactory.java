@@ -193,4 +193,17 @@ public Boolean deleteAutore(int id){
         }
         return null;
     }
+
+public List<Utente> searchAutore(String toSearch)throws SQLException{
+        
+        List <Utente> listToReturn = new ArrayList<>();
+
+        for (Utente utente : getUtenti()){
+            if (utente.getNome().contains(toSearch)||utente.getCognome().contains(toSearch))
+                listToReturn.add(utente);
+        }
+
+        return listToReturn;
+    }
+
 }

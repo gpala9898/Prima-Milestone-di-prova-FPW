@@ -295,5 +295,4 @@ public class ArticleFactory {
         }
         return null;
     }
-
 }
