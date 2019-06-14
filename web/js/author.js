@@ -22,6 +22,12 @@ function stateSuccess(data){ //Ho ricevuto una risposta HTTP con stato positivo
     for(var instance in data){
         $(autoriDiv).append(createElement(data[instance]));
     }
+    
+    $("#inautori ul li a").click(function () {
+        var text = $(this).text();
+        $("#author").val(text);
+        $(autoriDiv).empty();
+    });
 }
 
 function stateFailure(data, state){

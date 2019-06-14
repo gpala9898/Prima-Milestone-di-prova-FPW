@@ -200,6 +200,7 @@ public Boolean deleteAutore(int id){
 
         for (Utente utente : getUtenti()) {
             if (utente.getTipo().equals("autore")) {
+                //é case sensitive
                 if (utente.getNome().contains(toSearch) || utente.getCognome().contains(toSearch)){
                     listToReturn.add(utente);
                 }
