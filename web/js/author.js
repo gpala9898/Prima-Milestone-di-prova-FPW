@@ -7,15 +7,15 @@
 
 function createElement(autore){
 
-    var found = $("<a>").html(autore.nome,autore.cognome (autore.id));
+    var found = $("<a>").html(autore.nome + ", " + autore.cognome + " (" + autore.id + ")");
 
-    return $("<input>").append(found);    
+    return $("<li>").append(found);    
 }
 
 function stateSuccess(data){ //Ho ricevuto una risposta HTTP con stato positivo
     //Quindi data è la risposta (array di json) che ho costruito nel JSP
 
-    var autoriDiv = $("#inautori");
+    var autoriDiv = $("#inautori ul");
 
     $(autoriDiv).empty();
 
@@ -28,18 +28,20 @@ function stateFailure(data, state){
     console.log(state);
 }
 
-$(document).ready(function() { //Quando è pronto il DOM
+$(document).ready(function() { 
     
-    $("#author").keyup(function(event){ //Quando viene scritto qualcosa nella textbox
+    $("#author").keyup(function(event){ 
       
        $.ajax({
-          url: "SuggestAuthors", 
+          url: "suggest.json", 
           data: {cmd: "author",
                  toSearch: event.target.value
           },
           dataType: 'json',
-          success: function(data, state){stateSuccess(data);},
-          error: function(data, state){stateFailure(data, state);}
+          success: function(data)
+          {stateSuccess(data);},
+          error: function(data, state)
+          {stateFailure(data, state);}
        });
         
     });

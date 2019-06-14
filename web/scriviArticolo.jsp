@@ -62,17 +62,20 @@
                         
                         <tr class="rigapari">
                             <td><label><em>Scegli Autore</em></label><br>
-                                <ul id="naut">
-                                    <c:forEach items="${articoli.getUtente()}" var="utente">
-                                        <li>${utente.getNome()}, ${utente.getCognome()} (${utente.getId()})</li>
-                                        </c:forEach>
-                                </ul>
-                                <input type="text" name="author" value="" placeholder="Cerca Autore" id="author"/> 
+                                    <ul id="naut">
+                                        <c:forEach items="${articoli.getUtente()}" var="utente">
+                                            <li>${utente.getNome()}, ${utente.getCognome()} (${utente.getId()})</li>
+                                            </c:forEach>
+                                    </ul>
+                                
+                                <input type="text" name="author" placeholder="Cerca Autore" id="author"/> 
+                                
                                     <button type="submit" class="addaut" name="addAuthor">
-                                        <img src="img/add.png"/>
-                                <div id="inautori">
-                                    
-                                </div>
+                                        <img src="img/add.png"/></button>
+                                <br/>
+                                        <div id="inautori">
+                                            <ul></ul>
+                                        </div>
                             </td>
                         </tr>
                         

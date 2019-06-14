@@ -693,6 +693,14 @@ ul#naut {
 #naut li{
  text-align: center;
  }
+ 
+ div#inautori ul{
+     list-style-type: none;
+ }
+ 
+ #inautori li{
+     text-align: center;
+ }
 
 .tabellamodart input[type="text"]{
 width: 90%;
