@@ -35,9 +35,8 @@ function stateFailure(data, state){
 }
 
 $(document).ready(function() { 
-    
-    $("#author").keyup(function(event){ 
-      
+
+    $("#author").keyup(function(event){
        $.ajax({
           url: "suggest.json", 
           data: {cmd: "author",
@@ -52,4 +51,12 @@ $(document).ready(function() {
         
     });
     
+    /*var aut = $("#author").val();
+    if (aut === "") {
+        $("#inautori").hide();
+        $("#author").keydown(function () {
+            $("#inautori").empty();
+        }
+        );
+    }*/
 });

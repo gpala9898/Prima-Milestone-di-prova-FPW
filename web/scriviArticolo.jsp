@@ -40,7 +40,6 @@
     
 </aside>
     <form action="scriviArticolo.html?pid=${articoli.getId_articolo()}" method="post">
-            
         <!--Se l'ID dell'articolo è diverso da null la pagina si chiamerà modifica
         articolo, altrimenti la pagina si chiamerà SCRIVI ARTICOLO e mostrerà tutti
         i campi compilati-->
@@ -48,13 +47,15 @@
                         <tr>
                             <th><c:choose>
                                     <c:when test="${articoli.getId_articolo() != null}">
-                                        <b>MODIFICA ARTICOLO (ID:${articoli.getId_articolo()})</b>   
+                                        <b>MODIFICA ARTICOLO (ID:${articoli.getId_articolo()})</b> 
+                                        <input type="hidden" name="aid" value="${articoli.getId_articolo()}"/>
                                     </c:when>  
                                     <c:otherwise>
                                         <b>SCRIVI ARTICOLO</b>  
                                     </c:otherwise>  
                                 </c:choose></th>                           
                         </tr>
+                        
                         <tr class="rigadispari">
                             <td><label><em>Titolo Articolo</em></label>
                             <input type="text" name="titolo" id="titolo" value="${articoli.getTitolo()}"/></td>                       
@@ -70,7 +71,7 @@
                                 
                                 <input type="text" name="author" placeholder="Cerca Autore" id="author"/> 
                                 
-                                    <button type="submit" class="addaut" name="addAuthor">
+                                <button type="submit" class="addaut" name="addAuthor">
                                         <img src="img/add.png"/></button>
                                 <br/>
                                         <div id="inautori">

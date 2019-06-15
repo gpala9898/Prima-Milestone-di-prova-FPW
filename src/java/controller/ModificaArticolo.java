@@ -70,12 +70,23 @@ public class ModificaArticolo extends HttpServlet{
             request.setAttribute("articoli", articoli);
             request.setAttribute("pid", pid);
             }
-            request.getRequestDispatcher("scriviArticolo.jsp")
-                    .forward(request, response);            
+            
+            if(request.getParameter("addAuthor")!=null){
+                AuthorTokenizer a=new AuthorTokenizer(request.getParameter("author"));
+                ArticleFactory.aggiungiAutore(a.getId(),Integer.parseInt(request.getParameter("aid")));
             }
             
-        
-    
+            //L'autore viene effettivamente aggiunto nella lista degli autori dell'articolo
+            //ma alla pressione del tasto + la pagina sembra rimanere invariata, se 
+            //si ricarica la pagina manualmente o si torna su articoli e si riapre l'
+            //articolo però risulta inserito anche il nuovo autore (anche nella tabella del database)
+            //ho provato con un getRequestDispatcher ma non mostra comunque la 
+            //pagina aggiornata
+           
+            request.getRequestDispatcher("scriviArticolo.jsp")
+                    .forward(request, response); 
+            
+            }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

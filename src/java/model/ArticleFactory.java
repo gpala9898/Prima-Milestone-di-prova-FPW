@@ -295,4 +295,20 @@ public class ArticleFactory {
         }
         return null;
     }
+    
+    public static void aggiungiAutore(int aid,int pid) throws SQLException{
+        try{
+            Connection conn = DbManager.getInstance().getDbConnection();
+        String sql="insert into modart (id_aut, id_art) values (?,?);";
+        PreparedStatement stmt = (PreparedStatement) conn.prepareStatement(sql);
+            stmt.setInt(1, aid);
+            stmt.setInt(2, pid);
+            stmt.executeUpdate();
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
