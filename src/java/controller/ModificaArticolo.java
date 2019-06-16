@@ -73,7 +73,15 @@ public class ModificaArticolo extends HttpServlet{
             
             if(request.getParameter("addAuthor")!=null){
                 AuthorTokenizer a=new AuthorTokenizer(request.getParameter("author"));
-                ArticleFactory.aggiungiAutore(a.getId(),Integer.parseInt(request.getParameter("aid")));
+                
+                int pid = Integer.parseInt(request.getParameter("pid"));
+                
+                ArticleFactory.aggiungiAutore(a.getId(),pid);
+                
+                Article articoli=ArticleFactory.getInstance().getArticleId(pid);
+                
+                request.setAttribute("articoli", articoli);
+                request.setAttribute("pid",pid);
             }
             
             /*L'autore viene effettivamente aggiunto nella lista degli autori dell'articolo
