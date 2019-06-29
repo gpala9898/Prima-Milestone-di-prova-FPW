@@ -17,19 +17,10 @@ table articolo(
 id_articolo serial,
 titolo varchar,
 testo varchar,
-creatore varchar,
 data varchar,
 situazione varchar,
 immagine varchar
 )
-
-/*La chiave primaria è id_articolo e presenta una relazione tra articolo e
-utente di cardinalità N a N in quanto un utente(autore) può scrivere più articoli
-e ogni articolo può avere più autori, inoltre ha una relazione 1 a N con la tabella valutazione
-in quanto ogni articolo può avere più valutazioni ma ogni valutazione è valida per il singolo
-articolo. Con entrambe utente ha una relazione 1 a N perchè un autore può valutare
- N articoli ma ogni articolo ha una sola valutazione per autore.*/
-
 
 
 table valutazione(
@@ -37,8 +28,8 @@ id_valutazione serial,
 id_autore unsigned int,
 id_articolo unsigned int,
 voto int,
-commento_aut varchar,
-commento_org varchar,
+commaut varchar,
+commorg varchar,
 )
 
 /*La tabella valutazione ha una relazione 1 a N con articolo e autore

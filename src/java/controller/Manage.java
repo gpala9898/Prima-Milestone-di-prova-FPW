@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Article;
 import model.ArticleFactory;
 import model.Utente;
@@ -40,25 +41,25 @@ public class Manage extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
+        HttpSession session = request.getSession();
+        if(session.getAttribute("utenteId") != null){
         
-        if(request.getParameter("uid") == null){
-            request.getRequestDispatcher("login.html").forward(request, response);
-        } else {
-            
-            int uid = Integer.parseInt(request.getParameter("uid"));
+            int uid = (int) session.getAttribute("utenteId");
             Utente utente = UtenteFactory.getInstance().getUtenteById(uid);
-
             request.setAttribute("utente", utente);
 
-            
-            if (utente.getTipo().equals("autore"))
-                request.getRequestDispatcher("error.jsp").forward(request, response);
-            else{
+            if (utente.getTipo().equals("organizzatore")){
                 
                 List<Article> articoli = ArticleFactory.getInstance().getArticle();
                 request.setAttribute("articoli", articoli);
                 request.getRequestDispatcher("gestione.jsp").forward(request, response);
-        }
+            }
+                
+            else if(utente.getTipo().equals("autore")) {
+                request.getRequestDispatcher("error.jsp").forward(request, response);
+            }else {
+                request.getRequestDispatcher("gestione.jsp").forward(request, response);
+            }
         }
     }
         

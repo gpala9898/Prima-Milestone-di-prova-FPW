@@ -59,12 +59,14 @@ public class MyArticles extends HttpServlet {
                 int pid = ArticleFactory.getInstance().insertArticolo(articolo);
                 
                 response.sendRedirect("scriviArticolo.html?pid=" + pid);
-            } else {
-                request.getRequestDispatcher("articoli.jsp").forward(request, response);
             }
-        
+            else if(utente.getTipo().equals("organizzatore")) {
+                request.getRequestDispatcher("error.jsp").forward(request, response);
+            }
+             else {
+                request.getRequestDispatcher("articoli.jsp").forward(request, response);
+            }       
         }
-        
     }
                 /*Article articolo=new Article();
                 ArticleFactory.getInstance().writeArticle(articolo);

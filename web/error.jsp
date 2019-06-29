@@ -26,6 +26,8 @@
                 <div class="main_content">
                     
                     <h1>ERRORE</h1>
+                    <h2>Accesso Negato</h2>
+                    <h3>L'utente selezionato non ha i permessi per accedere alla pagina</h3>
                     <a type="submit" id="button" href="logout.html?logout=true">LOGOUT</a>
                 </div>
         <!--Qui includo il mio footer-->

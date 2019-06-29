@@ -40,7 +40,7 @@
     <!--Visualizza gli articoli che non sono da valutare di quel determinato autore-->
         <c:choose>
             <c:when test="${utente.getTipo()=='autore'}">
-                <strong><h4>I miei Articoli</h4></strong>
+                <h4>I miei Articoli</h4>
                         <ul><c:forEach items="${articoli}" var="articolo">                               
                                 <c:choose>
                                     <c:when test="${articolo.getSituazione()!='Da valutare'}">
@@ -52,7 +52,7 @@
                                 </c:choose>
                         </c:forEach></ul>
             <!--Visualizza gli articoli che sono da valutare di quel determinato autore-->    
-                <strong><h4>Da Valutare</h4></strong>
+                <h4>Da Valutare</h4>
                         <ul><c:forEach items="${articoli}" var="articolo">
                                 <c:choose>
                                     <c:when test="${articolo.getSituazione()=='Da valutare'}">
@@ -112,7 +112,7 @@
                     </table>
                     <br>
                     <!--Pulsante di collegamento alla pagina di creazione di un 
-                    nuovo articolo-->  
+                    nuovo articolo-->
                     
                     <form action="articoli.html" method="post">
                     <nav class="tasto">

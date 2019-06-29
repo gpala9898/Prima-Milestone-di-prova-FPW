@@ -8,6 +8,7 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -41,25 +42,24 @@ public class SuggestAuthors extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         UtenteFactory utente = UtenteFactory.getInstance();
-
+        List<Utente> autoriFound = new ArrayList<>();
         String q = request.getParameter("cmd");
 
         if (q != null){
            if (q.equals("author")) {
-
                 String toSearch = request.getParameter("toSearch");
-
-                List<Utente> autoriFound = utente.searchAutore(toSearch);
-               
-                request.setAttribute("autoriList", autoriFound);
-
+                autoriFound = utente.searchAutore(toSearch);
+                if(autoriFound != null){
+                    request.setAttribute("autoriList",autoriFound);
+                }else{
+                request.removeAttribute("autoriList");
+                }
                 response.setContentType("application/json");
 
                 request.getRequestDispatcher("suggestJSON.jsp").forward(request, response);
-
-           }
+            }
+          }
         }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -51,7 +51,8 @@ public class ModificaArticolo extends HttpServlet{
             int pid = Integer.parseInt(request.getParameter("pid"));
             Article articoli = ArticleFactory.getInstance().getArticleId(pid);
             
-            request.setAttribute("articoli", articoli);}
+            request.setAttribute("articoli", articoli);
+           }
            else{
                request.getRequestDispatcher("error.jsp").forward(request, response);
            }
@@ -71,23 +72,21 @@ public class ModificaArticolo extends HttpServlet{
             request.setAttribute("pid", pid);
             }
             
-            if(request.getParameter("addAuthor")!=null){
-                AuthorTokenizer a=new AuthorTokenizer(request.getParameter("author"));
-                
-                int pid = Integer.parseInt(request.getParameter("pid"));
-                
-                ArticleFactory.aggiungiAutore(a.getId(),pid);
-                
-                Article articoli=ArticleFactory.getInstance().getArticleId(pid);
-                
-                request.setAttribute("articoli", articoli);
-                request.setAttribute("pid",pid);
+        if (request.getParameter("addAuthor") != null) {
+            AuthorTokenizer a = new AuthorTokenizer(request.getParameter("author"));
+
+            int pid = Integer.parseInt(request.getParameter("pid"));
+
+            ArticleFactory.aggiungiAutore(a.getId(), pid);
+
+            Article articoli = ArticleFactory.getInstance().getArticleId(pid);
+
+            request.setAttribute("articoli", articoli);
+            request.setAttribute("pid", pid);
+        }
+        request.getRequestDispatcher("scriviArticolo.jsp").forward(request, response);
             }
-           
-            request.getRequestDispatcher("scriviArticolo.jsp")
-                    .forward(request, response); 
-            
-            }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

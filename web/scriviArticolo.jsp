@@ -48,8 +48,7 @@
                             <th><c:choose>
                                     <c:when test="${articoli.getId_articolo() != null}">
                                         <b>MODIFICA ARTICOLO (ID:${articoli.getId_articolo()})</b> 
-                                        <input type="hidden" name="aid" value="${articoli.getId_articolo()}"/>
-                                    </c:when>  
+                                        </c:when>  
                                     <c:otherwise>
                                         <b>SCRIVI ARTICOLO</b>  
                                     </c:otherwise>  
@@ -57,12 +56,12 @@
                         </tr>
                         
                         <tr class="rigadispari">
-                            <td><label><em>Titolo Articolo</em></label>
+                            <td><label>Titolo Articolo</label>
                             <input type="text" name="titolo" id="titolo" value="${articoli.getTitolo()}"/></td>                       
                         </tr>       
                         
                         <tr class="rigapari">
-                            <td><label><em>Scegli Autore</em></label><br>
+                            <td><label>Scegli Autore</label><br>
                                     <ul id="naut">
                                         <c:forEach items="${articoli.getUtente()}" var="utente">
                                             <li>${utente.getNome()}, ${utente.getCognome()} (${utente.getId()})</li>
@@ -85,42 +84,37 @@
                             <!--Checkbox per la scelta multipla della categoria 
                             di articolo-->
                             
-                            <td><label><em>Categorie</em></label>
-                        <center><table>
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" name="tipo"> Internet<br>                                                                                      
-                                            <input type="checkbox" name="tipo"> Robotica<br>
-                             </td> 
-                             
-                             <td>
-                                 <input type="checkbox" name="tipo"> Recensione <br>
-                                 <input type="checkbox" name="tipo"> HTML <br>                              
-                                        </td>
-                                        
-                                        <td>
-                                 <input type="checkbox" name="tipo"> Programmazione <br> 
-                                 <input type="checkbox" name="tipo"> Sicurezza Informatica <br>
-                                        </td>
-                                    </tr>
-                                </table></center></td>                           
+                            <td><label>Categorie</label>
+                                <ul>
+
+                                    <input type="checkbox" name="tipo"/> Internet                                                                                     
+                                    <input type="checkbox" name="tipo"/> Robotica
+                                    <input type="checkbox" name="tipo"/> Recensione
+                                </ul>
+                                <ul>
+                                    <input type="checkbox" name="tipo"/> HTML 
+                                    <input type="checkbox" name="tipo"/> Programmazione  
+                                    <input type="checkbox" name="tipo"/> Sicurezza Informatica
+
+                                </ul>
+                                </td>                           
                         </tr>
                         
                         <tr class="rigapari">
                             
                             <!--Riga per l'inserimento dell'immagine-->
-                            <td><label><em>Url Immagine</em></label><br>
+                            <td><label>Url Immagine</label><br>
                         <input type="url" name="img" id="immagine" value="${articoli.getImmagine()}"/>                              
                             </td>                                                    
                         </tr>
                         
                         <tr class="rigadispari">
-                            <td><label><em>Data</em></label><br>
+                            <td><label>Data</label><br>
                                 <input type="text" name="data" value="${articoli.getData()}"/></td>                        
                         </tr>
                         
                         <tr class="rigapari">
-                            <td><label><em>Testo</em></label><br/>
+                            <td><label>Testo</label><br/>
             <textarea id="testo" name="testo" rows="5" cols="60">${articoli.getTesto()}</textarea>
             <input type="hidden" name="lid" value="${articoli.getId_articolo()}"><br/></td>                                  
                         </tr>                                                           

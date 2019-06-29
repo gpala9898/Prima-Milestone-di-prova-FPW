@@ -137,37 +137,6 @@ public class ArticleFactory {
         return articleAuthor;
     }
             
-            /*while (set.next()) {
-                Article articolo = new Article();
-                articolo.setId_articolo(set.getInt("id_articolo"));
-                articolo.setTitolo(set.getString("titolo"));
-                articolo.setTesto(set.getString("testo"));
-                articolo.setData(set.getString("data"));
-                articolo.setSituazione(set.getString("situazione"));
-                articolo.setImmagine(set.getString("immagine"));
-                articleAuthor.add(articolo);
-            }
-            stmt.close();
-            conn.close();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(DbManager.class.getName()).
-                    log(Level.SEVERE, null, ex);
-        } return articleAuthor;
-
-    }*/
-        /*for(Article a : allArticles){
-            for(Utente u1 : a.getUtente()){
-                if(u1.equals(u)){
-                    articleAuthor.add(a);
-                }
-            }
-        }
-        
-        return articleAuthor;
-    }
-        */
-    
     public int insertArticolo(Article articolo) {
         int pid = 0;
         
@@ -175,7 +144,7 @@ public class ArticleFactory {
             Connection conn = DbManager.getInstance().getDbConnection();
             Statement stmt = conn.createStatement();
             String sql = "INSERT INTO articolo (id_articolo) "
-                    + "VALUES (default)"; //aggiungere un join per gli autori
+                    + "VALUES (default)"; 
 
             stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet set = stmt.getGeneratedKeys();
@@ -241,6 +210,15 @@ public class ArticleFactory {
             Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+   
+    /*
+    //avevo modificato getArticleId in modo da farlo tramite sql (correzione Milestone 3)
+    ma introducevo un errore in fase di creazione del nuovo articolo con il passaggio
+    di pid e di conseguenza non l'ho modificato, il salvataggio sul database viene
+    eseguito tuttavia non esplicitando la relazione con modart al nuovo articolo
+    non viene aggiunto l'autore con authorTokenizer come invece succede negli altri
+    articoli
+    
     
     public Article getArticleId(int id) throws SQLException {
 
@@ -294,7 +272,19 @@ public class ArticleFactory {
             Logger.getLogger(UtenteFactory.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }*/
+    
+    public Article getArticleId(int autid) throws SQLException {
+
+        List<Article> allArticles = this.getArticle();
+        for (Article a : allArticles) {
+            if (a.getId_articolo() == autid) {
+                return a;
+            }
+        }
+        return null;
     }
+
     
     public static void aggiungiAutore(int aid,int pid) throws SQLException{
         try{

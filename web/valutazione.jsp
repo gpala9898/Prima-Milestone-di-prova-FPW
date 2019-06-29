@@ -41,7 +41,7 @@
     <!--La pagina non è f-->
         <c:choose>
             <c:when test="${utente.getTipo()=='autore'}">
-                <strong><h4>I miei Articoli</h4></strong>
+                <h4>I miei Articoli</h4>
                         <ul><c:forEach items="${articoli}" var="articoli">
                                 <c:choose>
                                     <c:when test="${articoli.getSituazione()!='Da valutare'}">
@@ -53,7 +53,7 @@
                                 </c:choose>
                         </c:forEach></ul>
                 
-                <strong><h4>Da Valutare</h4></strong>
+                <h4>Da Valutare</h4>
                         <ul><c:forEach items="${articoli}" var="articoli">
                                 <c:choose>
                                     <c:when test="${articoli.getSituazione()=='Da valutare'}">
@@ -75,10 +75,10 @@
                     
                     <table class="tabellaart">
                         <tr>
-                            <th><strong>I vantaggi dell'Intelligenza Artificiale</strong><br><br>
-                                <em>Autore: Vincenzo Paduano</em><br><br>
-                                <em>Categorie: Programmazione, Robotica</em><br><br>
-                                <em>Data: 31/03/2019</em>
+                            <th><h1>I vantaggi dell'Intelligenza Artificiale</h1>
+                                <h2>Autore: Vincenzo Paduano</h2>
+                                <h3>Categorie: Programmazione, Robotica</h3>
+                                <h4>Data: 31/03/2019</h4>
                             </th>
 
                             <!--Immagine di copertina dell'articolo-->

@@ -54,7 +54,6 @@ public class Login extends HttpServlet {
             if(u != null){
                 session.setAttribute("utenteId", u.getId());
             }
-            
             else{
                 request.getRequestDispatcher("profilo.jsp").forward(request, response); 
             }
@@ -63,19 +62,19 @@ public class Login extends HttpServlet {
         if(session.getAttribute("utenteId") != null){
             int utenteId = (int) session.getAttribute("utenteId");
             Utente utente = UtenteFactory.getInstance().getUtenteById(utenteId);
+            
         if( "organizzatore".equals(utente.getTipo())){
             List<Article> articoli = ArticleFactory.getInstance().getArticle();
            request.setAttribute("utente", utente);
            request.setAttribute("articoli", articoli);
-           request.getRequestDispatcher("gestione.jsp").forward(request, response); 
-        }    
-            List<Article> articoli = ArticleFactory.getInstance().getArticleAutore(utente);
-            
-            
-            request.setAttribute("utente", utente);
-            request.setAttribute("articoli", articoli);
-            request.getRequestDispatcher("articoli.jsp").forward(request, response);
-        }else{
+                response.sendRedirect("gestione.html");
+            } else if ("autore".equals(utente.getTipo())) {
+                List<Article> articoli = ArticleFactory.getInstance().getArticleAutore(utente);
+                request.setAttribute("utente", utente);
+                request.setAttribute("articoli", articoli);
+                response.sendRedirect("articoli.html");
+            }
+        } else {
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }

@@ -198,14 +198,33 @@ public Boolean deleteAutore(int id){
 
         List<Utente> listToReturn = new ArrayList<>();
 
-        for (Utente utente : getUtenti()) {
-            if (utente.getTipo().equals("autore")) {
-                //é case sensitive
-                if (utente.getNome().contains(toSearch) || utente.getCognome().contains(toSearch)){
-                    listToReturn.add(utente);
-                }
+        try {
+            Connection conn = DbManager.getInstance().getDbConnection();
+            String sql = "select * from utente where (nome like ? or cognome like ?) and tipo='autore' ";
+
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, "%" + toSearch + "%");
+            stmt.setString(2, "%" + toSearch + "%");
+            
+            ResultSet set = stmt.executeQuery();
+            while(set.next()){
+                Utente utente = new Utente();
+                utente.setId(set.getInt("id_utente"));
+                utente.setNome(set.getString("nome"));
+                utente.setCognome(set.getString("cognome"));
+                utente.setEmail(set.getString("email"));
+                utente.setPassword(set.getString("password"));
+                utente.setEnte(set.getString("ente"));
+                utente.setImmagine(set.getString("immagine"));
+                utente.setTipo(set.getString("tipo"));
+                listToReturn.add(utente);
             }
-        }
-        return listToReturn;
+            stmt.close();
+            conn.close();
+            } catch (SQLException ex) {
+                    Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, ex);
+                }
+        if(listToReturn.isEmpty() || toSearch == "") return null;
+        else return listToReturn;
     }
 }
